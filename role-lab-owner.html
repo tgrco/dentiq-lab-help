@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hướng dẫn cho chủ labo — DentIQ Lab Help</title>
+<meta name="description" content="Chủ labo trên DentIQ Lab: cấu hình bảng giá/vật liệu/công đoạn, theo dõi doanh thu, công nợ và năng suất, mời phòng khám lên hệ thống, phân quyền cho nhân sự.">
+<link rel="canonical" href="https://help.dentiqlab.vn/role-lab-owner.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Hướng dẫn cho chủ labo — DentIQ Lab Help">
+<meta property="og:description" content="Cấu hình bảng giá/vật liệu, xem doanh thu/công nợ/năng suất, mời phòng khám, phân quyền nhân sự.">
+<meta property="og:url" content="https://help.dentiqlab.vn/role-lab-owner.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hướng dẫn cho chủ labo">
+<meta name="twitter:description" content="Cấu hình bảng giá/vật liệu, xem doanh thu/công nợ/năng suất, mời phòng khám, phân quyền.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Hướng dẫn cho chủ labo","description":"Chủ labo trên DentIQ Lab: cấu hình bảng giá/vật liệu/công đoạn, theo dõi doanh thu/công nợ/năng suất, mời phòng khám, phân quyền nhân sự.","url":"https://help.dentiqlab.vn/role-lab-owner.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="role-lab-owner">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Theo vai trò<span class="sep"></span>Chủ labo</nav>
+
+    <h1>Hướng dẫn cho chủ labo</h1>
+    <p>Chủ labo (<code>lab_admin</code>) là người sở hữu và điều hành xưởng — role chủ được cấp <strong>toàn bộ</strong> quyền và <strong>không sửa được</strong>. Trách nhiệm của bạn là <strong>đặt nền cho cả hệ thống chạy đúng</strong>: cấu hình bảng giá, danh mục vật liệu và công đoạn để mọi đơn tính tiền và chạy sản xuất nhất quán; theo dõi doanh thu, công nợ và năng suất để biết labo đang lời-lỗ ở đâu; mời phòng khám lên hệ thống để mở rộng mạng lưới; và phân quyền cho từng nhân sự. Công cụ chính của bạn là <strong>dashboard chủ labo</strong> và trang cấu hình.</p>
+
+    <figure>
+      <img src="assets/role-lab-owner/dashboard--owner.png" alt="Dashboard chủ labo — tổng quan doanh thu, công nợ, số case đang chạy và năng suất theo technician" loading="lazy">
+      <figcaption>Dashboard chủ labo: tổng quan doanh thu, công nợ phải thu, số case đang chạy theo công đoạn và năng suất — điểm khởi đầu mỗi ngày.</figcaption>
+    </figure>
+
+    <h2>Công việc từ đầu đến cuối</h2>
+    <ol>
+      <li><strong>Cấu hình lần đầu</strong> — khai <strong>bảng giá</strong>, <strong>danh mục vật liệu</strong> và <strong>công đoạn sản xuất</strong> để mọi đơn về sau tính tiền và chạy đúng.</li>
+      <li><strong>Mời phòng khám</strong> — gửi QR/link cho các phòng khám đối tác để họ bắt đầu đặt đơn, kể cả khi họ chưa dùng DentIQ.</li>
+      <li><strong>Phân quyền nhân sự</strong> — cấp loginId và gán role (điều phối, technician, QC, giao nhận, kế toán) cho từng người.</li>
+      <li><strong>Theo dõi vận hành</strong> — mỗi ngày xem dashboard: case đang tắc ở công đoạn nào, doanh thu tháng, công nợ phòng khám nào quá hạn.</li>
+      <li><strong>Đọc năng suất &amp; chất lượng</strong> — xem báo cáo KPI: sản lượng theo technician, tỉ lệ redo, thời gian mỗi công đoạn để cải tiến.</li>
+    </ol>
+
+    <h2>Cấu hình bảng giá &amp; vật liệu</h2>
+    <p>Đây là bước nền: bảng giá và danh mục vật liệu quyết định mỗi đơn tính tiền thế nào và technician được chọn vật liệu/công đoạn nào. Xem chi tiết ở <a href="pricing-material-catalog.html">Bảng giá &amp; vật liệu</a>. Có thể đặt giá riêng cho từng phòng khám nếu cần.</p>
+
+    <h2>Xem doanh thu, công nợ &amp; năng suất</h2>
+    <p>Toàn bộ số liệu vận hành nội bộ chỉ phía labo thấy — phòng khám không nhìn được hàng đợi, giá vốn hay technician nào làm. Báo cáo KPI cho bạn sản lượng, tỉ lệ redo và thời gian công đoạn; xem <a href="reports-kpi.html">Báo cáo &amp; KPI</a>.</p>
+
+    <h2>Mời phòng khám lên hệ thống</h2>
+    <p>Labo là bên chủ động seeding mạng lưới: mời phòng khám bằng QR/link để họ đặt đơn ngay cả khi chưa có tài khoản. Xem <a href="lab-clinic-invitation.html">Mời phòng khám</a>.</p>
+
+    <h2>Phân quyền cho nhân sự</h2>
+    <p>Mỗi labo được seed sẵn bộ role mặc định: chủ labo, điều phối, technician, QC, giao nhận, kế toán. Role chủ toàn quyền và không sửa được; các role khác sửa được. Cấp loginId và gán role đúng cho từng người ở <a href="roles-permissions.html">Vai trò &amp; phân quyền</a>.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Làm <strong>cấu hình bảng giá và vật liệu trước</strong> khi mời phòng khám đặt đơn — nếu chưa có bảng giá, đơn về sẽ không tính tiền đúng và không nuôi công nợ được. Chủ labo là role duy nhất có toàn quyền; hãy gán role hẹp hơn cho nhân sự theo đúng việc họ làm, đừng cấp quyền chủ cho tất cả.</p>
+    </div>
+
+    <h2>Tips &amp; lưu ý</h2>
+    <ul>
+      <li>Đăng nhập bằng <strong>loginId</strong> (tên đăng nhập) + mật khẩu, không phải email; mỗi loginId là duy nhất toàn hệ thống.</li>
+      <li>Mỗi user thuộc <strong>đúng một labo</strong> — không có thành viên đa-labo, không chuyển labo.</li>
+      <li>Xem dashboard đầu ngày để bắt sớm case tắc ở một công đoạn và công nợ quá hạn.</li>
+      <li>Đặt giá riêng cho phòng khám thân thiết nếu cần, nhưng giữ danh mục vật liệu chuẩn để technician và QC đối chiếu được.</li>
+      <li>Một user có thể mang nhiều role; ở labo nhỏ, một người có thể vừa điều phối vừa kế toán.</li>
+    </ul>
+
+    <div class="docs-pager">
+      <a href="migrate-from-excel-zalo.html"><div class="pager-label">← Trước</div><div class="pager-title">Chuyển từ Excel/Zalo</div></a>
+      <a href="role-coordinator.html" class="next"><div class="pager-label">Tiếp →</div><div class="pager-title">Hướng dẫn cho điều phối</div></a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

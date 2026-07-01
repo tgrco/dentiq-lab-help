@@ -12,6 +12,15 @@
       { key: 'migrate-from-excel-zalo',  href: 'migrate-from-excel-zalo.html',   label: 'Chuyển từ Excel/Zalo' },
     ]},
 
+    { section: 'Theo vai trò', items: [
+      { key: 'role-lab-owner',        href: 'role-lab-owner.html',        label: 'Chủ labo' },
+      { key: 'role-coordinator',      href: 'role-coordinator.html',      label: 'Điều phối' },
+      { key: 'role-technician',       href: 'role-technician.html',       label: 'Kỹ thuật viên' },
+      { key: 'role-qc',               href: 'role-qc.html',               label: 'QC' },
+      { key: 'role-shipper',          href: 'role-shipper.html',          label: 'Giao nhận' },
+      { key: 'role-accountant',       href: 'role-accountant.html',       label: 'Kế toán labo' },
+    ]},
+
     { section: 'Đặt đơn', items: [
       { key: 'connectionless-intake',    href: 'connectionless-intake.html',    label: 'Đặt đơn không cài (QR/web)' },
       { key: 'rx-photo-capture',         href: 'rx-photo-capture.html',         label: 'Rx & chụp ảnh' },
@@ -78,6 +87,13 @@
     'lab-clinic-connection': ['dentiq-connected-intake', 'wf-connect-dentiq', 'lab-clinic-invitation', 'concepts'],
     'zalo-bridge':           ['notifications', 'accounts-receivable', 'wf-month-end-ar', 'shipment-delivery-tracking'],
     'e-invoice-providers':   ['e-invoice-issuance', 'wf-einvoice-failed', 'role-accountant', 'statement'],
+
+    'role-lab-owner':   ['pricing-material-catalog', 'reports-kpi', 'lab-clinic-invitation', 'roles-permissions'],
+    'role-coordinator': ['case-queue-assignment', 'production-board', 'role-technician', 'wf-case-lifecycle'],
+    'role-technician':  ['production-board', 'production-stages', 'qc-gate', 'role-coordinator'],
+    'role-qc':          ['qc-gate', 'redo-management', 'wf-qc-fail-rework', 'role-technician'],
+    'role-shipper':     ['shipment-delivery-tracking', 'wf-case-lifecycle', 'role-coordinator', 'warranty-lookup-claims'],
+    'role-accountant':  ['accounts-receivable', 'statement', 'e-invoice-issuance', 'deposit'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';
