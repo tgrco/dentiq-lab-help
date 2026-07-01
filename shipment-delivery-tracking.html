@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giao &amp; theo dõi — DentIQ Lab Help</title>
+<meta name="description" content="Đánh dấu case sẵn sàng giao, chọn phương thức giao sát thực tế VN, phòng khám xác nhận đã nhận, và theo dõi SLA đo từ lúc labo nhận mẫu (48h rush / 2–5 ngày standard).">
+<link rel="canonical" href="https://help.dentiqlab.vn/shipment-delivery-tracking.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Giao &amp; theo dõi — DentIQ Lab Help">
+<meta property="og:description" content="Đánh dấu sẵn sàng giao, chọn phương thức, phòng khám xác nhận đã nhận, theo dõi SLA đo từ lúc nhận mẫu.">
+<meta property="og:url" content="https://help.dentiqlab.vn/shipment-delivery-tracking.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Giao &amp; theo dõi">
+<meta name="twitter:description" content="Đánh dấu sẵn sàng giao, chọn phương thức, xác nhận đã nhận, theo dõi SLA từ lúc nhận mẫu.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Giao & theo dõi","description":"Đánh dấu case sẵn sàng giao, chọn phương thức giao sát thực tế VN, phòng khám xác nhận đã nhận, theo dõi SLA đo từ lúc labo nhận mẫu.","url":"https://help.dentiqlab.vn/shipment-delivery-tracking.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="shipment-delivery-tracking">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Giao nhận &amp; bảo hành<span class="sep"></span>Giao &amp; theo dõi</nav>
+
+    <h1>Giao &amp; theo dõi</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Ở VN răng đi lại bằng shipper, Grab, xe khách liên tỉnh — một bản ghi giao duy nhất mà cả labo và phòng khám cùng đọc chấm dứt cảnh "răng đang ở đâu?" hỏi qua Zalo.</p>
+    <p>Tính năng này quản lý <strong>mọi chân vật lý</strong> của một case, không chỉ chuyến giao cuối. Một case điển hình đi qua ba leg rời nhau: <strong>inbound</strong> (mẫu vật lý vào labo), <strong>try-in</strong> (bán thành phẩm gửi thử rồi quay lại), và <strong>outbound</strong> (giao thành phẩm đã đạt QC). Mỗi leg ghi phương thức giao, bằng chứng và mốc thời gian; mọi mốc bắn thông báo tự động qua <strong>Zalo bridge</strong> thay cho cú nhắn thủ công. Đây là hiện thực các cạnh vật lý của vòng đời case — luật trạng thái là SSOT ở tài liệu workflow, ở đây chỉ mô tả thao tác.</p>
+
+    <figure>
+      <img src="assets/shipment-delivery-tracking/shipping-console--happy.png" alt="Màn hình giao nhận: danh sách case sẵn sàng giao, chọn phương thức giao và trạng thái từng chuyến" loading="lazy">
+      <figcaption>Bảng điều khiển giao nhận: case đạt QC vào đường giao, tạo chuyến, chọn phương thức và theo dõi trạng thái từng leg realtime.</figcaption>
+    </figure>
+
+    <h2>Đánh dấu sẵn sàng giao</h2>
+    <p>Chỉ case ở trạng thái <code>ready_to_ship</code> — tức <strong>đã đạt QC</strong> — mới tạo được leg outbound và chuyển sang <code>shipped</code> (BR-01). Đây là chốt chặn cứng kế thừa từ <a href="qc-gate.html">cổng QC</a>: không case nào rời labo mà chưa vượt QC một lần. Cố tạo chuyến giao cho case chưa qua QC sẽ bị hệ thống từ chối.</p>
+
+    <h2>Chọn phương thức giao</h2>
+    <p>Mỗi chuyến bắt buộc ghi <strong>phương thức giao</strong> từ tập sát thực tế logistics VN (BR-02):</p>
+    <ul>
+      <li><strong>Labo tự giao / pickup</strong> — labo tự chạy.</li>
+      <li><strong>Shipper nội thành</strong> — giao trong ngày, cùng quận / nội thành.</li>
+      <li><strong>Grab / xe ôm</strong> — đơn lẻ, gấp.</li>
+      <li><strong>Đối tác ship</strong> — GHN / GHTK / Viettel Post, kèm tên đối tác + mã vận đơn nếu có.</li>
+      <li><strong>Relay bến xe</strong> — gửi xe khách liên tỉnh, người nhận ra bến lấy. Đây là mắt xích dễ thất lạc nhất nên bắt buộc ghi thêm <strong>tuyến / nhà xe</strong>, <strong>biển số hoặc giờ xe</strong>, và <strong>mã / SĐT người nhận tại bến</strong>.</li>
+    </ul>
+    <p>Chuyển sang <code>delivered</code> bắt buộc có <strong>bằng chứng giao</strong> (BR-03): ảnh chụp lúc giao, chữ ký / họ tên người nhận, hoặc xác nhận của phòng khám. Mỗi lần cập nhật trạng thái tự bắn thông báo qua <strong>Zalo bridge</strong> (tối thiểu khi <code>shipped</code> và <code>delivered</code>); thông báo lỗi mạng thì retry + fallback, <strong>không</strong> chặn việc cập nhật trạng thái (BR-04).</p>
+
+    <h2>Phòng khám xác nhận đã nhận</h2>
+    <p>Phòng khám xác nhận <strong>đã nhận</strong> mà <strong>không cần tài khoản nặng</strong> (BR-05): mỗi case <code>shipped</code> có một link theo dõi <code>/track/&lt;token&gt;</code> phát tại thời điểm giao — token chính là cơ chế ủy quyền, không cần đăng nhập. Labo có thể xác nhận thay mặt nhưng phải ghi rõ ai xác nhận và lúc nào. Trong vòng try-in, phòng khám cũng xác nhận "đã nhận bán thành phẩm thử / đã gửi trả" gọn một chạm, mobile-first.</p>
+
+    <h2>Leg inbound &amp; theo dõi SLA</h2>
+    <p>Khi mẫu vật lý (impression / mẫu hàm) tới labo, điều phối đóng leg inbound để đặt cờ <code>sampleReceived=true</code> + <code>sampleReceivedAt</code> trên case (BR-09). Case full-digital (chỉ có STL) coi như inbound đã đóng ngay khi <code>submitted</code>, không cần leg vật lý.</p>
+    <p>Đây là điểm mấu chốt: ở VN <strong>đồng hồ SLA chỉ chạy từ lúc labo nhận mẫu vật lý</strong>, không phải từ lúc đơn số tới (BR-06). Rush = <strong>48h tính từ khi nhận mẫu</strong>; in-city standard thường <strong>2–5 ngày</strong>. Giao trễ so với due date phải cảnh báo và ghi nhận lý do trễ. Vì thế cờ <code>sampleReceived</code> — chứ không phải lúc đơn được tạo — mới quyết định due date.</p>
+
+    <table>
+      <thead><tr><th>Leg</th><th>Hướng</th><th>Ghi nhận</th></tr></thead>
+      <tbody>
+        <tr><td>Inbound</td><td>Phòng khám → labo</td><td>Nhận mẫu → bật <code>sampleReceived</code> (khởi động SLA)</td></tr>
+        <tr><td>Try-in</td><td>Labo ↔ phòng khám (hai chiều, có thể lặp)</td><td>Cặp <code>try_in_out</code> + <code>try_in_return</code></td></tr>
+        <tr><td>Outbound</td><td>Labo → phòng khám</td><td><code>ready_to_ship → shipped → delivered</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Sự cố giao nhận</h2>
+    <p>Thất lạc ở bất kỳ leg nào (gửi đi nhưng không tới) mở <strong>trạng thái sự cố</strong> và <strong>không</strong> tự nhảy trạng thái đích — phải điều tra rồi giao lại hoặc làm lại (BR-07). Giao nhầm phòng khám / sai case thì thu hồi, ghi nhận, giao lại đúng; bằng chứng giao sai được lưu để truy nguồn (BR-08). Mẫu vào trễ (đơn đã <code>submitted</code> nhưng mẫu quá hạn chưa tới) mở sự cố mẫu vào, nhắc phòng khám gửi lại / lấy dấu lại, sản xuất vẫn bị gác.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Với relay bến xe, leg treo ở <code>shipped</code> quá lâu <strong>không</strong> tự đánh dấu thất lạc — hệ thống nhắc và cho ghi chú "đang ở bến" cho tới khi quá ngưỡng. Đánh dấu sự cố ở phase này là <strong>thủ công</strong>; nhắc tự động cần scheduler và để cho lượt sau. Nếu SLA hiển thị chưa chạy, kiểm tra đã đóng leg inbound (nhận mẫu) chưa — đồng hồ đếm từ <code>sampleReceivedAt</code>, không phải từ lúc tạo đơn.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="qc-gate.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Cổng QC</div>
+      </a>
+      <a href="redo-management.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Quản lý redo</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

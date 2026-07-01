@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảo hành &amp; tra cứu — DentIQ Lab Help</title>
+<meta name="description" content="Tra cứu lịch sử phục hình đã giao theo bệnh nhân / SĐT / mã case / ngày giao, kiểm tra còn hay hết hạn bảo hành theo material × loại unit, xem material provenance, tạo claim, và cấu hình điều khoản bảo hành.">
+<link rel="canonical" href="https://help.dentiqlab.vn/warranty-lookup-claims.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Bảo hành &amp; tra cứu — DentIQ Lab Help">
+<meta property="og:description" content="Tra cứu lịch sử phục hình đã giao, kiểm tra hạn bảo hành theo material, xem provenance, tạo claim, cấu hình điều khoản.">
+<meta property="og:url" content="https://help.dentiqlab.vn/warranty-lookup-claims.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bảo hành &amp; tra cứu">
+<meta name="twitter:description" content="Tra cứu lịch sử phục hình đã giao, kiểm tra hạn bảo hành theo material, tạo claim, cấu hình điều khoản.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bảo hành & tra cứu","description":"Tra cứu lịch sử phục hình đã giao theo bệnh nhân / SĐT / mã case / ngày giao, kiểm tra hạn bảo hành theo material × loại unit, xem material provenance, tạo claim, và cấu hình điều khoản bảo hành.","url":"https://help.dentiqlab.vn/warranty-lookup-claims.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="warranty-lookup-claims">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Giao nhận &amp; bảo hành<span class="sep"></span>Bảo hành &amp; tra cứu</nav>
+
+    <h1>Bảo hành &amp; tra cứu</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Thẻ bảo hành giấy ở VN chứng nhận phôi, không chứng nhận thành phẩm — một tấm thẻ thật vẫn có thể đi kèm phục hình dùng phôi sai. Gắn provenance vào case là moat mà thẻ giấy không tạo được.</p>
+    <p>Tính năng cho phép labo <strong>tra cứu nhanh lịch sử một phục hình đã giao</strong> để biết còn hay hết hạn bảo hành, rồi <strong>tạo yêu cầu bảo hành</strong> đưa case quay lại sản xuất khi đủ điều kiện. Nó tác động lên cạnh <code>delivered → warranty → in_production | closed</code> của vòng đời case; luật chuyển trạng thái là SSOT ở tài liệu workflow.</p>
+
+    <figure>
+      <img src="assets/warranty-lookup-claims/lookup--results.png" alt="Kết quả tra cứu bảo hành: dòng case kèm chip trạng thái còn hạn hay hết hạn và số ngày còn lại" loading="lazy">
+      <figcaption>Ô tra cứu một dòng: kết quả là dòng case kèm chip trạng thái bảo hành — xanh "còn N ngày" hoặc xám "hết hạn" — thay cho việc lục thẻ giấy / sổ / Zalo.</figcaption>
+    </figure>
+
+    <h2>Tra cứu theo material &amp; thời hạn</h2>
+    <p>Tra cứu một case hỗ trợ ít nhất 4 khóa (BR-03): <strong>tên bệnh nhân</strong>, <strong>số điện thoại bệnh nhân</strong>, <strong>mã case</strong>, và <strong>khoảng ngày giao</strong>. SĐT là khóa thực dụng nhất ở VN vì phòng khám hay nhớ số khách thay vì mã case. Kết quả hiển thị trạng thái bảo hành (còn hạn / hết hạn + số ngày còn lại).</p>
+    <p>Thời hạn bảo hành tính theo <strong>cặp (material × loại restoration / unit)</strong> mà labo tự cấu hình (BR-01). Thực tế VN trải <strong>2–15 năm</strong> theo dòng vật liệu:</p>
+    <table>
+      <thead><tr><th>Dòng vật liệu</th><th>Thời hạn tham khảo</th></tr></thead>
+      <tbody>
+        <tr><td>Nhựa tạm</td><td>~6 tháng – 1 năm</td></tr>
+        <tr><td>PFM / sứ kim loại</td><td>~2–3 năm</td></tr>
+        <tr><td>Zirconia phổ thông</td><td>~5–7 năm</td></tr>
+        <tr><td>Zirconia / sứ cao cấp</td><td>tới 10–15 năm</td></tr>
+      </tbody>
+    </table>
+    <p>Vì vậy thời hạn phải nhập được bằng <strong>năm hoặc tháng</strong>, không giả định một con số cứng. Mốc bắt đầu tính là <strong>ngày giao</strong> (khi case vào <code>delivered</code>); hết hạn = ngày giao + thời hạn (BR-02). Case nhiều unit khác vật liệu tính hạn theo <strong>từng unit</strong>.</p>
+
+    <h2>Lịch sử case &amp; provenance</h2>
+    <p>Khi xem hoặc duyệt một case bảo hành, hệ thống hiển thị <strong>material provenance</strong> gắn trên case (BR-10): nhà sản xuất, dòng / số lô phôi, ai chỉ định material / shade. Đây là bằng chứng chống khoảng trống <strong>thẻ-thật-phôi-giả</strong>: provenance gắn vào case chứ không vào tờ thẻ rời, nên không thể tách khỏi lịch sử thật. Case cũ thiếu provenance được đánh dấu <strong>"thiếu nguồn gốc"</strong> thay vì tự bịa.</p>
+
+    <figure>
+      <img src="assets/warranty-lookup-claims/warranty-card--drawer.png" alt="Thẻ bảo hành điện tử: bệnh nhân, unit, material, ngày giao, ngày hết hạn, mã tra cứu và khối provenance" loading="lazy">
+      <figcaption>Thẻ bảo hành điện tử (BR-09): bệnh nhân, unit, material, ngày giao, ngày hết hạn, mã tra cứu — là <em>view</em> trên case, không phải thực thể rời, nên không thể tách khỏi lịch sử thật.</figcaption>
+    </figure>
+
+    <h2>Tạo claim bảo hành</h2>
+    <p>Chỉ tạo claim được khi case đang ở <code>delivered</code> <strong>và</strong> còn trong hạn (BR-04); case <code>closed</code> phải mở lại về <code>delivered</code> trước. Mọi claim <strong>bắt buộc ghi lý do hỏng + bằng chứng (≥1 ảnh)</strong>; khi duyệt phải ghi <strong>bên chịu trách nhiệm</strong> — labo / clinic / hao mòn tự nhiên (BR-05). Claim được duyệt đưa case <code>warranty → in_production</code> quay lại đúng công đoạn cần làm lại; claim bị từ chối (hết hạn / ngoài phạm vi) đưa case <code>warranty → closed</code> kèm lý do (BR-06).</p>
+    <p>Case <strong>hết hạn</strong> vẫn tra cứu được nhưng nút tạo claim bị khóa (BR-08); nếu vẫn cần sửa thì xử lý như đơn mới (work order mới), không phải claim — màn tra cứu vẫn hiển thị đủ lịch sử + provenance để báo giá có cơ sở. Một case có thể có <strong>nhiều lần bảo hành nối tiếp</strong>, mỗi lần là một bản ghi riêng nhưng <strong>không gia hạn</strong> mốc — đồng hồ vẫn chạy từ ngày giao gốc, trừ khi labo cấu hình chính sách "làm lại reset hạn" (BR-11).</p>
+
+    <h2>Cấu hình điều khoản bảo hành</h2>
+    <p>Labo cấu hình bảng thời hạn theo cặp material × unit — nguồn dữ liệu là lab slip / case (bệnh nhân, unit, material, ngày giao, cam kết bảo hành), <strong>không nhập trùng</strong> dữ liệu bảo hành tách rời case (BR-12). Đây là bảng đặc thù domain labo VN, DentIQ không có nên phải dựng riêng.</p>
+
+    <figure>
+      <img src="assets/warranty-lookup-claims/warranty-terms--config.png" alt="Màn cấu hình điều khoản bảo hành: bảng thời hạn theo cặp material và loại unit, nhập bằng năm hoặc tháng" loading="lazy">
+      <figcaption>Cấu hình điều khoản: bảng thời hạn bảo hành theo cặp (material × loại unit), nhập bằng năm hoặc tháng, không giả định một con số cứng.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Bảo hành <strong>khác</strong> <a href="redo-management.html">redo</a>: redo là làm lại do lỗi phát hiện trước / ngay khi giao; warranty là hỏng <strong>sau</strong> khi đã giao, trong thời hạn cam kết. Ngày giao thiếu / sai trong dữ liệu cũ thì <strong>không</strong> tự suy diễn hạn — đánh dấu "cần xác minh ngày giao" trước khi cho tạo claim. Claim trùng (báo lại cùng một hỏng hóc) gộp vào claim đang mở, không tạo bản sao.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="redo-management.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Quản lý redo</div>
+      </a>
+      <a href="pricing-material-catalog.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Bảng giá &amp; catalog vật liệu</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

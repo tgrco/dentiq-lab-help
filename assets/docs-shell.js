@@ -26,6 +26,12 @@
       { key: 'production-stages',     href: 'production-stages.html',     label: 'Công đoạn sản xuất' },
       { key: 'qc-gate',               href: 'qc-gate.html',               label: 'Cổng QC' },
     ]},
+
+    { section: 'Giao nhận & bảo hành', items: [
+      { key: 'shipment-delivery-tracking', href: 'shipment-delivery-tracking.html', label: 'Giao & theo dõi' },
+      { key: 'redo-management',            href: 'redo-management.html',            label: 'Quản lý redo' },
+      { key: 'warranty-lookup-claims',     href: 'warranty-lookup-claims.html',     label: 'Bảo hành & tra cứu' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -45,6 +51,9 @@
     'production-board':      ['case-queue-assignment', 'production-stages', 'qc-gate', 'role-technician'],
     'production-stages':     ['production-board', 'qc-gate', 'concepts', 'wf-case-lifecycle'],
     'qc-gate':               ['production-board', 'redo-management', 'wf-qc-fail-rework', 'role-qc'],
+    'shipment-delivery-tracking': ['qc-gate', 'warranty-lookup-claims', 'role-shipper', 'wf-case-lifecycle'],
+    'redo-management':            ['qc-gate', 'warranty-lookup-claims', 'wf-redo-claim', 'reports-kpi'],
+    'warranty-lookup-claims':     ['redo-management', 'wf-warranty-claim', 'role-clinic-dentist', 'accounts-receivable'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';
