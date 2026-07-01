@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Báo cáo &amp; KPI — DentIQ Lab Help</title>
+<meta name="description" content="Các chỉ số vận hành của labo trong DentIQ Lab: tỉ lệ redo bóc tách theo technician/clinic/material/lý do, năng suất, doanh thu và công nợ (AR aging) — ý nghĩa và nguồn dữ liệu từng KPI.">
+<link rel="canonical" href="https://help.dentiqlab.vn/reports-kpi.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Báo cáo &amp; KPI — DentIQ Lab Help">
+<meta property="og:description" content="Chỉ số labo: tỉ lệ redo theo technician/clinic/material, năng suất, doanh thu, công nợ (AR aging) — ý nghĩa và nguồn.">
+<meta property="og:url" content="https://help.dentiqlab.vn/reports-kpi.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Báo cáo &amp; KPI">
+<meta name="twitter:description" content="Tỉ lệ redo, năng suất, doanh thu, công nợ (AR aging) — ý nghĩa và nguồn dữ liệu.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Báo cáo & KPI","description":"Các chỉ số vận hành của labo: tỉ lệ redo bóc tách theo technician/clinic/material/lý do, năng suất, doanh thu và công nợ (AR aging) — ý nghĩa và nguồn dữ liệu từng KPI.","url":"https://help.dentiqlab.vn/reports-kpi.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="reports-kpi">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Quản trị<span class="sep"></span>Báo cáo &amp; KPI</nav>
+
+    <h1>Báo cáo &amp; KPI</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Không đo thì không cải thiện — mỗi lần làm lại, mỗi đồng công nợ đều thành một con số bạn nhìn thấy được.</p>
+    <p>Báo cáo &amp; KPI biến dữ liệu vận hành đang chảy qua DentIQ Lab thành các chỉ số chủ labo theo dõi: <strong>chất lượng</strong> (tỉ lệ redo), <strong>năng suất</strong>, <strong>doanh thu</strong> và <strong>công nợ</strong>. Điểm khác biệt là mọi con số ở đây <strong>tính ra từ dữ liệu thật</strong> đã ghi trong luồng (case, QC, redo, giao, công nợ), không phải gõ tay vào Excel.</p>
+
+    <figure>
+      <img src="assets/reports-kpi/quality-dashboard--happy.png" alt="Dashboard chất lượng: tỉ lệ redo tổng và bóc tách theo technician, clinic, material và lý do, có bộ lọc theo thời gian" loading="lazy">
+      <figcaption>Dashboard chất lượng: tỉ lệ redo bóc tách theo technician / clinic / material / lý do, lọc theo thời gian, tách cột "do labo" vs "do clinic" — lộ điểm yếu để cải thiện.</figcaption>
+    </figure>
+
+    <h2>Các chỉ số chính</h2>
+    <table>
+      <thead><tr><th>KPI</th><th>Ý nghĩa</th><th>Nguồn dữ liệu</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tỉ lệ redo</strong></td><td>Số case redo / tổng case giao, trong khoảng thời gian chọn được. Chỉ số chất lượng cốt lõi.</td><td>RedoRecord gắn trên case + cổng <a href="qc-gate.html">QC</a></td></tr>
+        <tr><td><strong>Tỉ lệ redo theo technician</strong></td><td>Kỹ thuật viên nào hay gây lỗi để đào tạo / phân ca lại. Redo <code>do-clinic</code> tách riêng, không tính vào lỗi technician.</td><td>Phân công case + fault attribution</td></tr>
+        <tr><td><strong>Tỉ lệ redo theo clinic</strong></td><td>Phòng khám nào hay đặt sai (Rx/lab slip sai) để làm việc lại hoặc điều chỉnh giá/đặt cọc.</td><td>Cạnh clinic↔lab + fault attribution</td></tr>
+        <tr><td><strong>Tỉ lệ redo theo material / lý do</strong></td><td>Mode lỗi phổ biến (sai-shade, khớp-cắn-cao, không-khít, vỡ…) theo dòng vật liệu.</td><td>Taxonomy lý do redo + material</td></tr>
+        <tr><td><strong>Năng suất</strong></td><td>Case xử lý / công đoạn hoàn thành theo kỳ, theo technician — nhìn thông lượng thật của xưởng.</td><td>Vòng đời case + công đoạn sản xuất</td></tr>
+        <tr><td><strong>Doanh thu</strong></td><td>Giá trị case đã giao theo kỳ (VND), cơ sở để thấy xưởng làm ra bao nhiêu.</td><td>Case <code>delivered</code> × bảng giá</td></tr>
+        <tr><td><strong>Công nợ (AR aging)</strong></td><td>Tiền phòng khám còn nợ, phân theo tuổi nợ (trong hạn / quá hạn) per clinic — biết thu ai, khi nào.</td><td><a href="accounts-receivable.html">Công nợ</a> + <a href="statement.html">sao kê</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Tỉ lệ redo — chỉ số cốt lõi</h2>
+    <p>Ở VN, phần lớn labo <strong>không đo được</strong> tỉ lệ redo, không biết lỗi do đâu, không biết technician hay clinic nào gây nhiều lỗi. DentIQ Lab tính tỉ lệ redo tự động từ mỗi lần làm lại đã ghi, rồi bóc tách để lộ điểm yếu:</p>
+    <ul>
+      <li><strong>Theo technician</strong> — để đào tạo, phân ca lại; redo do lỗi phía clinic được tách khỏi tỉ lệ chất lượng nội bộ nên không "đổ oan" cho kỹ thuật viên.</li>
+      <li><strong>Theo clinic</strong> — vẫn thống kê redo <code>do-clinic</code> theo phòng khám để biết ai hay đặt sai và điều chỉnh giá / đặt cọc.</li>
+      <li><strong>Theo material và lý do</strong> — thấy mode lỗi (sai shade là nguyên nhân số 1 ở VN, khớp cắn cao số 2) để chặn từ gốc.</li>
+    </ul>
+    <p>Đếm redo tính <strong>theo case</strong> (redo-of-redo trên cùng case không thổi phồng tỉ lệ), và lọc được theo khoảng thời gian.</p>
+
+    <h2>Doanh thu, năng suất &amp; công nợ</h2>
+    <p>Ngoài chất lượng, chủ labo cần ba con số vận hành để điều hành xưởng: <strong>doanh thu</strong> (case đã giao × bảng giá, tính bằng VND), <strong>năng suất</strong> (thông lượng theo công đoạn / technician), và <strong>công nợ</strong> theo <strong>AR aging</strong> — phân bổ số dư nợ theo tuổi nợ để biết khoản nào quá hạn cần nhắc. Công nợ lấy trực tiếp từ sổ AR và sao kê per clinic, nên số trên báo cáo khớp với số trên sao kê đã chốt.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>KPI chỉ chính xác khi dữ liệu nguồn được ghi đủ: mỗi lần <a href="qc-gate.html">QC fail</a> / <a href="redo-management.html">redo</a> phải ghi lý do + bên chịu trách nhiệm, mỗi case giao phải vào <code>delivered</code>, mỗi khoản thu phải ghi nhận. Bỏ ghi ở luồng vận hành thì báo cáo thiếu — con số phản ánh đúng những gì đã nhập.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="lab-settings.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Cấu hình labo</div>
+      </a>
+      <a href="notifications.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Thông báo</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

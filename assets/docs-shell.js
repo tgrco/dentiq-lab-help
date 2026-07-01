@@ -59,6 +59,14 @@
       { key: 'zalo-bridge',           href: 'zalo-bridge.html',           label: 'Zalo ZNS' },
       { key: 'e-invoice-providers',   href: 'e-invoice-providers.html',   label: 'Nhà cung cấp HĐĐT' },
     ]},
+
+    { section: 'Quản trị', items: [
+      { key: 'roles-permissions', href: 'roles-permissions.html', label: 'Vai trò & phân quyền' },
+      { key: 'lab-settings',      href: 'lab-settings.html',      label: 'Cấu hình labo' },
+      { key: 'reports-kpi',       href: 'reports-kpi.html',       label: 'Báo cáo & KPI' },
+      { key: 'notifications',     href: 'notifications.html',     label: 'Thông báo' },
+      { key: 'security',          href: 'security.html',          label: 'Bảo mật & dữ liệu' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -90,6 +98,12 @@
     'lab-clinic-connection': ['dentiq-connected-intake', 'wf-connect-dentiq', 'lab-clinic-invitation', 'concepts'],
     'zalo-bridge':           ['notifications', 'accounts-receivable', 'wf-month-end-ar', 'shipment-delivery-tracking'],
     'e-invoice-providers':   ['e-invoice-issuance', 'wf-einvoice-failed', 'role-accountant', 'statement'],
+
+    'roles-permissions': ['role-lab-owner', 'lab-settings', 'security', 'concepts'],
+    'lab-settings':      ['pricing-material-catalog', 'warranty-lookup-claims', 'e-invoice-issuance', 'roles-permissions'],
+    'reports-kpi':       ['redo-management', 'accounts-receivable', 'role-lab-owner', 'warranty-lookup-claims'],
+    'notifications':     ['zalo-bridge', 'wf-month-end-ar', 'shipment-delivery-tracking', 'security'],
+    'security':          ['roles-permissions', 'concepts', 'lab-settings', 'faq'],
 
     'role-lab-owner':   ['pricing-material-catalog', 'reports-kpi', 'lab-clinic-invitation', 'roles-permissions'],
     'role-coordinator': ['case-queue-assignment', 'production-board', 'role-technician', 'wf-case-lifecycle'],

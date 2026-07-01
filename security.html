@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảo mật &amp; dữ liệu — DentIQ Lab Help</title>
+<meta name="description" content="Mô hình bảo mật của DentIQ Lab: cô lập dữ liệu theo tenant (mỗi lab tách biệt), đăng nhập bằng loginId, quyền theo lab permission, và mô hình truy cập theo cạnh clinic-lab graph.">
+<link rel="canonical" href="https://help.dentiqlab.vn/security.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Bảo mật &amp; dữ liệu — DentIQ Lab Help">
+<meta property="og:description" content="Cô lập dữ liệu theo tenant, đăng nhập loginId, quyền theo lab permission, truy cập theo cạnh clinic-lab graph.">
+<meta property="og:url" content="https://help.dentiqlab.vn/security.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bảo mật &amp; dữ liệu">
+<meta name="twitter:description" content="Cô lập dữ liệu theo tenant, đăng nhập loginId, quyền theo lab permission, truy cập theo cạnh clinic-lab graph.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bảo mật & dữ liệu","description":"Mô hình bảo mật của DentIQ Lab: cô lập dữ liệu theo tenant (mỗi lab tách biệt), đăng nhập bằng loginId, quyền theo lab permission, và mô hình truy cập theo cạnh clinic-lab graph.","url":"https://help.dentiqlab.vn/security.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="security">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Quản trị<span class="sep"></span>Bảo mật &amp; dữ liệu</nav>
+
+    <h1>Bảo mật &amp; dữ liệu</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Dữ liệu một labo không bao giờ rò sang labo khác — đó là ranh giới cứng, không phải cấu hình bạn phải tự bật.</p>
+    <p>Bảo mật trong DentIQ Lab dựa trên ba trụ: <strong>cô lập dữ liệu theo tenant</strong> (mỗi labo là một ranh giới cứng), <strong>đăng nhập bằng loginId</strong>, và <strong>quyền theo lab permission</strong> giải theo <strong>cạnh clinic-lab graph</strong>. Mô hình này được thiết kế để "mặc định từ chối" — bạn không thấy gì ngoài phạm vi mình thuộc về.</p>
+
+    <h2>Cô lập theo tenant</h2>
+    <p>Đơn vị thuê (tenant) chính là một <strong>lab</strong>. Labo là ranh giới dữ liệu cứng: <strong>dữ liệu một labo không rò sang labo khác</strong>. Phòng khám là thực thể nhẹ, có thể "không tài khoản" — tồn tại như đối tác của labo (đặt đơn qua QR/web link) kể cả khi chưa từng đăng nhập; khi tự đăng ký thì danh tính nhẹ này được nâng cấp.</p>
+    <ul>
+      <li><strong>Ranh giới cứng theo lab.</strong> Mọi truy vấn được lọc theo <code>labId</code> của người dùng — không có đường đọc chéo sang labo khác.</li>
+      <li><strong>Superadmin nền tảng tách tuyến.</strong> User vận hành nền tảng có <code>labId = null</code>, chỉ chạm được bề mặt quản trị hệ thống, và <strong>bị từ chối mọi tuyến của tenant lab</strong> — không lẫn vào dữ liệu labo.</li>
+    </ul>
+
+    <h2>Truy cập theo cạnh clinic-lab graph</h2>
+    <p>Quan hệ labo ↔ phòng khám là mạng nhiều-nhiều: một lab nối nhiều clinic, một clinic nối nhiều lab. <strong>Quyền nhìn theo cạnh, không theo tenant đơn lẻ</strong>: một work order thuộc về <strong>đúng một cạnh</strong> (lab X ↔ clinic Y), và chỉ hai đầu cạnh đó thấy cùng một bản ghi case realtime. Lab khác / clinic khác không thấy.</p>
+    <table>
+      <thead><tr><th>Nguyên tắc</th><th>Nghĩa là</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mặc định từ chối</strong></td><td>Không thấy gì ngoài các cạnh mình thuộc về.</td></tr>
+        <tr><td><strong>Clinic chỉ thấy case của mình</strong></td><td>Với labo đó — không thấy hàng đợi nội bộ, giá vốn, hay technician nào làm.</td></tr>
+        <tr><td><strong>Lab thấy toàn bộ vận hành nội bộ</strong></td><td>+ thông tin clinic cần để làm đúng (Rx, ảnh, shade…).</td></tr>
+        <tr><td><strong>Tối thiểu hoá dữ liệu bệnh nhân</strong></td><td>Labo cần thông tin kỹ thuật (răng, vật liệu), <strong>không</strong> cần hồ sơ y tế đầy đủ — chỉ lưu cái cần để chế tác + bảo hành.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Danh tính &amp; quyền</h2>
+    <p>User đăng nhập bằng <a href="roles-permissions.html">loginId</a> (tên đăng nhập) + mật khẩu, <strong>không</strong> bằng email; loginId duy nhất toàn hệ thống, lưu chuẩn hoá chữ thường. Mỗi user thuộc <strong>đúng một lab</strong> và mang một hoặc nhiều lab role; quyền thao tác được giải ra từ tập <strong>lab permission</strong> của các role đó và đính vào phiên để gác từng thao tác. Quyền phạm vi nền tảng (<code>scope='system'</code>) <strong>không bao giờ</strong> lộ cho một labo — cơ chế ẩn khiến tenant không thể thấy, xin hay được cấp quyền nền tảng.</p>
+
+    <h2>Nhật ký &amp; riêng tư</h2>
+    <p>Mọi truy cập case được <strong>ghi log</strong> để audit. Bệnh nhân là dữ liệu của phòng khám; labo là bên xử lý theo mục đích chế tác. Log được lưu tách khỏi cơ sở dữ liệu nghiệp vụ, có thời gian giữ giới hạn (TTL — tự hết hạn để không phình vô hạn), và <strong>không chứa dữ liệu nhạy cảm / bí mật</strong> trong nội dung log.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Việc một người "không thấy" dữ liệu của labo/phòng khám khác <strong>không phải lỗi</strong> — đó là cô lập tenant hoạt động đúng. Muốn hai bên cùng thấy một case, phải tồn tại <strong>cạnh</strong> hợp tác giữa labo và phòng khám đó (xem <a href="roles-permissions.html">phân quyền</a>). Dữ liệu bệnh nhân chỉ lưu ở mức tối thiểu cần cho chế tác + bảo hành.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="notifications.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Thông báo</div>
+      </a>
+      <a href="wf-first-order.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Đơn hàng đầu tiên</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

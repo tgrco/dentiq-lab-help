@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thông báo — DentIQ Lab Help</title>
+<meta name="description" content="Hệ thống thông báo của DentIQ Lab: trạng thái case, nhắc công nợ quá hạn, cập nhật giao hàng — ưu tiên kênh Zalo (Zalo-first), ai nhận thông báo gì.">
+<link rel="canonical" href="https://help.dentiqlab.vn/notifications.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Thông báo — DentIQ Lab Help">
+<meta property="og:description" content="Thông báo trạng thái case, nhắc công nợ, giao hàng; kênh Zalo-first; ai nhận gì.">
+<meta property="og:url" content="https://help.dentiqlab.vn/notifications.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thông báo">
+<meta name="twitter:description" content="Thông báo trạng thái case, nhắc công nợ, giao hàng; kênh Zalo-first; ai nhận gì.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Thông báo","description":"Hệ thống thông báo của DentIQ Lab: trạng thái case, nhắc công nợ quá hạn, cập nhật giao hàng — ưu tiên kênh Zalo (Zalo-first), ai nhận thông báo gì.","url":"https://help.dentiqlab.vn/notifications.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="notifications">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Quản trị<span class="sep"></span>Thông báo</nav>
+
+    <h1>Thông báo</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Người dùng VN sống trên Zalo — nên thông báo đi tới nơi họ đã ở, thay vì bắt họ vào app để hay tin.</p>
+    <p>Thông báo giữ hai phía — labo và phòng khám — cùng nắm được điều quan trọng đúng lúc: <strong>case đổi trạng thái</strong>, <strong>công nợ tới hạn</strong>, <strong>hàng đang giao</strong>. DentIQ Lab ưu tiên kênh <strong>Zalo</strong> (Zalo-first) vì Zalo là hạ tầng đặt hàng hiện hữu ở VN (~80% SME dùng) — hệ thống <strong>cộng sinh</strong> với Zalo, không thay thế trực diện.</p>
+
+    <h2>Sự kiện → kênh → người nhận</h2>
+    <table>
+      <thead><tr><th>Sự kiện</th><th>Kênh</th><th>Người nhận</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Case đổi trạng thái</strong> (tiếp nhận, vào sản xuất, QC pass/fail, sẵn sàng giao)</td><td>Trong app + Zalo</td><td>Phòng khám đặt đơn; điều phối / technician liên quan phía labo</td></tr>
+        <tr><td><strong>Đã giao (delivered)</strong> — phục hình về tới phòng khám</td><td>Trong app + Zalo</td><td>Phòng khám nhận hàng; điều phối phía labo</td></tr>
+        <tr><td><strong>Cập nhật giao hàng</strong> — bắt đầu ship / đang trên đường</td><td>Trong app + Zalo</td><td>Phòng khám; giao nhận (shipper) phía labo</td></tr>
+        <tr><td><strong>Sao kê kỳ đã chốt</strong> — bảng công nợ tháng per clinic</td><td>Zalo / PDF</td><td>Phòng khám (nha sĩ / lễ tân / chủ phòng khám)</td></tr>
+        <tr><td><strong>Nhắc công nợ quá hạn</strong> (dunning) — số dư &gt; 0 và quá hạn sao kê</td><td>Zalo</td><td>Phòng khám còn nợ quá hạn</td></tr>
+        <tr><td><strong>Yêu cầu bảo hành / redo</strong> — trạng thái claim</td><td>Trong app + Zalo</td><td>Phòng khám báo lỗi; QC / điều phối phía labo</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Zalo-first</h2>
+    <p>Cầu nối <a href="zalo-bridge.html">Zalo bridge</a> chia sẻ trạng thái / phiếu / sao kê sang Zalo, kèm fallback ảnh + share-to-Zalo để giữ chân người dùng chưa quen app. Với phòng khám không cài đặt gì (đặt đơn qua QR/web link), Zalo là kênh chính để họ nhận tin về đơn của mình mà không cần đăng nhập nặng.</p>
+    <p>Ví dụ điển hình là <strong>nhắc nợ khéo qua Zalo</strong>: khi một phòng khám còn nợ quá hạn (số dư &gt; 0 và quá due date của sao kê), hệ thống gửi nhắc kèm đối chiếu sao kê kỳ tương ứng — thay cho việc gọi điện đòi nợ thủ công.</p>
+
+    <h2>Ai nhận gì</h2>
+    <p>Thông báo bám theo <a href="roles-permissions.html">quyền theo cạnh clinic↔lab</a>: một phòng khám chỉ nhận tin về <strong>case của chính mình</strong> với labo đó — không thấy hàng đợi nội bộ, giá vốn hay technician nào làm. Phía labo, thông báo tới đúng vai trò liên quan: điều phối cho việc phân ca, QC cho pass/fail, giao nhận cho ship, kế toán cho công nợ.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Nhắc nợ qua Zalo chỉ gửi cho phòng khám thật sự <strong>quá hạn</strong> (còn nợ &gt; 0 và đã qua due date), gắn với đúng sao kê kỳ — tránh làm phiền khách còn trong hạn. Claim / báo lỗi trùng (báo lại cùng một sự cố) được gộp, không tạo thông báo lặp. Cấu hình chi tiết kênh Zalo ở <a href="zalo-bridge.html">Zalo ZNS</a>.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="reports-kpi.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Báo cáo &amp; KPI</div>
+      </a>
+      <a href="security.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Bảo mật &amp; dữ liệu</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

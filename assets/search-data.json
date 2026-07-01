@@ -103,5 +103,20 @@
     "keywords": ["phụ tá","phu ta","lễ tân","le tan","assistant","điền đơn","dien don","chụp ảnh","chup anh"] },
   { "key": "role-clinic-owner", "url": "role-clinic-owner.html", "title": "Hướng dẫn cho chủ phòng khám", "section": "Theo vai trò",
     "description": "Chủ phòng khám xem tổng case ở labo, công nợ phải trả, tỉ lệ redo từng labo.",
-    "keywords": ["chủ phòng khám","chu phong kham","clinic owner","công nợ","cong no","redo","chất lượng","chat luong"] }
+    "keywords": ["chủ phòng khám","chu phong kham","clinic owner","công nợ","cong no","redo","chất lượng","chat luong"] },
+  { "key": "roles-permissions", "url": "roles-permissions.html", "title": "Vai trò & phân quyền", "section": "Quản trị",
+    "description": "Đăng nhập loginId, role mặc định (lab_admin, coordinator, technician, qc, shipper, accountant), lab permission.",
+    "keywords": ["vai trò","vai tro","phân quyền","phan quyen","role","permission","loginid","lab_admin","phân quyền"] },
+  { "key": "lab-settings", "url": "lab-settings.html", "title": "Cấu hình labo", "section": "Quản trị",
+    "description": "Các mục cấu hình labo: catalog, bảng giá, điều khoản bảo hành, e-invoice.",
+    "keywords": ["cấu hình","cau hinh","settings","labo","điều khoản","dieu khoan","cấu hình labo"] },
+  { "key": "reports-kpi", "url": "reports-kpi.html", "title": "Báo cáo & KPI", "section": "Quản trị",
+    "description": "Tỉ lệ redo, năng suất, doanh thu, công nợ (AR aging).",
+    "keywords": ["báo cáo","bao cao","kpi","report","tỉ lệ redo","ti le redo","doanh thu","năng suất","nang suat"] },
+  { "key": "notifications", "url": "notifications.html", "title": "Thông báo", "section": "Quản trị",
+    "description": "Thông báo trạng thái case, nhắc công nợ, giao hàng; kênh Zalo-first.",
+    "keywords": ["thông báo","thong bao","notification","zalo","nhắc","nhac","alert"] },
+  { "key": "security", "url": "security.html", "title": "Bảo mật & dữ liệu", "section": "Quản trị",
+    "description": "Cô lập dữ liệu theo tenant, đăng nhập loginId, quyền theo lab permission.",
+    "keywords": ["bảo mật","bao mat","security","dữ liệu","du lieu","tenant","cô lập","co lap","quyền","quyen"] }
 ]

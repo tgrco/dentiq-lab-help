@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vai trò &amp; phân quyền — DentIQ Lab Help</title>
+<meta name="description" content="Mô hình đăng nhập bằng loginId (không email), mỗi user thuộc đúng một lab và mang một hay nhiều lab role. Bộ role mặc định seed sẵn — lab_admin toàn quyền không sửa được, coordinator, technician, qc, shipper, accountant — với quyền giải ra từ tập lab permission.">
+<link rel="canonical" href="https://help.dentiqlab.vn/roles-permissions.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Vai trò &amp; phân quyền — DentIQ Lab Help">
+<meta property="og:description" content="Đăng nhập bằng loginId, mỗi user thuộc đúng 1 lab, mang 1+ lab role; bộ role mặc định seed sẵn; quyền giải ra từ tập lab permission.">
+<meta property="og:url" content="https://help.dentiqlab.vn/roles-permissions.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vai trò &amp; phân quyền">
+<meta name="twitter:description" content="Đăng nhập loginId, bộ role mặc định (lab_admin, coordinator, technician, qc, shipper, accountant), quyền từ lab permission.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Vai trò & phân quyền","description":"Đăng nhập bằng loginId (không email), mỗi user thuộc đúng một lab và mang một hay nhiều lab role; bộ role mặc định seed sẵn (lab_admin toàn quyền không sửa được, coordinator, technician, qc, shipper, accountant); quyền giải ra từ tập lab permission.","url":"https://help.dentiqlab.vn/roles-permissions.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="roles-permissions">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Quản trị<span class="sep"></span>Vai trò &amp; phân quyền</nav>
+
+    <h1>Vai trò &amp; phân quyền</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Ai thấy gì, ai làm được gì trong labo — không dựa vào lời hứa, mà dựa vào một bộ role rõ ràng gán cho từng người.</p>
+    <p>Mọi người trong labo đăng nhập bằng <strong>loginId</strong> (tên đăng nhập), <strong>không</strong> bằng email. Mỗi user thuộc <strong>đúng một lab</strong> và mang <strong>một hoặc nhiều lab role</strong>; quyền thao tác của họ được hệ thống <strong>giải ra</strong> từ tập <strong>lab permission</strong> của các role đó. DentIQ Lab seed sẵn một bộ role mặc định khớp với các vị trí thật trong labo, để bạn dùng ngay mà không phải tự dựng quyền từ đầu.</p>
+
+    <figure>
+      <img src="assets/roles-permissions/dashboard--technician-gated-nav.png" alt="Bảng điều khiển của một technician: thanh điều hướng bên trái chỉ hiện các mục thuộc quyền của họ, ít hơn so với chủ labo" loading="lazy">
+      <figcaption>Điều hướng theo quyền: một technician chỉ thấy các mục thuộc role của mình (ít hơn hẳn chủ labo). Mặc định là <strong>từ chối</strong> — không có quyền thì không thấy mục.</figcaption>
+    </figure>
+
+    <h2>Đăng nhập bằng loginId</h2>
+    <p>Danh tính đăng nhập là <strong>loginId</strong> (tên đăng nhập), lưu chuẩn hoá chữ thường và <strong>duy nhất toàn hệ thống</strong>. Email là <strong>tuỳ chọn</strong>. Vì loginId là duy nhất nên đăng nhập không nhập nhằng, và labo VN không bắt buộc mọi kỹ thuật viên phải có email riêng.</p>
+    <ul>
+      <li><strong>Một user → đúng một lab.</strong> Không có thành viên đa-lab, không chuyển lab: mỗi user được cấp loginId để đăng nhập vào labo duy nhất của mình.</li>
+      <li><strong>Handle bị cấm bị từ chối.</strong> Các tên nhạy cảm (vd <code>admin</code>, <code>owner</code>, <code>support</code>) bị chặn ngay khi tạo tài khoản.</li>
+      <li><strong>Một user mang một hoặc nhiều role.</strong> Ví dụ một người vừa làm điều phối vừa kiêm QC ở labo nhỏ — quyền hiệu lực là hợp của các role.</li>
+    </ul>
+
+    <h2>Bộ role mặc định</h2>
+    <p>Mỗi lab được seed sẵn sáu role, khớp với các vị trí thật trong xưởng. Mỗi role có <strong>code</strong> (định danh máy, cố định — dùng để gác vòng đời case) và <strong>name</strong> (nhãn hiển thị).</p>
+    <table>
+      <thead><tr><th>Role</th><th>Là ai</th><th>Quyền chính</th></tr></thead>
+      <tbody>
+        <tr><td><code>lab_admin</code></td><td>Chủ labo</td><td><strong>Toàn quyền</strong> — không sửa/xoá được (systemProtected). Cấu hình bảng giá, vật liệu, người dùng, xem doanh thu/công nợ/năng suất.</td></tr>
+        <tr><td><code>coordinator</code></td><td>Quản lý / điều phối</td><td>Tiếp nhận work order, phân technician, đặt hạn, chuyển trạng thái case, điều phối sản xuất.</td></tr>
+        <tr><td><code>technician</code></td><td>Kỹ thuật viên</td><td>Cập nhật tiến độ công đoạn được giao (milling/sinter/polish…). Không thấy giá vốn, công nợ.</td></tr>
+        <tr><td><code>qc</code></td><td>Kiểm định (QC)</td><td>Chấm cổng QC, ghi pass/fail + ảnh bằng chứng, ghi phôi/lô trước khi cho case đi giao.</td></tr>
+        <tr><td><code>shipper</code></td><td>Giao nhận</td><td>Cập nhật trạng thái giao, xác nhận đã giao (delivered).</td></tr>
+        <tr><td><code>accountant</code></td><td>Kế toán labo</td><td>Quản công nợ, chốt kỳ, phát hành sao kê / hoá đơn điện tử, ghi nhận thanh toán.</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Role chủ <code>lab_admin</code> không sửa được</strong>: nó được cấp <strong>toàn bộ</strong> lab permission liệt kê tường minh (không dùng wildcard). Năm role còn lại <strong>sửa được</strong> — bạn có thể chỉnh tập quyền của từng role theo cách labo mình vận hành.</p>
+
+    <h2>Quyền được giải ra từ lab permission</h2>
+    <p>Một <strong>lab role</strong> thực chất là một tập <strong>lab permission</strong> — đơn vị cấp quyền nhỏ nhất, mỗi mã khoá một thao tác cụ thể. Quyền hiệu lực của một user là hợp của permission từ mọi role họ mang. Danh mục quyền phạm vi lab gồm 14 mã, nhóm theo mảng chức năng:</p>
+    <table>
+      <thead><tr><th>Nhóm</th><th>Lab permission (mã)</th><th>Cho phép</th></tr></thead>
+      <tbody>
+        <tr><td>Case</td><td><code>case.read</code>, <code>case.create</code>, <code>case.transition</code>, <code>case.assign</code>, <code>case.sample</code>, <code>case.material</code>, <code>case.deposit</code></td><td>Xem/tạo case, chuyển trạng thái, phân công, ghi mẫu/ảnh, ghi material, ghi đặt cọc.</td></tr>
+        <tr><td>Clinic</td><td><code>clinic.read</code>, <code>clinic.manage</code></td><td>Xem và quản lý quan hệ với phòng khám (cạnh clinic↔lab).</td></tr>
+        <tr><td>Catalog</td><td><code>catalog.material.manage</code>, <code>catalog.price.manage</code></td><td>Quản lý danh mục vật liệu và bảng giá.</td></tr>
+        <tr><td>Access</td><td><code>roles.manage</code>, <code>users.manage</code></td><td>Quản lý role và người dùng của labo.</td></tr>
+        <tr><td>Settings</td><td><code>lab.settings.manage</code></td><td>Chỉnh cấu hình chung của labo.</td></tr>
+      </tbody>
+    </table>
+    <p>Quyền <strong>phạm vi nền tảng</strong> (<code>scope='system'</code>, dành cho superadmin) <strong>không bao giờ</strong> lộ cho một labo — đây là cơ chế ẩn: một labo không thể thấy, xin, hay được cấp quyền nền tảng. Bạn chỉ làm việc với các quyền <code>scope='lab'</code> ở trên.</p>
+
+    <h2>Role nào chạm quyền nào (tham khảo)</h2>
+    <p>Bảng dưới là gợi ý tập quyền hợp lý của mỗi role mặc định (chủ labo có tất cả); bạn có thể chỉnh 5 role sửa được cho khớp thực tế labo mình:</p>
+    <table>
+      <thead><tr><th>Permission</th><th>lab_admin</th><th>coordinator</th><th>technician</th><th>qc</th><th>shipper</th><th>accountant</th></tr></thead>
+      <tbody>
+        <tr><td><code>case.read</code></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td><code>case.create</code></td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><code>case.transition</code></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>—</td></tr>
+        <tr><td><code>case.assign</code></td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><code>case.material</code></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>—</td><td>—</td></tr>
+        <tr><td><code>catalog.price.manage</code></td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+        <tr><td><code>catalog.material.manage</code></td><td>✓</td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><code>roles.manage</code> / <code>users.manage</code></td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><code>lab.settings.manage</code></td><td>✓</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p>Lưu ý: <strong>code</strong> của các role khớp với ROLE trong máy trạng thái case + bảng giá, nên vòng đời case và gác giá vẫn giải đúng dù bạn đổi <strong>name</strong> hiển thị. Các dấu ✓/— ở đây là mặc định gợi ý, không phải luật cứng — chủ labo tinh chỉnh được cho 5 role sửa được.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Một người dùng "không thấy" một màn hình thường <strong>không phải lỗi</strong> — đó là quyền hoạt động đúng (mặc định từ chối). Muốn họ thấy thêm, gán role phù hợp hoặc bổ sung permission cho role đó. Chỉ <code>lab_admin</code> quản lý được role và người dùng. Riêng <code>lab_admin</code> không sửa/xoá được để labo không bao giờ mất đường vào toàn quyền.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="e-invoice-providers.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Nhà cung cấp HĐĐT</div>
+      </a>
+      <a href="lab-settings.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Cấu hình labo</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>
