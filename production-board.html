@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảng sản xuất — DentIQ Lab Help</title>
+<meta name="description" content="Bảng kanban realtime các công đoạn sản xuất (design → milling → sinter → polish/glaze → QC): technician cập nhật tiến độ từng bước, tập cột sinh theo material.">
+<link rel="canonical" href="https://help.dentiqlab.vn/production-board.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Bảng sản xuất — DentIQ Lab Help">
+<meta property="og:description" content="Bảng kanban realtime các công đoạn; technician cập nhật tiến độ, clinic xem chỉ-đọc.">
+<meta property="og:url" content="https://help.dentiqlab.vn/production-board.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bảng sản xuất">
+<meta name="twitter:description" content="Kanban realtime các công đoạn milling/sinter/polish; cập nhật tiến độ từng bước.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bảng sản xuất","description":"Bảng kanban realtime các công đoạn sản xuất; technician cập nhật tiến độ từng bước, tập cột sinh theo material, clinic xem chỉ-đọc.","url":"https://help.dentiqlab.vn/production-board.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="production-board">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Sản xuất<span class="sep"></span>Bảng sản xuất</nav>
+
+    <h1>Bảng sản xuất</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Một bản tiến độ realtime cả labo và phòng khám cùng nhìn — hết "case đang ở đâu, xong chưa" trên Zalo.</p>
+    <p>Bảng sản xuất là bảng theo dõi realtime kiểu <strong>Kanban</strong>: mỗi case là một thẻ chạy qua các cột <strong>công đoạn sản xuất</strong> (design → milling → sinter → polish/glaze → bàn giao QC). Đây là <strong>lớp hiển thị + cập nhật</strong> cho phần <code>in_production</code> của vòng đời case — technician cập nhật tiến độ từng bước, ai xem cũng thấy một bản trạng thái duy nhất.</p>
+
+    <figure>
+      <img src="assets/production-board/board--happy.png" alt="Bảng kanban sản xuất với các cột công đoạn design, milling, sinter, polish/glaze và thẻ case" loading="lazy">
+      <figcaption>Kanban ngang: mỗi cột là một công đoạn; thẻ case hiện tooth/shade/material, hạn giao và technician. Kéo-thả thẻ sang cột kế để chuyển công đoạn.</figcaption>
+    </figure>
+
+    <h2>Case vào và rời board khi nào</h2>
+    <p>Board không sở hữu trạng thái case — nó đọc/ghi bản ghi state của vòng đời case:</p>
+    <ul>
+      <li>Một case <strong>vào board</strong> khi sang <code>in_production</code>; <strong>rời board</strong> khi chuyển sang <code>qc</code>.</li>
+      <li>Mỗi công đoạn là một cột; di chuyển thẻ = ghi nhận tiến độ trong cùng state <code>in_production</code>.</li>
+      <li>Một thẻ chỉ ở <strong>một</strong> công đoạn tại một thời điểm (single source of truth).</li>
+      <li>Mỗi lần chuyển công đoạn ghi mốc thời gian + ai chuyển, để truy nguồn.</li>
+      <li>Case <code>on_hold</code> (chờ vật liệu) vẫn hiện nhưng đánh dấu tạm dừng, không tính tiến độ.</li>
+    </ul>
+
+    <h2>Tập cột sinh theo material</h2>
+    <p>Tập cột công đoạn <strong>phụ thuộc material</strong> của case — không hard-code một chuỗi duy nhất. Một material không bao giờ hiện cột không thuộc chuỗi của nó:</p>
+    <table>
+      <thead><tr><th>Material</th><th>Chuỗi cột công đoạn</th></tr></thead>
+      <tbody>
+        <tr><td>Zirconia / e.max</td><td>design → milling → sinter → polish/glaze → QC</td></tr>
+        <tr><td>PFM (sứ kim loại)</td><td>design → đúc/khung kim loại → đắp sứ → polish/glaze → QC (không có sinter)</td></tr>
+        <tr><td>Hàm nhựa (acrylic)</td><td>gắn răng → ép/hoàn thiện → QC (không milling/sinter)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Công đoạn shade-critical &amp; vòng try-in</h2>
+    <p>Sản xuất răng sứ VN là hybrid CAD/CAM + hoàn thiện thủ công nặng: phần máy (design → milling → sinter) chỉ là nửa đầu; nửa sau là technician <strong>đắp/nhuộm/tráng men bằng tay</strong> — đây mới là chỗ shade thực sự "đậu" và là công đoạn nhạy cảm làm-lại nhất.</p>
+    <ul>
+      <li><strong>Polish/glaze là bước shade-critical:</strong> thẻ ở cột này làm nổi <strong>shade mục tiêu</strong> (code + ảnh tab nếu có) ngay trên mặt thẻ để technician đối chiếu. Thiếu shade mục tiêu → cảnh báo, không để technician "đoán" màu.</li>
+      <li><strong>Vòng try-in:</strong> case phức tạp (răng trước / cầu) rời board giữa chừng để gửi bán thành phẩm về phòng khám thử khít/khớp cắn rồi nhận lại. Thẻ ở <code>try_in</code> tách thành làn riêng "đang thử tại phòng khám", tạm rời luồng công đoạn; board <strong>không</strong> cho cập nhật tiến độ cho tới khi quay lại <code>in_production</code> (tránh ghi tiến độ "ảo"). Vòng này lặp được nhiều lần.</li>
+    </ul>
+
+    <h2>Ai cập nhật, ai chỉ-đọc</h2>
+    <ul>
+      <li><strong>Technician</strong> — chỉ cập nhật công đoạn mình được phân: bắt đầu / xong / chuyển công đoạn sau.</li>
+      <li><strong>Điều phối</strong> — nhìn toàn bảng, phát hiện ùn ứ ở một công đoạn, cân tải giữa technician.</li>
+      <li><strong>Nha sĩ / lễ tân (clinic)</strong> — xem cùng board ở chế độ <strong>chỉ-đọc</strong>: case đang ở công đoạn nào, dự kiến xong; ẩn thao tác kéo-thả.</li>
+    </ul>
+
+    <figure>
+      <img src="assets/production-board/board--technician.png" alt="Bảng sản xuất ở góc nhìn technician — chỉ các công đoạn được phân cho mình" loading="lazy">
+      <figcaption>Góc nhìn technician: tập trung vào công đoạn được phân cho mình, cập nhật bắt đầu/xong và chuyển sang công đoạn kế.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Realtime ở Phase-2 đạt bằng <strong>client polling</strong> (bảng tự làm mới ~8s + làm mới ngay sau thao tác của bạn), chưa phải server push (SSE). Cập nhật của bạn hiện tới người khác trong vài giây, không cần bấm refresh. Mạng yếu (đặc thù VN): cập nhật lạc quan tại client rồi đồng bộ lại khi có mạng — không kẹt UI. Logic <strong>cổng QC</strong> nằm ngoài board (feature riêng, xem trang kế).</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="case-queue-assignment.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Hàng đợi &amp; phân ca</div>
+      </a>
+      <a href="production-stages.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Công đoạn sản xuất</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

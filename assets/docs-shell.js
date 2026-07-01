@@ -19,6 +19,13 @@
       { key: 'stl-scan-upload',          href: 'stl-scan-upload.html',          label: 'Tải STL / scan' },
       { key: 'lab-slip',                 href: 'lab-slip.html',                 label: 'Phiếu labo' },
     ]},
+
+    { section: 'Sản xuất', items: [
+      { key: 'case-queue-assignment', href: 'case-queue-assignment.html', label: 'Hàng đợi & phân ca' },
+      { key: 'production-board',      href: 'production-board.html',      label: 'Bảng sản xuất' },
+      { key: 'production-stages',     href: 'production-stages.html',     label: 'Công đoạn sản xuất' },
+      { key: 'qc-gate',               href: 'qc-gate.html',               label: 'Cổng QC' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -34,6 +41,10 @@
     'dentiq-connected-intake': ['connectionless-intake', 'lab-clinic-connection', 'wf-connect-dentiq', 'stl-scan-upload'],
     'stl-scan-upload':         ['rx-photo-capture', 'dentiq-connected-intake', 'wf-stl-digital', 'production-board'],
     'lab-slip':                ['rx-photo-capture', 'connectionless-intake', 'role-clinic-assistant', 'glossary'],
+    'case-queue-assignment': ['production-board', 'role-coordinator', 'wf-case-lifecycle', 'qc-gate'],
+    'production-board':      ['case-queue-assignment', 'production-stages', 'qc-gate', 'role-technician'],
+    'production-stages':     ['production-board', 'qc-gate', 'concepts', 'wf-case-lifecycle'],
+    'qc-gate':               ['production-board', 'redo-management', 'wf-qc-fail-rework', 'role-qc'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';

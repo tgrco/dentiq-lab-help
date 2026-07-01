@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hàng đợi & phân ca — DentIQ Lab Help</title>
+<meta name="description" content="Màn hình vận hành chính của labo: nhận work order vào hàng đợi, tách chờ-mẫu và sẵn-sàng-sản-xuất, phân technician theo công đoạn, đặt và đổi hạn giao.">
+<link rel="canonical" href="https://help.dentiqlab.vn/case-queue-assignment.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Hàng đợi & phân ca — DentIQ Lab Help">
+<meta property="og:description" content="Nhận work order vào hàng đợi, phân technician theo công đoạn, đặt hạn — SLA tính từ lúc nhận mẫu.">
+<meta property="og:url" content="https://help.dentiqlab.vn/case-queue-assignment.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hàng đợi & phân ca">
+<meta name="twitter:description" content="Hàng đợi case của labo: phân ca theo công đoạn, đặt hạn, ưu tiên case trễ.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Hàng đợi & phân ca","description":"Màn hình vận hành chính của labo: nhận work order vào hàng đợi, phân technician theo công đoạn, đặt hạn giao; SLA tính từ lúc nhận mẫu.","url":"https://help.dentiqlab.vn/case-queue-assignment.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="case-queue-assignment">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Sản xuất<span class="sep"></span>Hàng đợi &amp; phân ca</nav>
+
+    <h1>Hàng đợi &amp; phân ca</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Màn hình labo nhìn mỗi ngày — thay cho sổ tay, bảng trắng, Excel và vòng nhắn Zalo "đã nhận mẫu chưa".</p>
+    <p>Hàng đợi &amp; phân ca là màn hình vận hành chính của một labo: một hàng đợi hiển thị mọi <strong>work order</strong> đã nhận và đang chạy, để điều phối viên <strong>phân technician theo công đoạn</strong>, đặt và đổi <strong>hạn giao (due date)</strong>, nhìn tải mỗi technician và ưu tiên case trễ hạn. Đây là đoạn <code>accepted → in_production</code> của vòng đời case — nơi labo quyết định ai làm gì, khi nào.</p>
+
+    <figure>
+      <img src="assets/case-queue-assignment/case-board--happy.png" alt="Bảng hàng đợi case của labo với thẻ case theo công đoạn, hạn giao và technician được phân" loading="lazy">
+      <figcaption>Hàng đợi case: thẻ hiện tooth, hạn giao, technician và rep/CTV sở hữu. Điều phối kéo-thả để phân ca; case trễ/cận hạn nổi lên đầu.</figcaption>
+    </figure>
+
+    <h2>Hai nhóm theo chân vật lý: chờ mẫu vs sẵn sàng</h2>
+    <p>Ở VN, <strong>đơn số thường về trước mẫu vật lý</strong> (impression đi bằng shipper/Grab/xe khách). Vì vậy hàng đợi tách rõ hai nhóm case đang ở <code>accepted</code>:</p>
+    <ul>
+      <li><strong>Chờ nhận mẫu</strong> (<code>sampleReceived=false</code>) — đơn số đã về nhưng mẫu vật lý chưa tới. Nút "vào sản xuất" bị khoá; <strong>chưa có đồng hồ SLA</strong>.</li>
+      <li><strong>Sẵn sàng sản xuất</strong> (<code>sampleReceived=true</code>) — mẫu đã trong tay (hoặc case STL-only). Đủ điều kiện phân ca và đẩy vào <code>in_production</code>.</li>
+    </ul>
+    <p>Cờ chân vật lý này do vòng đời case định nghĩa; màn hình điều phối <strong>đọc</strong> cờ đó, gác việc đẩy vào sản xuất theo nó — không định nghĩa lại. Case chờ-mẫu xếp riêng, không trộn vào thứ tự SLA. Trạng thái từng case là nguồn tự phục vụ để mỗi phòng khám tự xem, thay cho việc nhắn Zalo hỏi "đã nhận mẫu chưa / xong chưa".</p>
+
+    <h2>Phân technician theo công đoạn</h2>
+    <p>Sản xuất VN là CAD/CAM lai thủ công nhiều công đoạn (design → milling → sinter → đắp/nhuộm/tráng men tay), nên phân ca là <strong>theo công đoạn</strong>, không phải theo cả case:</p>
+    <ul>
+      <li>Phân một technician cho một <strong>production stage</strong> của case là điều kiện để case ở <code>in_production</code>.</li>
+      <li>Một case phân được nhiều technician theo từng công đoạn; một technician nhận nhiều case.</li>
+      <li>Tải của technician = tổng công đoạn đang gán cho người đó, hiển thị ở panel bên cạnh để cân tải.</li>
+      <li>Case còn <strong>chờ mẫu</strong> không kéo vào cột sản xuất được — nút bị khoá kèm lý do rõ "chờ nhận mẫu".</li>
+    </ul>
+
+    <h2>Hạn giao &amp; cờ trễ — đo từ lúc nhận mẫu</h2>
+    <p>Điều phối đặt hoặc đổi hạn giao của case; mỗi lần đổi ghi lại ai đổi, khi nào, lý do (không đổi state). Điểm mấu chốt VN: <strong>đồng hồ SLA chỉ chạy từ mốc nhận mẫu <code>sampleReceivedAt</code></strong>, không tính từ lúc phòng khám bấm gửi đơn số — vì mẫu còn trên đường.</p>
+    <table>
+      <thead><tr><th>Nhóm</th><th>Điều kiện</th><th>SLA / phân ca</th></tr></thead>
+      <tbody>
+        <tr><td>Chờ nhận mẫu</td><td><code>accepted</code>, <code>sampleReceived=false</code></td><td>Chưa có đồng hồ SLA; khoá "vào sản xuất"</td></tr>
+        <tr><td>Sẵn sàng / chờ phân ca</td><td><code>accepted</code>, <code>sampleReceived=true</code></td><td>SLA chạy từ nhận mẫu; sẵn sàng phân ca</td></tr>
+        <tr><td>Đang chạy công đoạn</td><td><code>in_production</code></td><td>Có technician theo công đoạn; cờ trễ/cận hạn</td></tr>
+      </tbody>
+    </table>
+    <p>Mặc định: rush = 48h kể từ nhận mẫu; thường = 2–5 ngày. Case trễ/cận hạn được đánh dấu và nổi lên đầu hàng đợi theo mặc định.</p>
+
+    <h2>Ai thấy gì — cổng quyền</h2>
+    <p>Chỉ role phía <strong>lab</strong> thấy và thao tác hàng đợi của <strong>chính labo đó</strong>. Phân ca và đổi hạn giới hạn ở điều phối/chủ labo:</p>
+    <ul>
+      <li><strong>Điều phối / chủ labo</strong> — phân technician, đặt/đổi hạn, ưu tiên case trễ, xem tải toàn xưởng.</li>
+      <li><strong>Technician</strong> — chỉ xem case + công đoạn được giao cho mình; không phân cho người khác.</li>
+      <li><strong>Rep/CTV</strong> — <strong>chỉ đọc</strong> case của các phòng khám mình phụ trách, theo dõi trễ hạn để chủ động báo khách; không phân ca/đổi hạn (tôn trọng quan hệ chăm sóc khách).</li>
+    </ul>
+
+    <figure>
+      <img src="assets/case-queue-assignment/case-board--readonly.png" alt="Hàng đợi ở chế độ chỉ-đọc cho rep/CTV — không có thao tác phân ca hay đổi hạn" loading="lazy">
+      <figcaption>Chế độ chỉ-đọc (rep/CTV): thấy case của phòng khám mình phụ trách và trạng thái/hạn giao, nhưng ẩn thao tác phân ca và đổi hạn.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/case-queue-assignment/case-list--happy.png" alt="Hàng đợi dạng danh sách với case, hạn giao, technician và cờ trễ hạn" loading="lazy">
+      <figcaption>Dạng danh sách: lọc/nhóm theo phòng khám và theo rep; sắp xếp mặc định trễ hạn → cận hạn → còn hạn.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Nếu nút "vào sản xuất" bị khoá: case còn ở nhóm <strong>chờ nhận mẫu</strong> (<code>sampleReceived=false</code>). Đây không phải lỗi — đồng hồ SLA và sản xuất chỉ bắt đầu khi mẫu vật lý thực sự về tới labo. Khi mốc nhận mẫu được ghi, case tự chuyển sang nhóm sẵn sàng và đồng hồ trễ hạn bắt đầu tính.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="lab-slip.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Phiếu labo</div>
+      </a>
+      <a href="production-board.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Bảng sản xuất</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

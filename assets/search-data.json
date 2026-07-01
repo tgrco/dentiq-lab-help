@@ -28,5 +28,17 @@
     "keywords": ["stl","scan","máy scan","may scan","upload","intraoral","digital"] },
   { "key": "lab-slip", "url": "lab-slip.html", "title": "Phiếu labo", "section": "Đặt đơn",
     "description": "Phiếu labo đi kèm mẫu: các trường và cách map sang dữ liệu intake.",
-    "keywords": ["phiếu labo","phieu labo","lab slip","phiếu","phieu","mẫu","mau"] }
+    "keywords": ["phiếu labo","phieu labo","lab slip","phiếu","phieu","mẫu","mau"] },
+  { "key": "case-queue-assignment", "url": "case-queue-assignment.html", "title": "Hàng đợi & phân ca", "section": "Sản xuất",
+    "description": "Nhận work order vào hàng đợi, chấp nhận, phân technician theo công đoạn, đặt hạn.",
+    "keywords": ["hàng đợi","hang doi","queue","phân ca","phan ca","assignment","technician","điều phối","dieu phoi"] },
+  { "key": "production-board", "url": "production-board.html", "title": "Bảng sản xuất", "section": "Sản xuất",
+    "description": "Bảng kanban realtime các công đoạn milling/sinter/polish, technician cập nhật tiến độ.",
+    "keywords": ["bảng sản xuất","bang san xuat","production board","kanban","milling","sinter","polish","tiến độ","tien do"] },
+  { "key": "production-stages", "url": "production-stages.html", "title": "Công đoạn sản xuất", "section": "Sản xuất",
+    "description": "Chuỗi công đoạn theo material: design, milling, sinter, polish/glaze, try-in.",
+    "keywords": ["công đoạn","cong doan","production stage","design","milling","sinter","glaze","try-in","material"] },
+  { "key": "qc-gate", "url": "qc-gate.html", "title": "Cổng QC", "section": "Sản xuất",
+    "description": "Cổng QC chặn giao: kiểm tooth/shade/material, độ khít, thẩm mỹ; pass/fail.",
+    "keywords": ["qc","kiểm định","kiem dinh","quality control","cổng qc","cong qc","pass","fail","độ khít","do khit"] }
 ]
