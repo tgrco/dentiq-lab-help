@@ -1,0 +1,10 @@
+{
+  "name": "dentiq-lab-help",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "gen-llms": "node scripts/gen-llms.mjs"
+  }
+}
