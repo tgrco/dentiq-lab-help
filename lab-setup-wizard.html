@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cấu hình labo lần đầu — DentIQ Lab Help</title>
+<meta name="description" content="Checklist lần đầu cho labo mới: khai vật liệu và công đoạn, lập bảng giá, bộ vai trò mặc định được seed, và tạo QR để phòng khám đặt đơn.">
+<link rel="canonical" href="https://help.dentiqlab.vn/lab-setup-wizard.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Cấu hình labo lần đầu — DentIQ Lab Help">
+<meta property="og:description" content="Checklist lần đầu cho labo mới: vật liệu, bảng giá, vai trò và QR đặt đơn.">
+<meta property="og:url" content="https://help.dentiqlab.vn/lab-setup-wizard.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cấu hình labo lần đầu — DentIQ Lab Help">
+<meta name="twitter:description" content="Khai vật liệu, bảng giá, vai trò và tạo QR cho phòng khám đặt đơn.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cấu hình labo lần đầu — DentIQ Lab","description":"Checklist lần đầu cho labo mới: vật liệu, bảng giá, vai trò và QR đặt đơn.","url":"https://help.dentiqlab.vn/lab-setup-wizard.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="lab-setup-wizard">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Bắt đầu<span class="sep"></span>Cấu hình labo lần đầu</nav>
+
+    <h1>Cấu hình labo lần đầu</h1>
+    <p>Trước khi labo nhận đơn đầu tiên, có bốn thứ cần khai một lần. Làm xong bốn bước này, hệ thống tự suy ra <strong>công đoạn nào phải làm</strong> và <strong>giá bao nhiêu</strong> cho mỗi đơn — bạn không phải nhập tay mỗi lần. Đây là cấu hình gốc mà cả sản xuất và công nợ đều phụ thuộc.</p>
+
+    <figure>
+      <img src="assets/lab-setup-wizard/login--happy.png" alt="Màn hình đăng nhập DentIQ Lab bằng loginId" loading="lazy">
+      <figcaption>Đăng nhập phía labo bằng <strong>loginId</strong> + mật khẩu (không phải email).</figcaption>
+    </figure>
+
+    <h2>1. Khai vật liệu + công đoạn (material catalog)</h2>
+    <p>Khai danh mục material mà labo chạy (zirconia, e.max, PFM/sứ kim loại, acrylic…). Mỗi material khai chuỗi production stage tương ứng — ví dụ zirconia: design → milling → sinter → polish/glaze → QC. Nhờ đó khi một work order được tiếp nhận, hệ thống biết áp chuỗi công đoạn nào.</p>
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Nếu một material khai thiếu công đoạn, đơn dùng material đó không suy ra được chuỗi stage và sẽ bị chặn tiếp nhận với cảnh báo cấu hình thiếu. Khai đủ công đoạn cho từng material trước khi go-live.</p>
+    </div>
+
+    <h2>2. Lập bảng giá (price list)</h2>
+    <p>Bảng giá định giá <strong>theo đơn vị/răng</strong> (per unit), phân bậc theo material và dòng sản phẩm/phôi. Một dòng giá = một bộ (loại unit, material, dòng sản phẩm) → đơn giá VND/đơn vị. Bậc giá điển hình ở Việt Nam: zirconia &gt; e.max &gt; PFM/sứ kim loại &gt; acrylic.</p>
+    <ul>
+      <li><strong>VND, số nguyên đồng</strong> — không phần thập phân, không giá âm.</li>
+      <li><strong>Có phiên bản (versioning)</strong> — mỗi lần xuất bản tạo một phiên bản mới có ngày hiệu lực; phiên bản cũ giữ nguyên để truy lại giá đã áp cho đơn trước.</li>
+      <li><strong>Chốt cứng vào đơn</strong> — khi tiếp nhận work order, hệ thống tự áp giá từ phiên bản đang hiệu lực và chốt cứng; sửa bảng giá sau này không đổi giá các đơn đã chốt.</li>
+      <li><strong>Giá riêng theo phòng khám</strong> — có thể đặt override cho từng phòng khám; không có override thì rơi về bảng giá sỉ gốc. Giá sỉ là riêng tư, không lộ cho phòng khám khác.</li>
+    </ul>
+
+    <figure>
+      <img src="assets/lab-setup-wizard/pricing-in-shell--owner.png" alt="Cấu hình bảng giá trong shell của DentIQ Lab" loading="lazy">
+      <figcaption>Bảng giá cấu hình trong shell phía chủ labo — ma trận (loại unit × material × dòng sản phẩm), ô nhập VND/đơn vị.</figcaption>
+    </figure>
+
+    <h2>3. Bộ vai trò mặc định được seed</h2>
+    <p>Mỗi labo được seed sẵn một bộ vai trò (lab role) khớp với các actor thực tế trong xưởng. Bạn có thể dùng ngay và tinh chỉnh quyền cho từng vai (trừ <code>lab_admin</code> được bảo vệ, không sửa/xoá):</p>
+    <table>
+      <thead><tr><th>Vai trò (code)</th><th>Ai / làm gì</th></tr></thead>
+      <tbody>
+        <tr><td><code>lab_admin</code></td><td>Chủ labo — toàn quyền, không sửa/xoá được (systemProtected).</td></tr>
+        <tr><td><code>coordinator</code></td><td>Điều phối — tiếp nhận work order, phân technician, đặt hạn.</td></tr>
+        <tr><td><code>technician</code></td><td>Kỹ thuật viên — cập nhật tiến độ công đoạn được giao (milling/sinter/polish…).</td></tr>
+        <tr><td><code>qc</code></td><td>QC — duyệt hoặc đánh trượt trước khi giao.</td></tr>
+        <tr><td><code>shipper</code></td><td>Giao nhận — cập nhật trạng thái giao, xác nhận đã giao.</td></tr>
+        <tr><td><code>accountant</code></td><td>Kế toán — phát hành hoá đơn, theo dõi công nợ phải thu.</td></tr>
+      </tbody>
+    </table>
+    <p>Người dùng phía labo đăng nhập bằng loginId (duy nhất toàn hệ thống) + mật khẩu; mỗi user thuộc đúng một labo và có thể mang nhiều vai trò trong cùng labo đó.</p>
+
+    <h2>4. Tạo QR / link để phòng khám đặt đơn</h2>
+    <p>Cuối cùng, tạo QR hoặc web link để phòng khám đặt đơn <strong>không cần cài đặt</strong>. Phòng khám quét QR, điền phiếu (răng, material, shade, hạn), chụp ảnh + Rx và gửi — đơn rơi thẳng vào case queue của bạn với đủ thông tin. Đây là kênh connectionless, đòn bẩy chính để kéo phòng khám lên mạng lưới.</p>
+
+    <div class="docs-pager">
+      <a href="concepts.html"><div class="pager-label">← Trước</div><div class="pager-title">Khái niệm cốt lõi</div></a>
+      <a href="migrate-from-excel-zalo.html" class="next"><div class="pager-label">Tiếp →</div><div class="pager-title">Chuyển từ Excel/Zalo</div></a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

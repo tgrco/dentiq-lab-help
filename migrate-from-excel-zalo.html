@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chuyển từ Excel/Zalo — DentIQ Lab Help</title>
+<meta name="description" content="Cách chuyển một labo đang chạy trên Zalo và Excel lên DentIQ Lab: cần chuẩn bị gì và thói quen cũ ánh xạ sang hệ thống mới thế nào.">
+<link rel="canonical" href="https://help.dentiqlab.vn/migrate-from-excel-zalo.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Chuyển từ Excel/Zalo — DentIQ Lab Help">
+<meta property="og:description" content="Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab: chuẩn bị gì và ánh xạ thói quen cũ.">
+<meta property="og:url" content="https://help.dentiqlab.vn/migrate-from-excel-zalo.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chuyển từ Excel/Zalo — DentIQ Lab Help">
+<meta name="twitter:description" content="Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Chuyển từ Excel/Zalo — DentIQ Lab","description":"Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab: chuẩn bị gì và ánh xạ thói quen cũ.","url":"https://help.dentiqlab.vn/migrate-from-excel-zalo.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="migrate-from-excel-zalo">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Bắt đầu<span class="sep"></span>Chuyển từ Excel/Zalo</nav>
+
+    <h1>Chuyển từ Excel/Zalo</h1>
+    <p>Hầu hết labo Việt Nam hôm nay nhận đơn qua Zalo hoặc điện thoại, và theo dõi công nợ bằng Excel hoặc sổ tay. DentIQ Lab không đòi bạn bỏ hết mọi thứ trong một đêm — mục tiêu là <strong>gỡ bỏ việc nhập liệu hai lần</strong> và <strong>gom mọi thứ về một nguồn duy nhất</strong>. Trang này chỉ cách chuyển sang, và cách thói quen cũ ánh xạ sang hệ thống mới.</p>
+
+    <h2>Vì sao chuyển</h2>
+    <p>Zalo là hạ tầng đặt hàng hiện hữu (khoảng 79,6 triệu người dùng thường xuyên, hơn 80% SME Việt Nam kinh doanh trên đó). Nhưng một luồng chat để lạc thông tin, sai shade/tooth, và không truy được. Excel công nợ thì mỗi đơn nhập lại giá, dễ sai và không truy vết. DentIQ Lab <strong>cộng sinh</strong> với Zalo (chia sẻ trạng thái/phiếu sang Zalo được), không thay thế trực diện — nhưng chuyển việc quản đơn và công nợ về một chỗ.</p>
+
+    <h2>Cần chuẩn bị gì</h2>
+    <ul>
+      <li><strong>Danh sách phòng khám</strong> đang đặt hàng — tên, người liên hệ, kênh Zalo/điện thoại hiện tại.</li>
+      <li><strong>Bảng giá hiện tại</strong> — đơn giá theo material và loại phục hình, kể cả giá riêng cho từng phòng khám nếu có.</li>
+      <li><strong>Công nợ đang mở</strong> — số dư mỗi phòng khám còn nợ tính đến ngày chuyển, để mở sổ công nợ đúng điểm xuất phát.</li>
+      <li><strong>Danh mục material + công đoạn</strong> labo đang chạy — để khai vào material catalog.</li>
+    </ul>
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Chuyển bảng giá và danh mục material chính là bước <a href="lab-setup-wizard.html">Cấu hình labo lần đầu</a>. Làm xong bước đó trước, rồi mới mời phòng khám đặt đơn qua QR.</p>
+    </div>
+
+    <h2>Thói quen cũ ánh xạ sang DentIQ Lab</h2>
+    <table>
+      <thead><tr><th>Hiện tại</th><th>Trên DentIQ Lab</th></tr></thead>
+      <tbody>
+        <tr><td>Phòng khám nhắn đơn qua Zalo, kèm ảnh rời rạc</td><td>Phòng khám quét QR / mở web link, điền phiếu chuẩn (răng, material, shade, hạn) + ảnh + Rx — đơn rơi thẳng vào case queue</td></tr>
+        <tr><td>Gọi điện hỏi lại shade / răng nào</td><td>Thông tin đủ ngay từ đầu trên work order; sai shade/tooth được ghi nhận và quy nguồn</td></tr>
+        <tr><td>Ghi tiến độ trong đầu / nhắn "đang làm"</td><td>Case chạy qua các production stage (design → milling → sinter → polish → QC); phòng khám thấy tiến độ realtime</td></tr>
+        <tr><td>Excel/sổ theo dõi công nợ từng phòng khám</td><td>Giá chốt cứng từng đơn nuôi công nợ (AR); mỗi phòng khám một statement theo tháng</td></tr>
+        <tr><td>Xuất hoá đơn không nhất quán</td><td>Phát hành hoá đơn điện tử theo quy định VN (tái dùng module e-invoice của DentIQ)</td></tr>
+        <tr><td>Thẻ bảo hành giấy, khó tra khi có tranh chấp</td><td>Lịch sử case tra được: material, ngày giao, ai làm — nền cho bảo hành và tranh chấp làm-lại</td></tr>
+        <tr><td>Nhắc nợ / báo trạng thái thủ công qua Zalo</td><td>Vẫn share sang Zalo được, nhưng dữ liệu gốc nằm ở một chỗ, cả hai phía cùng đọc</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Chuyển dần, không cần cắt một lần</h2>
+    <p>Không phải mọi phòng khám lên hệ thống cùng lúc. Cách phổ biến: bật QR cho vài phòng khám thân thiết trước, giữ Zalo song song trong thời gian đầu, rồi mở rộng khi cả hai phía quen. Việc share-to-Zalo và fallback ảnh giúp giai đoạn chuyển tiếp mượt mà.</p>
+
+    <div class="docs-pager">
+      <a href="lab-setup-wizard.html"><div class="pager-label">← Trước</div><div class="pager-title">Cấu hình labo lần đầu</div></a>
+      <a href="role-lab-owner.html" class="next"><div class="pager-label">Tiếp →</div><div class="pager-title">Hướng dẫn theo vai trò</div></a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

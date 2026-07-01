@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khái niệm cốt lõi — DentIQ Lab Help</title>
+<meta name="description" content="Mô hình tư duy DentIQ Lab: work order vs case vs unit, hai kênh đặt đơn, SLA tính từ lúc nhận mẫu, redo vs bảo hành, hai phía và vai trò.">
+<link rel="canonical" href="https://help.dentiqlab.vn/concepts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Khái niệm cốt lõi — DentIQ Lab Help">
+<meta property="og:description" content="Mô hình tư duy DentIQ Lab: work order vs case vs unit, hai kênh đặt đơn, SLA, redo vs bảo hành, vai trò.">
+<meta property="og:url" content="https://help.dentiqlab.vn/concepts.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Khái niệm cốt lõi — DentIQ Lab Help">
+<meta name="twitter:description" content="Mô hình tư duy DentIQ Lab cho người mới bắt đầu.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Khái niệm cốt lõi — DentIQ Lab","description":"Mô hình tư duy: work order vs case vs unit, hai kênh đặt đơn, SLA, redo vs bảo hành, vai trò.","url":"https://help.dentiqlab.vn/concepts.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="concepts">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Bắt đầu<span class="sep"></span>Khái niệm cốt lõi</nav>
+
+    <h1>Khái niệm cốt lõi</h1>
+    <p>Vài khái niệm nền tảng quyết định cách toàn bộ DentIQ Lab vận hành. Nắm được năm điều dưới đây thì mọi màn hình, mọi luồng còn lại sẽ dễ hiểu. Đây là bản mồi (primer); định nghĩa đầy đủ nằm trong bảng thuật ngữ.</p>
+
+    <h2>1. Work order vs case vs unit</h2>
+    <h3>Work order — đơn</h3>
+    <p>Đơn đặt hàng kỹ thuật mà <strong>phòng khám</strong> gửi cho <strong>labo</strong>: yêu cầu chế tác một hoặc nhiều phục hình cho một bệnh nhân (răng nào, material gì, shade gì, hạn giao). Là đơn vị giao dịch trung tâm của hệ thống — dân dụng gọi là "phiếu đặt răng" hay "lab order".</p>
+    <h3>Case — case</h3>
+    <p>Chính work order đó khi đã được labo tiếp nhận và đang trong sản xuất. "Work order" nhấn mạnh phía đặt hàng; "case" nhấn mạnh phía thực hiện. Cùng một thực thể dữ liệu, chỉ khác góc nhìn.</p>
+    <h3>Unit — từng phục hình</h3>
+    <p>Đơn vị phục hình cụ thể: crown, cầu răng, veneer, hàm, khay… Một work order có thể có nhiều unit. <strong>Định giá và bảo hành thường tính theo unit</strong> — unit là đơn vị đếm để tính tiền.</p>
+
+    <h2>2. Hai kênh đặt đơn</h2>
+    <p>Một work order đi vào DentIQ Lab qua một trong hai kênh, nhưng cùng đổ về <strong>một case duy nhất</strong> bên labo:</p>
+    <ul>
+      <li><strong>Connectionless (QR/web).</strong> Phòng khám không dùng phần mềm nào vẫn đặt được đơn qua QR hoặc web link — không cài đặt, không cần tài khoản nặng. Đây là đòn bẩy mở rộng mạng lưới.</li>
+      <li><strong>DentIQ-connected.</strong> Phòng khám dùng DentIQ tạo phiếu labo, đơn tự đồng bộ sang DentIQ Lab — không phải gõ lại. Gỡ bỏ tình trạng nhập liệu hai lần.</li>
+    </ul>
+
+    <h2>3. SLA tính từ lúc nhận mẫu</h2>
+    <p>Đây là điểm dễ hiểu nhầm nhất. Ở Việt Nam phần lớn case vẫn gửi mẫu vật lý (impression) đi kèm, và mẫu tới labo <strong>sau</strong> khi đơn được gửi trên hệ thống. Vì vậy SLA / hạn sản xuất tính từ <strong>lúc labo nhận được mẫu</strong> (<code>sampleReceivedAt</code>), <strong>không</strong> phải từ lúc phòng khám gửi đơn. Luồng có một chặng vật lý offline (mẫu đang trên đường → labo đã nhận mẫu) phải được mô hình hoá rõ.</p>
+
+    <h2>4. Redo vs warranty</h2>
+    <p>Hai khái niệm nghe giống nhau nhưng xảy ra ở thời điểm khác nhau:</p>
+    <table>
+      <thead><tr><th></th><th>Redo (làm lại)</th><th>Warranty (bảo hành)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Khi nào</strong></td><td>Trước hoặc ngay khi giao</td><td>Sau khi đã giao, trong thời hạn cam kết</td></tr>
+        <tr><td><strong>Vì sao</strong></td><td>Lỗi: sai shade/tooth/material, không khít, vỡ</td><td>Phục hình hỏng trong thời gian bảo hành</td></tr>
+        <tr><td><strong>Ghi nhận</strong></td><td>Quy trách nhiệm (do labo hay đặt sai); tỉ lệ redo là chỉ số chất lượng</td><td>Tra cứu lịch sử case, material, ngày giao để sửa/làm lại</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. Hai phía &amp; vai trò</h2>
+    <p>DentIQ Lab luôn có hai phía và mô hình kinh doanh của chúng khác nhau:</p>
+    <ul>
+      <li><strong>Phòng khám (clinic)</strong> là bên <strong>không trả tiền và không cài</strong> gì. Mọi thao tác phía phòng khám phải làm được mà không đăng ký nặng — một bước thừa là một phòng khám không lên mạng lưới.</li>
+      <li><strong>Labo (lab)</strong> là <strong>khách hàng trả tiền SaaS</strong>. Người dùng phía labo đăng nhập bằng <strong>loginId</strong> (tên đăng nhập) + mật khẩu — không phải bằng email. Mỗi user thuộc đúng một labo và mang một hoặc nhiều vai trò (lab role).</li>
+    </ul>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Nguyên tắc nền: một work order chỉ có <strong>một</strong> bản ghi trạng thái duy nhất mà cả hai phía cùng đọc realtime — không có "bản của phòng khám" và "bản của labo" lệch nhau. Đây là điều thay thế cho Zalo/Excel chạy song song.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="getting-started.html"><div class="pager-label">← Trước</div><div class="pager-title">Bắt đầu nhanh</div></a>
+      <a href="lab-setup-wizard.html" class="next"><div class="pager-label">Tiếp →</div><div class="pager-title">Cấu hình labo lần đầu</div></a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

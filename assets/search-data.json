@@ -1,0 +1,17 @@
+[
+  { "key": "overview", "url": "index.html", "title": "Tổng quan DentIQ Lab", "section": "Bắt đầu",
+    "description": "Giới thiệu DentIQ Lab — hệ điều hành realtime nối phòng khám và labo nha khoa.",
+    "keywords": ["tổng quan","tong quan","giới thiệu","gioi thieu","dentiq lab","labo","phòng khám","phong kham","work order"] },
+  { "key": "getting-started", "url": "getting-started.html", "title": "Bắt đầu nhanh", "section": "Bắt đầu",
+    "description": "Vòng đời một case từ đặt đơn đến bảo hành, cho người mới bắt đầu.",
+    "keywords": ["bắt đầu","bat dau","quick start","vòng đời","vong doi","case"] },
+  { "key": "concepts", "url": "concepts.html", "title": "Khái niệm cốt lõi", "section": "Bắt đầu",
+    "description": "work order, case, unit, hai kênh đặt đơn, SLA tính từ nhận mẫu, redo vs bảo hành.",
+    "keywords": ["khái niệm","khai niem","concept","unit","sla","sample","redo","bảo hành","bao hanh"] },
+  { "key": "lab-setup-wizard", "url": "lab-setup-wizard.html", "title": "Cấu hình labo lần đầu", "section": "Bắt đầu",
+    "description": "Khai vật liệu, bảng giá, vai trò và tạo QR cho phòng khám đặt đơn.",
+    "keywords": ["cấu hình","cau hinh","setup","bảng giá","bang gia","vật liệu","vat lieu","qr","material catalog"] },
+  { "key": "migrate-from-excel-zalo", "url": "migrate-from-excel-zalo.html", "title": "Chuyển từ Excel/Zalo", "section": "Bắt đầu",
+    "description": "Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab.",
+    "keywords": ["chuyển đổi","chuyen doi","migrate","excel","zalo","import","công nợ","cong no"] }
+]

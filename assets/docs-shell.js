@@ -3,11 +3,25 @@
 // <article class="docs-content"> body. This file injects everything else.
 
 (function () {
-  const NAV = [];
+  const NAV = [
+    { section: 'Bắt đầu', items: [
+      { key: 'overview',                 href: 'index.html',                     label: 'Tổng quan' },
+      { key: 'getting-started',          href: 'getting-started.html',           label: 'Bắt đầu nhanh' },
+      { key: 'concepts',                 href: 'concepts.html',                  label: 'Khái niệm cốt lõi' },
+      { key: 'lab-setup-wizard',         href: 'lab-setup-wizard.html',          label: 'Cấu hình labo lần đầu' },
+      { key: 'migrate-from-excel-zalo',  href: 'migrate-from-excel-zalo.html',   label: 'Chuyển từ Excel/Zalo' },
+    ]},
+  ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
   // Labels resolved from NAV above so a single source of truth.
-  const RELATED = {};
+  const RELATED = {
+    'overview':                ['getting-started', 'concepts', 'role-lab-owner', 'glossary'],
+    'getting-started':         ['overview', 'concepts', 'lab-setup-wizard', 'wf-case-lifecycle'],
+    'concepts':                ['glossary', 'getting-started', 'wf-case-lifecycle', 'production-stages'],
+    'lab-setup-wizard':        ['pricing-material-catalog', 'roles-permissions', 'lab-clinic-invitation', 'getting-started'],
+    'migrate-from-excel-zalo': ['lab-setup-wizard', 'accounts-receivable', 'wf-lab-go-live', 'troubleshoot'],
+  };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';
   const FAVICON_HREF = 'assets/icons/favicon.ico';
