@@ -13,5 +13,20 @@
     "keywords": ["cấu hình","cau hinh","setup","bảng giá","bang gia","vật liệu","vat lieu","qr","material catalog"] },
   { "key": "migrate-from-excel-zalo", "url": "migrate-from-excel-zalo.html", "title": "Chuyển từ Excel/Zalo", "section": "Bắt đầu",
     "description": "Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab.",
-    "keywords": ["chuyển đổi","chuyen doi","migrate","excel","zalo","import","công nợ","cong no"] }
+    "keywords": ["chuyển đổi","chuyen doi","migrate","excel","zalo","import","công nợ","cong no"] },
+  { "key": "connectionless-intake", "url": "connectionless-intake.html", "title": "Đặt đơn không cài (QR/web)", "section": "Đặt đơn",
+    "description": "Phòng khám tạo work order qua QR/web link, không cài app, không đăng ký nặng.",
+    "keywords": ["đặt đơn","dat don","không cài","khong cai","qr","web link","connectionless","intake","work order"] },
+  { "key": "rx-photo-capture", "url": "rx-photo-capture.html", "title": "Rx & chụp ảnh", "section": "Đặt đơn",
+    "description": "Chuẩn hoá phiếu chỉ định Rx và ảnh; shade là bắt buộc.",
+    "keywords": ["rx","chỉ định","chi dinh","ảnh","anh","photo","shade","chụp ảnh","chup anh"] },
+  { "key": "dentiq-connected-intake", "url": "dentiq-connected-intake.html", "title": "Đặt đơn qua DentIQ", "section": "Đặt đơn",
+    "description": "Phòng khám dùng DentIQ tự sync work order, hết double-entry.",
+    "keywords": ["dentiq","kết nối","ket noi","sync","đồng bộ","dong bo","connected intake"] },
+  { "key": "stl-scan-upload", "url": "stl-scan-upload.html", "title": "Tải STL / scan", "section": "Đặt đơn",
+    "description": "Đường nâng cấp cho clinic có máy scan: upload STL, xem scan.",
+    "keywords": ["stl","scan","máy scan","may scan","upload","intraoral","digital"] },
+  { "key": "lab-slip", "url": "lab-slip.html", "title": "Phiếu labo", "section": "Đặt đơn",
+    "description": "Phiếu labo đi kèm mẫu: các trường và cách map sang dữ liệu intake.",
+    "keywords": ["phiếu labo","phieu labo","lab slip","phiếu","phieu","mẫu","mau"] }
 ]

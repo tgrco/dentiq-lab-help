@@ -11,6 +11,14 @@
       { key: 'lab-setup-wizard',         href: 'lab-setup-wizard.html',          label: 'Cấu hình labo lần đầu' },
       { key: 'migrate-from-excel-zalo',  href: 'migrate-from-excel-zalo.html',   label: 'Chuyển từ Excel/Zalo' },
     ]},
+
+    { section: 'Đặt đơn', items: [
+      { key: 'connectionless-intake',    href: 'connectionless-intake.html',    label: 'Đặt đơn không cài (QR/web)' },
+      { key: 'rx-photo-capture',         href: 'rx-photo-capture.html',         label: 'Rx & chụp ảnh' },
+      { key: 'dentiq-connected-intake',  href: 'dentiq-connected-intake.html',  label: 'Đặt đơn qua DentIQ' },
+      { key: 'stl-scan-upload',          href: 'stl-scan-upload.html',          label: 'Tải STL / scan' },
+      { key: 'lab-slip',                 href: 'lab-slip.html',                 label: 'Phiếu labo' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -21,6 +29,11 @@
     'concepts':                ['glossary', 'getting-started', 'wf-case-lifecycle', 'production-stages'],
     'lab-setup-wizard':        ['pricing-material-catalog', 'roles-permissions', 'lab-clinic-invitation', 'getting-started'],
     'migrate-from-excel-zalo': ['lab-setup-wizard', 'accounts-receivable', 'wf-lab-go-live', 'troubleshoot'],
+    'connectionless-intake':   ['rx-photo-capture', 'wf-first-order', 'role-clinic-dentist', 'lab-slip'],
+    'rx-photo-capture':        ['connectionless-intake', 'lab-slip', 'stl-scan-upload', 'role-clinic-assistant'],
+    'dentiq-connected-intake': ['connectionless-intake', 'lab-clinic-connection', 'wf-connect-dentiq', 'stl-scan-upload'],
+    'stl-scan-upload':         ['rx-photo-capture', 'dentiq-connected-intake', 'wf-stl-digital', 'production-board'],
+    'lab-slip':                ['rx-photo-capture', 'connectionless-intake', 'role-clinic-assistant', 'glossary'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';

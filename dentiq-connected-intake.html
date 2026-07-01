@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đặt đơn qua DentIQ — DentIQ Lab Help</title>
+<meta name="description" content="Phòng khám dùng DentIQ tạo phiếu labo ngay trong DentIQ; phiếu tự xuất hiện trong hàng đợi case của labo — hết double-entry. Cách tạo mã kết nối và link phòng khám.">
+<link rel="canonical" href="https://help.dentiqlab.vn/dentiq-connected-intake.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Đặt đơn qua DentIQ — DentIQ Lab Help">
+<meta property="og:description" content="Phòng khám dùng DentIQ tự sync work order sang DentIQ Lab, hết double-entry.">
+<meta property="og:url" content="https://help.dentiqlab.vn/dentiq-connected-intake.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Đặt đơn qua DentIQ">
+<meta name="twitter:description" content="Phòng khám dùng DentIQ tự sync work order, hết double-entry.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Đặt đơn qua DentIQ","description":"Phòng khám dùng DentIQ tạo phiếu labo; phiếu tự đồng bộ sang DentIQ Lab, hết double-entry. Cách tạo mã kết nối.","url":"https://help.dentiqlab.vn/dentiq-connected-intake.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="dentiq-connected-intake">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Đặt đơn<span class="sep"></span>Đặt đơn qua DentIQ</nav>
+
+    <h1>Đặt đơn qua DentIQ</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Phòng khám dùng DentIQ đặt đơn — phiếu tự chảy sang labo, không ai gõ lại.</p>
+    <p>Phòng khám dùng phần mềm DentIQ tạo phiếu đặt labo <strong>ngay trong DentIQ</strong>; phiếu đó <strong>tự xuất hiện</strong> trong hàng đợi case của labo trên DentIQ Lab — không ai phải gõ lại. Trạng thái sản xuất của labo <strong>tự đồng bộ ngược</strong> về DentIQ, để phòng khám thấy trạng thái thật thay vì tự đoán. Đây là kênh nhập liệu thứ hai, song song với <a href="connectionless-intake.html">đặt đơn không cài (QR/web)</a>.</p>
+
+    <figure>
+      <img src="assets/dentiq-connected-intake/dentiq-links--happy.png" alt="Danh sách phòng khám DentIQ đã kết nối với labo, kèm trạng thái liên kết" loading="lazy">
+      <figcaption>Màn kết nối phía labo: danh sách phòng khám DentIQ đã link cùng trạng thái. Case của họ tự đổ vào hàng đợi, không gõ lại.</figcaption>
+    </figure>
+
+    <h2>Vì sao dùng: hết double-entry</h2>
+    <p>Hôm nay, một phòng khám dùng DentIQ tạo phiếu lab order trong DentIQ, rồi <strong>gõ lại</strong> sang Zalo để phiếu thực sự tới labo → nhập đôi, lệch dữ liệu. DentIQ cũng <strong>tự đoán</strong> trạng thái đã nhận / hoàn thành vì không có tín hiệu từ labo. DentIQ Lab là "đầu bên kia" còn thiếu: nối hai bên xoá bỏ nhập đôi và thay phần đoán bằng trạng thái thật.</p>
+    <ul>
+      <li><strong>Không nhập đôi</strong> — lab order gửi tới provider đã link tự thành case <code>submitted</code> ở labo.</li>
+      <li><strong>Trạng thái thật</strong> — labo <code>accepted</code> chiếu ngược về DentIQ thành RECEIVED; không còn đoán.</li>
+      <li><strong>Một case, một hàng đợi</strong> — case DentIQ-connected chạy giống hệt case kênh khác, không có hàng đợi riêng.</li>
+    </ul>
+
+    <h2>Cách tạo link kết nối</h2>
+    <p>Liên kết một provider DentIQ với labo chỉ thành lập qua <strong>mã kết nối hai chiều</strong> — không bên nào tự ý link bên kia:</p>
+    <ol>
+      <li>Chủ labo mở màn <strong>Kết nối phòng khám DentIQ</strong> (settings phía labo) và bấm <strong>Tạo mã kết nối</strong>.</li>
+      <li>Hệ thống sinh một mã / QR (lab link). Labo copy hoặc chia sẻ mã cho phòng khám.</li>
+      <li>Admin phía clinic dán mã vào provider trong DentIQ → trạng thái chuyển "Đã liên kết".</li>
+      <li>Từ đó, mọi lab order gửi tới provider đã link tự vào hàng đợi labo; trạng thái chiếu ngược về DentIQ.</li>
+    </ol>
+    <p>Mã sai/hết hạn khi clinic dán vào → báo lỗi rõ ở phía DentIQ, <strong>không</strong> tạo lab link treo; labo không thấy gì.</p>
+
+    <figure>
+      <img src="assets/dentiq-connected-intake/dentiq-links--create.png" alt="Hộp thoại tạo mã kết nối/QR để gửi cho phòng khám DentIQ" loading="lazy">
+      <figcaption>Tạo mã kết nối: sinh mã/QR để gửi cho phòng khám. Dùng lại đúng pattern phát QR của đặt đơn không cài — labo chỉ học một lần.</figcaption>
+    </figure>
+
+    <h2>Chỉ thêm, không phá cái đang chạy</h2>
+    <ul>
+      <li><strong>Partial adoption</strong> — phòng khám có thể link một số provider, để một số không link; provider chưa link hành xử đúng như DentIQ hôm nay (trạng thái thủ công), không hồi quy.</li>
+      <li><strong>Standalone không bao giờ vỡ</strong> — labo không có phòng khám DentIQ nào vẫn dùng DentIQ Lab đầy đủ qua đặt đơn không cài.</li>
+      <li><strong>Cả hai kênh cùng lúc</strong> — labo nhận case từ cả connectionless và DentIQ-connected; chọn kênh là việc của phòng khám, trong suốt với vận hành labo.</li>
+      <li><strong>Hủy link an toàn</strong> — hủy link không xoá case đã đồng bộ; case đang chạy tiếp tục, đơn mới từ provider đó quay về hành vi thủ công.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Case DentIQ-connected và case kênh khác đổ về <strong>một hàng đợi hợp nhất</strong> phía labo — chỉ thêm nhãn nguồn "DentIQ", không có màn riêng theo kênh. Hàng đợi này thuộc <a href="case-queue-assignment.html">Hàng đợi &amp; phân công</a>.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="rx-photo-capture.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Rx &amp; chụp ảnh</div>
+      </a>
+      <a href="stl-scan-upload.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Tải STL / scan</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

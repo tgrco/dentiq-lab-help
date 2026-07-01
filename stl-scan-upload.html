@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tải STL / scan — DentIQ Lab Help</title>
+<meta name="description" content="Đường nâng cấp tuỳ chọn cho phòng khám đã có máy scan: đính file .stl/.ply/.obj vào work order, xem scan viewer, xử lý file lỗi. STL không bao giờ bắt buộc.">
+<link rel="canonical" href="https://help.dentiqlab.vn/stl-scan-upload.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Tải STL / scan — DentIQ Lab Help">
+<meta property="og:description" content="Đường nâng cấp cho clinic có máy scan: upload STL/PLY/OBJ, xem scan, xử lý file lỗi.">
+<meta property="og:url" content="https://help.dentiqlab.vn/stl-scan-upload.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tải STL / scan">
+<meta name="twitter:description" content="Đường nâng cấp cho clinic có máy scan: upload STL, xem scan.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Tải STL / scan","description":"Đường nâng cấp tuỳ chọn cho phòng khám có máy scan: đính file .stl/.ply/.obj vào work order, xem scan viewer, xử lý file lỗi.","url":"https://help.dentiqlab.vn/stl-scan-upload.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="stl-scan-upload">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Đặt đơn<span class="sep"></span>Tải STL / scan</nav>
+
+    <h1>Tải STL / scan</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Đường nâng cấp cho phòng khám có máy scan — STL không bao giờ bắt buộc.</p>
+    <p>Tải STL / scan cho phép phòng khám <strong>đã có máy scan</strong> đính kèm file scan kỹ thuật số (định dạng <code>.stl</code> / <code>.ply</code> / <code>.obj</code>) vào một work order. Đây là <strong>đường nâng cấp tuỳ chọn</strong>, không phải đường nhập liệu chính: chỉ ~30–35% phòng khám VN có máy scan trong miệng, phần còn lại vẫn gửi dấu vật lý + ảnh. Vì vậy ảnh + dấu vật lý mãi là đường chính; STL chỉ là lựa chọn thêm cho case có sẵn scan.</p>
+
+    <figure>
+      <img src="assets/stl-scan-upload/scan-viewer--happy.png" alt="Scan viewer hiển thị mesh 3D của file scan đã tải lên, sẵn sàng cho sản xuất" loading="lazy">
+      <figcaption>Scan viewer: preview mesh 3D để labo và phòng khám xác nhận đúng file trước khi vào sản xuất.</figcaption>
+    </figure>
+
+    <h2>Đính file scan vào đơn</h2>
+    <p>STL upload là một <strong>bước tuỳ chọn bổ sung</strong> vào bước "Đặt" của <a href="connectionless-intake.html">đặt đơn không cài</a>, không phải luồng riêng. Sau khi điền các trường tối thiểu (ảnh vẫn là đường chính), phòng khám có thể đính thêm file scan trong vùng "Đính file scan (tuỳ chọn)".</p>
+    <ul>
+      <li><strong>Định dạng chấp nhận</strong> — <code>.stl</code>, <code>.ply</code>, <code>.obj</code> và biến thể nén; gồm file export từ 3Shape, Medit, iTero ở dạng chung. File ngoài danh sách bị từ chối với thông báo rõ.</li>
+      <li><strong>File lớn, upload resumable</strong> — file tới hàng trăm MB upload phân mảnh, có thể tiếp tục; mạng yếu/đứt giữa chừng thì nối lại, không tải lại từ đầu.</li>
+      <li><strong>Nén khi truyền/lưu</strong> — giảm băng thông và chi phí, lossless với mesh (không hỏng hình học).</li>
+      <li><strong>Quota &amp; giới hạn</strong> — có giới hạn kích thước/số file theo cấu hình; vượt thì báo và chặn, không lưu âm thầm.</li>
+    </ul>
+
+    <figure>
+      <img src="assets/stl-scan-upload/intake-form--scan-attached.png" alt="Phiếu đặt đơn với file scan đã đính kèm, kèm thumbnail và tiến trình" loading="lazy">
+      <figcaption>File scan đã đính vào đơn. Nút "Gửi đơn" không bao giờ bị chặn khi chưa có file — STL luôn tuỳ chọn.</figcaption>
+    </figure>
+
+    <h2>Case full-digital: bỏ được chân vật lý</h2>
+    <p>Giá trị thật khi phòng khám <strong>có</strong> scan là bỏ được chân vật lý. Nếu đơn <strong>chỉ có scan, không gửi mẫu vật lý</strong>, đánh dấu là case full-digital (STL-only): labo <strong>vào sản xuất được luôn</strong>, không phải chờ mẫu hàm tới nơi. Nếu vừa scan vừa gửi mẫu thì vẫn theo chân vật lý bình thường.</p>
+
+    <h2>Xử lý file lỗi</h2>
+    <p>Sau khi tải lên, hệ thống dựng preview để xác nhận đúng file. Nếu file hỏng / mesh lỗi, preview thất bại — hệ thống báo phòng khám tải lại, nhưng <strong>không chặn việc gửi đơn</strong> vì STL là tuỳ chọn.</p>
+    <figure>
+      <img src="assets/stl-scan-upload/scan-viewer--error.png" alt="Scan viewer báo lỗi khi file scan hỏng hoặc mesh lỗi" loading="lazy">
+      <figcaption>File hỏng / mesh lỗi: preview báo lỗi, gợi ý tải lại. Đơn vẫn gửi được bằng ảnh/dấu vật lý.</figcaption>
+    </figure>
+    <table>
+      <thead><tr><th>Tình huống</th><th>Cách xử lý</th></tr></thead>
+      <tbody>
+        <tr><td>Mạng yếu / đứt giữa chừng</td><td>Upload resumable, nối lại từ phần đã tải</td></tr>
+        <tr><td>File quá lớn / vượt quota</td><td>Báo rõ, chặn, gợi ý nén hoặc tách hàm</td></tr>
+        <tr><td>Định dạng lạ (.dcm, .zip…)</td><td>Từ chối với thông báo</td></tr>
+        <tr><td>File hỏng / mesh lỗi</td><td>Preview lỗi, báo tải lại; không chặn gửi đơn</td></tr>
+        <tr><td>Không có máy scan</td><td>Bỏ qua bước này, gửi bằng ảnh/dấu vật lý</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đây là đường <strong>upload thủ công</strong>: nhận file export thủ công từ 3Shape/Medit/iTero. Pull file <strong>tự động</strong> từ máy/cloud của hãng scan thuộc một dự án riêng (device API integrations), ngoài phạm vi tính năng này.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="dentiq-connected-intake.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Đặt đơn qua DentIQ</div>
+      </a>
+      <a href="lab-slip.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Phiếu labo</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

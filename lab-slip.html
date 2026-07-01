@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phiếu labo — DentIQ Lab Help</title>
+<meta name="description" content="Phiếu labo là tờ giấy đi kèm mẫu: bệnh nhân, răng FDI, material, shade, ghi chú, điều khoản bảo hành. Cách các trường của phiếu map sang dữ liệu intake trên DentIQ Lab.">
+<link rel="canonical" href="https://help.dentiqlab.vn/lab-slip.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Phiếu labo — DentIQ Lab Help">
+<meta property="og:description" content="Phiếu labo đi kèm mẫu: các trường và cách map sang dữ liệu intake.">
+<meta property="og:url" content="https://help.dentiqlab.vn/lab-slip.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Phiếu labo">
+<meta name="twitter:description" content="Phiếu labo đi kèm mẫu: các trường và cách map sang dữ liệu intake.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Phiếu labo","description":"Phiếu labo là tờ giấy đi kèm mẫu: các trường và cách map sang dữ liệu intake trên DentIQ Lab.","url":"https://help.dentiqlab.vn/lab-slip.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="lab-slip">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Đặt đơn<span class="sep"></span>Phiếu labo</nav>
+
+    <h1>Phiếu labo</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Tờ giấy đi kèm mẫu — dữ liệu gốc của mọi work order ở VN.</p>
+    <p>Phiếu labo (lab slip) — còn gọi là phiếu đặt răng — là <strong>tờ giấy đi kèm mẫu/dấu vật lý (impression)</strong>, ghi thông tin ca: bệnh nhân, răng, loại phục hình, material, shade, ghi chú, hạn và điều khoản bảo hành. Ở VN phiếu thường do <strong>phụ tá</strong> điền, không chỉ nha sĩ — nên UX nhập liệu phải hợp với phụ tá. Đây là dữ liệu gốc để đối chiếu giá và phát hành thẻ bảo hành.</p>
+
+    <h2>Phiếu labo chứa gì</h2>
+    <p>Các trường của phiếu labo giấy là chuẩn để thiết kế phiếu Rx số hoá — cái đi vào labo phải đủ và đúng như phiếu:</p>
+    <table>
+      <thead><tr><th>Trường trên phiếu</th><th>Nội dung</th><th>Bắt buộc</th></tr></thead>
+      <tbody>
+        <tr><td>Bệnh nhân</td><td>Tên / định danh bệnh nhân của ca</td><td>Có</td></tr>
+        <tr><td>Răng (FDI)</td><td>(Các) răng phục hình theo sơ đồ FDI</td><td>Có</td></tr>
+        <tr><td>Loại phục hình</td><td>crown, veneer, cầu, abutment… (restoration/unit)</td><td>Có</td></tr>
+        <tr><td>Material</td><td>Vật liệu + dòng sản phẩm/phôi: zirconia, e.max, PFM…</td><td>Có</td></tr>
+        <tr><td>Shade</td><td>Mã VITA; kèm stump shade khi mài cùi</td><td>Có</td></tr>
+        <tr><td>Ghi chú khớp cắn / pontic</td><td>Yêu cầu khớp cắn, thiết kế pontic (nếu cầu)</td><td>Tuỳ ca</td></tr>
+        <tr><td>Hạn giao (due date)</td><td>Ngày phòng khám cần nhận</td><td>Có</td></tr>
+        <tr><td>Điều khoản bảo hành (warranty)</td><td>Điều kiện/thời hạn bảo hành phục hình</td><td>Có</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Map sang dữ liệu intake</h2>
+    <p>Phiếu Rx số trên DentIQ Lab là <strong>phiên bản số hoá của phiếu labo giấy</strong> — mỗi trường phiếu tương ứng một trường intake, không bịa thêm, không bỏ sót:</p>
+    <ul>
+      <li><strong>Bệnh nhân, răng, loại phục hình, material, shade, hạn</strong> → các trường Rx bắt buộc khi đặt đơn (xem <a href="rx-photo-capture.html">Rx &amp; chụp ảnh</a>). Răng chọn trên sơ đồ FDI, shade chọn mã VITA — không nhập tự do.</li>
+      <li><strong>Điều khoản bảo hành</strong> → gắn với case để sau này phát hành thẻ bảo hành và xử lý redo.</li>
+      <li><strong>Chính tờ phiếu giấy</strong> → chụp lại và đính kèm như một ảnh Rx hợp lệ; nhiều ca VN dùng dấu vật lý nên ảnh phiếu là đường gửi chính đáng.</li>
+    </ul>
+    <p>Phiếu labo cũng là gốc để đối chiếu giá (theo material + loại phục hình) và là căn cứ phát hành thẻ bảo hành khi giao hàng. Vì thế đặt đơn không cài và Rx số đều bám sát đúng tập trường của phiếu — để dữ liệu số khớp một-một với tờ giấy đi cùng mẫu.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đơn số được tạo tại ghế, nhưng phiếu labo giấy vẫn đi cùng mẫu vật lý trên đường ship. "Labo đã nhận mẫu" là mốc tách biệt với "đơn đã gửi" — đừng nhầm đơn số <code>submitted</code> là labo đã có mẫu &amp; phiếu trong tay.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="stl-scan-upload.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Tải STL / scan</div>
+      </a>
+      <a href="case-queue-assignment.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Hàng đợi &amp; phân công</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>
