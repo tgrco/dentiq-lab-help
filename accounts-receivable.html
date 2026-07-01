@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Công nợ — DentIQ Lab Help</title>
+<meta name="description" content="Theo dõi công nợ từng phòng khám theo tháng: ghi nợ khi giao case, ghi có khi thu tiền hoặc trừ cọc, số dư từng phòng khám — thay file Excel chép tay.">
+<link rel="canonical" href="https://help.dentiqlab.vn/accounts-receivable.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Công nợ — DentIQ Lab Help">
+<meta property="og:description" content="Theo dõi công nợ từng phòng khám theo tháng: ghi nợ khi giao case, ghi có khi thu tiền/trừ cọc, số dư từng phòng khám — thay Excel.">
+<meta property="og:url" content="https://help.dentiqlab.vn/accounts-receivable.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Công nợ">
+<meta name="twitter:description" content="Theo dõi công nợ từng phòng khám theo tháng, ghi nợ/ghi có, số dư — thay Excel.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Công nợ","description":"Theo dõi công nợ từng phòng khám theo tháng: ghi nợ khi giao case, ghi có khi thu tiền hoặc trừ cọc, số dư từng phòng khám — thay file Excel chép tay.","url":"https://help.dentiqlab.vn/accounts-receivable.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="accounts-receivable">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tài chính<span class="sep"></span>Công nợ</nav>
+
+    <h1>Công nợ</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Mô hình thanh toán B2B của labo VN là <em>công nợ-tháng</em>: không thu tiền từng đơn, mà ghi nợ khi giao case rồi chốt một lần theo tháng cho mỗi phòng khám. Quản được dòng tiền là quản được sự sống còn của xưởng.</p>
+    <p>Tính năng theo dõi <strong>tiền phòng khám còn nợ labo</strong> theo từng case và theo kỳ, thay cho file Excel chép tay. Labo biết chính xác mỗi phòng khám đang nợ bao nhiêu, đã đặt cọc bao nhiêu, đến hạn khi nào — và sao kê được trong một cú bấm. Đây là một trong những lý do cốt lõi khiến một labo chịu trả tiền SaaS.</p>
+
+    <figure>
+      <img src="assets/accounts-receivable/ar-overview--happy.png" alt="Màn tổng quan công nợ: danh sách phòng khám với cột còn nợ, quá hạn, đặt cọc, lọc theo kỳ" loading="lazy">
+      <figcaption>Tổng quan công nợ: danh sách phòng khám kèm cột "còn nợ", "quá hạn", "đặt cọc", lọc theo kỳ. Mọi số tiền hiển thị VND theo định dạng nghìn/phẩy chuẩn VN.</figcaption>
+    </figure>
+
+    <h2>Ghi nợ khi giao, ghi có khi thu</h2>
+    <p>Công nợ phát sinh từ vòng đời case: khi một work order đạt trạng thái <strong>đã giao (delivered)</strong>, hệ thống tự ghi một bút toán <strong>ghi nợ (debit)</strong> bằng giá trị case vào công nợ của phòng khám tương ứng. Mỗi case chỉ sinh <strong>một</strong> bút toán ghi nợ; nếu case bị huỷ/redo sau khi đã ghi nợ thì tạo bút toán <strong>điều chỉnh (adjustment)</strong> đối ứng, không xoá bút toán gốc.</p>
+    <p>Mỗi lần nhận tiền hoặc trừ cọc là một bút toán <strong>ghi có (credit)</strong>. Một thanh toán phải gắn với một phòng khám; có thể phân bổ cho một hay nhiều case, hoặc để dạng trả chung (on-account) trừ dần theo FIFO theo ngày giao. Số tiền ghi nợ luôn lấy <strong>đúng giá đã chốt cứng</strong> trên work order (đã áp giá riêng của phòng khám nếu có) — feature công nợ <strong>không</strong> tự định giá, chỉ tiêu thụ giá đã chốt từ <a href="pricing-material-catalog.html">Bảng giá &amp; vật liệu</a>.</p>
+
+    <h2>Số dư từng phòng khám</h2>
+    <p>Tổng còn nợ của một phòng khám = <strong>Σ ghi nợ − Σ cọc − Σ đã trả</strong>, luôn khớp với chi tiết từng case (đối chiếu không lệch). <strong>Cọc</strong> được ghi nhận khi phòng khám trả trước và trừ vào công nợ khi quyết toán; cọc không làm tổng nợ của phòng khám âm dưới 0 — phần thừa giữ dạng số dư có (on-account), trừ tiếp kỳ sau.</p>
+
+    <figure>
+      <img src="assets/accounts-receivable/ar-clinic-ledger--drawer.png" alt="Sổ chi tiết một phòng khám: dòng case ghi nợ và thanh toán ghi có theo thời gian, số dư chạy" loading="lazy">
+      <figcaption>Sổ chi tiết một phòng khám: dòng case (ghi nợ) và thanh toán (ghi có) theo thời gian, kèm số dư chạy — thay hẳn cột Excel dễ sai, hay cãi số.</figcaption>
+    </figure>
+
+    <h2>Kỳ công nợ-tháng &amp; chốt sao kê</h2>
+    <p>Kỳ sao kê mặc định là <strong>tháng dương lịch per phòng khám</strong>. Cuối kỳ tháng, hệ thống chốt một <a href="statement.html">sao kê</a> cho mỗi phòng khám: số còn nợ đầu kỳ + ghi nợ trong kỳ − đã trả − cọc = số còn nợ cuối kỳ. Số <strong>còn nợ cuối kỳ</strong> của tháng N là <strong>còn nợ đầu kỳ</strong> của tháng N+1 (số dư cuộn). Số liệu trên sao kê đã chốt là <strong>bất biến</strong> — điều chỉnh sau kỳ phải tạo bút toán mới, không sửa số cũ.</p>
+    <p>Labo có thể đặt kỳ khác (tuần / 2 tuần) per phòng khám, nhưng một phòng khám chỉ có một định nghĩa kỳ đang hiệu lực; đổi kỳ chỉ áp cho các kỳ <strong>chưa chốt</strong>, không hồi tố sao kê đã chốt. Sao kê đã chốt là đầu vào hợp lệ để phát hành <a href="e-invoice-issuance.html">hoá đơn điện tử</a> và để nhắc nợ khéo qua Zalo khi quá hạn.</p>
+
+    <div class="callout">
+      <div class="ctitle">Cổng quyền</div>
+      <p>Chỉ người thuộc labo có quyền tài chính mới được ghi nhận thanh toán, điều chỉnh và phát hành sao kê. Phía phòng khám chỉ <strong>xem/đối chiếu</strong> sao kê của chính mình, không sửa số. Nhắc nợ qua Zalo chỉ gửi cho phòng khám có số còn nợ <strong>quá hạn</strong> (&gt; 0 và quá ngày đến hạn), đính kèm sao kê kỳ tương ứng — không gửi trùng để tránh spam.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="pricing-material-catalog.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Bảng giá &amp; vật liệu</div>
+      </a>
+      <a href="statement.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Sao kê</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

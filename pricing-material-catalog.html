@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bảng giá &amp; vật liệu — DentIQ Lab Help</title>
+<meta name="description" content="Khai material catalog (zirconia/e.max/PFM) kèm công đoạn, lập bảng giá theo đơn vị/răng theo material và dòng sản phẩm, đặt giá riêng theo phòng khám (clinic override); đơn tới tự áp đúng công đoạn và giá đã chốt.">
+<link rel="canonical" href="https://help.dentiqlab.vn/pricing-material-catalog.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Bảng giá &amp; vật liệu — DentIQ Lab Help">
+<meta property="og:description" content="Khai material catalog kèm công đoạn, lập bảng giá theo đơn vị/material/dòng sản phẩm, giá riêng theo phòng khám; đơn tự áp công đoạn và giá đúng.">
+<meta property="og:url" content="https://help.dentiqlab.vn/pricing-material-catalog.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bảng giá &amp; vật liệu">
+<meta name="twitter:description" content="Khai material + công đoạn, lập bảng giá theo đơn vị/material, giá riêng theo phòng khám.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Bảng giá & vật liệu","description":"Khai material catalog kèm công đoạn, lập bảng giá theo đơn vị/răng theo material và dòng sản phẩm, đặt giá riêng theo phòng khám; đơn tới tự áp đúng công đoạn và giá đã chốt.","url":"https://help.dentiqlab.vn/pricing-material-catalog.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="pricing-material-catalog">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tài chính<span class="sep"></span>Bảng giá &amp; vật liệu</nav>
+
+    <h1>Bảng giá &amp; vật liệu</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Khai một lần: danh mục vật liệu kèm công đoạn, và bảng giá theo đơn vị. Sau đó mọi đơn tự suy ra <em>làm những công đoạn nào</em> và <em>giá bao nhiêu</em> — không phải nhập tay, dò Excel mỗi lần.</p>
+    <p>Đây là <strong>cấu hình gốc</strong> mà cả sản xuất lẫn công nợ phụ thuộc vào: không có nó thì không định giá được work order, không biết áp công đoạn (production stage) nào. Chủ labo khai <strong>material catalog</strong> (danh mục vật liệu) và <strong>price list</strong> (bảng giá); kỹ thuật viên chỉ đọc — thấy công đoạn áp cho case và giá đã chốt, không sửa được.</p>
+
+    <figure>
+      <img src="assets/pricing-material-catalog/material-catalog--happy.png" alt="Danh mục vật liệu: mỗi dòng material kèm chuỗi công đoạn tương ứng" loading="lazy">
+      <figcaption>Material catalog: mỗi vật liệu (zirconia, e.max, PFM…) khai một chuỗi công đoạn tương ứng. Đơn dùng material nào thì tự áp đúng chuỗi công đoạn đó.</figcaption>
+    </figure>
+
+    <h2>Danh mục vật liệu &amp; công đoạn</h2>
+    <p>Mỗi mục material trong catalog khai báo chuỗi <strong>production stage</strong> tương ứng — ví dụ zirconia → design → milling → sinter → polish/glaze → QC. Khi một work order được tiếp nhận, hệ thống đọc catalog để xác định chuỗi công đoạn phải làm cho từng unit; kỹ thuật viên không phải chọn tay.</p>
+    <p>Nếu catalog khai <strong>thiếu công đoạn</strong> cho một material thì đơn dùng material đó không suy được chuỗi stage → hệ thống chặn tiếp nhận và báo cấu hình thiếu, thay vì cho chạy một case không có công đoạn.</p>
+
+    <h2>Bảng giá theo đơn vị &amp; material</h2>
+    <p>Giá VN tính <strong>theo đơn vị/răng</strong> (restoration/unit), phân <strong>bậc theo material</strong> và thường theo <strong>dòng sản phẩm/phôi</strong> (ví dụ zirconia Cercon khác zirconia phôi Hàn–Trung). Một dòng giá = một bộ (loại unit, material, dòng sản phẩm) → đơn giá VND/đơn vị. Bậc giá điển hình:</p>
+    <table>
+      <thead><tr><th>Bậc</th><th>Dòng vật liệu</th></tr></thead>
+      <tbody>
+        <tr><td>Cao nhất</td><td>Zirconia (phôi cao cấp)</td></tr>
+        <tr><td></td><td>e.max</td></tr>
+        <tr><td></td><td>PFM / sứ kim loại</td></tr>
+        <tr><td>Thấp nhất</td><td>Acrylic / nhựa</td></tr>
+      </tbody>
+    </table>
+    <p>Mọi giá tính bằng <strong>VND</strong>, số nguyên đồng (không phần thập phân). Tổng tiền một đơn = Σ (đơn giá × số đơn vị) theo từng unit. Nếu một (unit × material) trên đơn <strong>không có</strong> dòng giá tương ứng, đơn được đánh dấu <strong>"thiếu giá"</strong> để chủ labo định giá thủ công — không tự gán giá 0.</p>
+
+    <figure>
+      <img src="assets/pricing-material-catalog/price-matrix--happy.png" alt="Ma trận bảng giá: loại unit × material × dòng sản phẩm, mỗi ô là đơn giá VND trên đơn vị" loading="lazy">
+      <figcaption>Ma trận giá: (loại unit × material × dòng sản phẩm), mỗi ô là đơn giá VND/đơn vị. Nút "Xuất bản phiên bản" tạo bản giá mới có ngày hiệu lực; phiên bản cũ giữ lại để truy lại giá đã áp cho đơn trước.</figcaption>
+    </figure>
+
+    <h2>Phiên bản giá &amp; chốt cứng vào đơn</h2>
+    <p>Giá có <strong>phiên bản (versioning)</strong>: mỗi lần xuất bản tạo một phiên bản mới kèm ngày hiệu lực; phiên bản cũ giữ nguyên để truy lại giá đã áp. Khi tạo/tiếp nhận một work order, hệ thống <strong>tự áp</strong> giá từ phiên bản đang hiệu lực và <strong>chốt cứng</strong> giá đó vào đơn — sửa bảng giá sau này <strong>không</strong> đổi giá các đơn đã chốt. Đây là điều kiện để công nợ và sao kê xuôi dòng luôn khớp với con số tại thời điểm giao.</p>
+    <p>Không cho <strong>xoá cứng</strong> một material/dòng giá đang được đơn tham chiếu; chỉ cho ngừng hiệu lực (archive) để giữ truy vết. Material bị archive nhưng còn đơn đang chạy thì công đoạn của đơn đó không đổi.</p>
+
+    <h2>Giá riêng theo phòng khám</h2>
+    <p>Ngoài bảng giá gốc (giá sỉ mặc định của labo), chủ labo có thể đặt <strong>mức giá riêng cho từng phòng khám</strong> (clinic override) — labo cho phòng khám A mức giá khác phòng khám B. Khi định giá một đơn, hệ thống ưu tiên override của phòng khám đặt đơn; không có override thì rơi về bảng giá gốc. Override cũng theo (unit × material × dòng sản phẩm) và cũng được versioning + chốt cứng như bảng gốc.</p>
+    <p>Bảng giá sỉ và mọi override là <strong>dữ liệu nhạy cảm cạnh tranh</strong>: một phòng khám chỉ thấy giá áp cho chính nó, không thấy giá của phòng khám khác.</p>
+
+    <figure>
+      <img src="assets/pricing-material-catalog/clinic-overrides--happy.png" alt="Tab giá riêng theo phòng khám: mỗi phòng khám kế thừa bảng gốc hoặc đặt đơn giá override riêng" loading="lazy">
+      <figcaption>Giá riêng theo phòng khám: mỗi phòng khám mặc định kế thừa bảng giá gốc; đặt override để cho A mức giá khác B. Đơn của phòng khám tự áp đúng override đã chốt.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <div class="ctitle">Đầu vào cho công nợ</div>
+      <p>Giá đã chốt của mỗi đơn là <strong>đầu vào duy nhất</strong> cho <a href="accounts-receivable.html">công nợ</a>: mỗi phòng khám có một <a href="statement.html">sao kê</a> theo tháng tổng hợp các đơn đã giao, trừ <a href="deposit.html">cọc</a> đã ghi. Feature này <strong>chỉ cung cấp giá chốt + cọc ghi theo đơn</strong>; không tự tính công nợ hay phát hành sao kê — đó là các feature xuôi dòng.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="warranty-lookup-claims.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Bảo hành &amp; tra cứu</div>
+      </a>
+      <a href="accounts-receivable.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Công nợ</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoá đơn điện tử — DentIQ Lab Help</title>
+<meta name="description" content="Phát hành hoá đơn điện tử (HĐĐT) hợp lệ theo Nghị định 70/2025: tạo XML + ký số qua nhà cung cấp (VNPT/MISA/Viettel), gắn với chu kỳ công nợ, tái dùng module e-invoice của DentIQ.">
+<link rel="canonical" href="https://help.dentiqlab.vn/e-invoice-issuance.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Hoá đơn điện tử — DentIQ Lab Help">
+<meta property="og:description" content="Phát hành HĐĐT theo Nghị định 70/2025, tạo XML + ký số qua VNPT/MISA/Viettel, gắn với chu kỳ công nợ.">
+<meta property="og:url" content="https://help.dentiqlab.vn/e-invoice-issuance.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hoá đơn điện tử">
+<meta name="twitter:description" content="Phát hành HĐĐT theo Nghị định 70/2025, ký số qua VNPT/MISA/Viettel.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Hoá đơn điện tử","description":"Phát hành hoá đơn điện tử (HĐĐT) hợp lệ theo Nghị định 70/2025: tạo XML + ký số qua nhà cung cấp (VNPT/MISA/Viettel), gắn với chu kỳ công nợ, tái dùng module e-invoice của DentIQ.","url":"https://help.dentiqlab.vn/e-invoice-issuance.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="e-invoice-issuance">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tài chính<span class="sep"></span>Hoá đơn điện tử</nav>
+
+    <h1>Hoá đơn điện tử</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">HĐĐT là yêu cầu pháp lý bắt buộc ở VN. Gắn nó vào đúng nguồn công nợ trong DentIQ Lab là điểm khác biệt cụ thể — đối thủ quốc tế (3Shape/DS Core/Dandy) không giải bài toán HĐĐT VN.</p>
+    <p>Tính năng cho phép labo phát hành <strong>hoá đơn điện tử (HĐĐT)</strong> hợp lệ cho công nợ với phòng khám — xuất từ một <a href="statement.html">sao kê</a> hoặc từ số dư công nợ — chỉ bằng vài thao tác, qua nhà cung cấp HĐĐT (VNPT/MISA/Viettel). Đây là <strong>tái sử dụng module e-invoice của DentIQ</strong>, không xây lại từ đầu.</p>
+
+    <figure>
+      <img src="assets/e-invoice-issuance/einvoice-list--happy.png" alt="Danh sách hoá đơn điện tử đã phát hành với trạng thái, mã hoá đơn và liên kết tải XML/PDF" loading="lazy">
+      <figcaption>Danh sách HĐĐT: mỗi hoá đơn kèm trạng thái (đã phát hành / đã huỷ / đã thay thế), mã hoá đơn và liên kết tải XML/PDF — truy ngược được về các work order cấu thành.</figcaption>
+    </figure>
+
+    <h2>Tuân thủ Nghị định 70/2025</h2>
+    <p>HĐĐT phải tuân thủ <strong>Nghị định 123/2020 và Nghị định 70/2025</strong>: XML đúng chuẩn, chữ ký số hợp lệ, báo cáo cơ quan thuế (GDT), lưu trữ 10 năm. Không tự chế format — mọi phát hành đi qua nhà cung cấp được công nhận. Báo cáo GDT phải gửi <strong>trong ngày phát hành (same-day)</strong> theo NĐ 70/2025; nếu báo cáo thất bại, hoá đơn ở trạng thái "chờ xác nhận GDT", không coi là phát hành hoàn tất cho tới khi xác nhận — và không phát hành trùng.</p>
+    <p>Hỗ trợ đầy đủ vòng đời sau phát hành theo luật: <strong>huỷ / điều chỉnh / thay thế</strong> hoá đơn, mỗi hành động ghi vết và giữ nguyên bản gốc trong lưu trữ 10 năm. Phát hành nhầm thì dùng huỷ/điều chỉnh/thay thế, <strong>không</strong> xoá cứng (vi phạm lưu trữ 10 năm).</p>
+
+    <h2>Tạo XML + ký số qua gateway</h2>
+    <p>Từ một sao kê đã chốt, hệ thống dựng dữ liệu hoá đơn: người bán = labo, người mua = phòng khám, dòng hàng theo unit, thuế suất per-line (per-line VAT) lấy từ cấu hình labo. Sau đó gọi adapter nhà cung cấp → ký số → phát hành → nhận mã + XML hợp lệ → báo cáo GDT same-day. Đơn vị tiền là <strong>VND</strong>.</p>
+    <p>Thông tin <strong>người mua (phòng khám)</strong> — mã số thuế, tên, địa chỉ — bắt buộc đầy đủ trước khi phát hành. Người mua sai/thiếu mã số thuế → chặn phát hành, yêu cầu bổ sung hồ sơ phòng khám. Nếu nhà cung cấp down/timeout khi phát hành, hệ thống không tạo hoá đơn "nửa vời"; cho thử lại, không trùng số.</p>
+
+    <figure>
+      <img src="assets/e-invoice-issuance/einvoice-detail--drawer.png" alt="Chi tiết một hoá đơn điện tử: người bán, người mua, dòng hàng theo unit và thuế suất per-line" loading="lazy">
+      <figcaption>Chi tiết một HĐĐT: người bán (labo), người mua (phòng khám), dòng hàng theo unit và thuế suất per-line. Mỗi hoá đơn gắn nguồn là một sao kê/số dư AR cụ thể.</figcaption>
+    </figure>
+
+    <h2>Gắn với chu kỳ công nợ</h2>
+    <p>Phát hành HĐĐT là một bước trong <strong>chu kỳ công nợ lab</strong> (workflow sở hữu vòng đời sao kê → công nợ → thu tiền). Feature này chỉ sở hữu <em>hành động phát hành + cấu hình + bật/tắt</em>; thứ tự kỳ và đối soát thuộc về workflow đó. <strong>Labo là bên phát hành</strong> hoá đơn cho phòng khám; để tránh xuất hoá đơn hai lần với DentIQ phía phòng khám, mặc định chỉ labo phát hành, và một sao kê kỳ chỉ phát hành HĐĐT một lần.</p>
+
+    <figure>
+      <img src="assets/e-invoice-issuance/einvoice-config--settings.png" alt="Màn cấu hình nhà cung cấp HĐĐT cấp labo với công tắc bật/tắt toàn tính năng" loading="lazy">
+      <figcaption>Cấu hình cấp labo: kết nối nhà cung cấp (VNPT/MISA/Viettel), thông tin người bán, mẫu số/ký hiệu hoá đơn — kèm công tắc bật/tắt toàn tính năng.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <div class="ctitle">Có thể tắt</div>
+      <p>Tính năng có thể <strong>tắt</strong> ở cấp labo. Labo không phát hành HĐĐT vẫn dùng được toàn bộ phần còn lại của DentIQ Lab — không có HĐĐT là một mặc định hợp lệ. Khi tắt hoặc khi nhà cung cấp chưa cấu hình, hệ thống <strong>không</strong> chặn quản công nợ; chỉ ẩn/khoá hành động phát hành và nêu rõ trạng thái.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="statement.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Sao kê</div>
+      </a>
+      <a href="deposit.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Đặt cọc</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

@@ -32,6 +32,14 @@
       { key: 'redo-management',            href: 'redo-management.html',            label: 'Quản lý redo' },
       { key: 'warranty-lookup-claims',     href: 'warranty-lookup-claims.html',     label: 'Bảo hành & tra cứu' },
     ]},
+
+    { section: 'Tài chính', items: [
+      { key: 'pricing-material-catalog', href: 'pricing-material-catalog.html', label: 'Bảng giá & vật liệu' },
+      { key: 'accounts-receivable',      href: 'accounts-receivable.html',      label: 'Công nợ' },
+      { key: 'statement',                href: 'statement.html',                label: 'Sao kê' },
+      { key: 'e-invoice-issuance',       href: 'e-invoice-issuance.html',       label: 'Hoá đơn điện tử' },
+      { key: 'deposit',                  href: 'deposit.html',                  label: 'Đặt cọc' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -54,6 +62,11 @@
     'shipment-delivery-tracking': ['qc-gate', 'warranty-lookup-claims', 'role-shipper', 'wf-case-lifecycle'],
     'redo-management':            ['qc-gate', 'warranty-lookup-claims', 'wf-redo-claim', 'reports-kpi'],
     'warranty-lookup-claims':     ['redo-management', 'wf-warranty-claim', 'role-clinic-dentist', 'accounts-receivable'],
+    'pricing-material-catalog': ['lab-setup-wizard', 'production-stages', 'accounts-receivable', 'role-lab-owner'],
+    'accounts-receivable':      ['statement', 'deposit', 'e-invoice-issuance', 'wf-month-end-ar'],
+    'statement':                ['accounts-receivable', 'e-invoice-issuance', 'wf-month-end-ar', 'deposit'],
+    'e-invoice-issuance':       ['statement', 'e-invoice-providers', 'wf-einvoice-failed', 'role-accountant'],
+    'deposit':                  ['accounts-receivable', 'statement', 'pricing-material-catalog', 'role-accountant'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';

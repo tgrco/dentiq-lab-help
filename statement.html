@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sao kê — DentIQ Lab Help</title>
+<meta name="description" content="Sao kê tháng cho mỗi phòng khám: số dư đầu kỳ + phát sinh trong tháng − thanh toán − cọc = số dư cuối kỳ; xuất sao kê và nối sang hoá đơn điện tử.">
+<link rel="canonical" href="https://help.dentiqlab.vn/statement.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Sao kê — DentIQ Lab Help">
+<meta property="og:description" content="Sao kê tháng mỗi phòng khám: số dư đầu kỳ + phát sinh − thanh toán − cọc = số dư cuối kỳ; xuất sao kê, nối sang HĐĐT.">
+<meta property="og:url" content="https://help.dentiqlab.vn/statement.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sao kê">
+<meta name="twitter:description" content="Sao kê tháng: số dư đầu kỳ + phát sinh − thanh toán − cọc = số dư cuối kỳ.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Sao kê","description":"Sao kê tháng cho mỗi phòng khám: số dư đầu kỳ + phát sinh trong tháng − thanh toán − cọc = số dư cuối kỳ; xuất sao kê và nối sang hoá đơn điện tử.","url":"https://help.dentiqlab.vn/statement.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="statement">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tài chính<span class="sep"></span>Sao kê</nav>
+
+    <h1>Sao kê</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Sao kê là bản chốt kỳ giữa labo và một phòng khám: liệt kê case đã giao, đã trả, còn nợ. Một cú bấm thay cho bảng Excel gõ tay cuối tháng.</p>
+    <p>Sao kê (statement) được chốt <strong>theo kỳ tháng, per phòng khám</strong>. Nó gom mọi bút toán ghi nợ tích luỹ trong kỳ, trừ thanh toán và cọc, ra số dư cuối kỳ. Sao kê đã chốt là đầu vào để phát hành <a href="e-invoice-issuance.html">hoá đơn điện tử</a> và để nhắc nợ khéo qua Zalo nếu quá hạn.</p>
+
+    <figure>
+      <img src="assets/statement/ar-clinic-ledger--drawer.png" alt="Chi tiết một kỳ sao kê phòng khám: các case đã giao, thanh toán, cọc và số dư đầu/cuối kỳ" loading="lazy">
+      <figcaption>Sao kê một kỳ của phòng khám: các case đã giao trong kỳ, thanh toán, cọc và số dư đầu/cuối kỳ. Xuất được qua Zalo/PDF và sẵn sàng phát hành HĐĐT.</figcaption>
+    </figure>
+
+    <h2>Công thức sao kê</h2>
+    <p>Mỗi kỳ sao kê là một phép cộng dồn có kiểm soát. Ví dụ minh hoạ một kỳ tháng (mọi số VND):</p>
+    <table>
+      <thead><tr><th>Dòng</th><th>Diễn giải</th><th style="text-align:right">Số tiền (VND)</th></tr></thead>
+      <tbody>
+        <tr><td>Số dư đầu kỳ</td><td>Còn nợ cuối kỳ tháng trước cuộn sang</td><td style="text-align:right">5.000.000</td></tr>
+        <tr><td>+ Phát sinh trong kỳ</td><td>Σ giá trị case đã giao trong tháng (ghi nợ)</td><td style="text-align:right">+ 12.000.000</td></tr>
+        <tr><td>− Thanh toán</td><td>Tiền phòng khám đã trả trong kỳ (ghi có)</td><td style="text-align:right">− 8.000.000</td></tr>
+        <tr><td>− Cọc trừ vào</td><td>Cọc đã ghi, trừ khi quyết toán</td><td style="text-align:right">− 2.000.000</td></tr>
+        <tr><td><strong>= Số dư cuối kỳ</strong></td><td><strong>Cuộn sang thành đầu kỳ tháng sau</strong></td><td style="text-align:right"><strong>7.000.000</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Số <strong>còn nợ cuối kỳ</strong> của tháng N chính là <strong>còn nợ đầu kỳ</strong> của tháng N+1 (số dư cuộn) — đảm bảo không có tiền nào rơi giữa hai kỳ. Số liệu trên sao kê đã chốt là <strong>bất biến</strong>: điều chỉnh sau kỳ phải tạo bút toán mới sang kỳ sau, không sửa số cũ.</p>
+
+    <h2>Xuất sao kê</h2>
+    <p>Chốt kỳ per phòng khám: gom mọi bút toán ghi nợ của kỳ, trừ cọc, phát hành sao kê rồi gửi qua Zalo/PDF. Nút "Chốt sao kê kỳ này" cho xem trước trước khi gửi, sau đó đánh dấu sẵn sàng phát hành HĐĐT. Nếu kỳ đã chốt rồi phát hiện thiếu một case lẽ ra thuộc kỳ, <strong>không</strong> sửa sao kê cũ — ghi case vào kỳ kế hoặc tạo bút toán điều chỉnh có ngày tham chiếu.</p>
+
+    <h2>Nối sang hoá đơn điện tử</h2>
+    <p>Một sao kê đã chốt là đầu vào hợp lệ để phát hành <a href="e-invoice-issuance.html">HĐĐT</a>: labo là bên phát hành, phòng khám là bên mua. Feature công nợ/sao kê <strong>không</strong> tự dựng XML hay ký số — việc phát hành uỷ thác cho feature e-invoice; sao kê chỉ feed dữ liệu và đánh dấu đã được phát hành. Một sao kê kỳ chỉ phát hành HĐĐT <strong>một lần</strong> để tránh xuất trùng.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đầu vào của số phát sinh là <strong>giá đã chốt cứng</strong> trên work order (từ <a href="pricing-material-catalog.html">Bảng giá &amp; vật liệu</a>), đã áp đúng giá riêng của phòng khám nếu có. Sửa giá/override sau khi case đã giao <strong>không</strong> đổi số trên sao kê đã chốt.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="accounts-receivable.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Công nợ</div>
+      </a>
+      <a href="e-invoice-issuance.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Hoá đơn điện tử</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

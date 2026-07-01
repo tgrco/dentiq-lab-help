@@ -49,5 +49,20 @@
     "keywords": ["redo","làm lại","lam lai","lỗi","loi","tỉ lệ redo","ti le redo","chất lượng","chat luong"] },
   { "key": "warranty-lookup-claims", "url": "warranty-lookup-claims.html", "title": "Bảo hành & tra cứu", "section": "Giao nhận & bảo hành",
     "description": "Tra cứu bảo hành theo material và thời hạn, xem lịch sử case, tạo claim.",
-    "keywords": ["bảo hành","bao hanh","warranty","tra cứu","tra cuu","claim","material","provenance","điều khoản","dieu khoan"] }
+    "keywords": ["bảo hành","bao hanh","warranty","tra cứu","tra cuu","claim","material","provenance","điều khoản","dieu khoan"] },
+  { "key": "pricing-material-catalog", "url": "pricing-material-catalog.html", "title": "Bảng giá & vật liệu", "section": "Tài chính",
+    "description": "Khai material + công đoạn, lập bảng giá theo unit/material, giá riêng theo phòng khám.",
+    "keywords": ["bảng giá","bang gia","pricing","vật liệu","vat lieu","material catalog","clinic override","zirconia","e.max","pfm"] },
+  { "key": "accounts-receivable", "url": "accounts-receivable.html", "title": "Công nợ", "section": "Tài chính",
+    "description": "Theo dõi công nợ từng phòng khám theo tháng, ghi nợ/ghi có, số dư.",
+    "keywords": ["công nợ","cong no","accounts receivable","ar","ghi nợ","ghi no","số dư","so du"] },
+  { "key": "statement", "url": "statement.html", "title": "Sao kê", "section": "Tài chính",
+    "description": "Sao kê tháng: số dư đầu kỳ + phát sinh − thanh toán − cọc = số dư cuối kỳ.",
+    "keywords": ["sao kê","sao ke","statement","số dư","so du","đầu kỳ","dau ky","cuối kỳ","cuoi ky"] },
+  { "key": "e-invoice-issuance", "url": "e-invoice-issuance.html", "title": "Hoá đơn điện tử", "section": "Tài chính",
+    "description": "Phát hành HĐĐT theo Nghị định 70/2025, ký số qua VNPT/MISA/Viettel.",
+    "keywords": ["hoá đơn điện tử","hoa don dien tu","e-invoice","hđđt","hddt","nghị định 70","nghi dinh 70","vnpt","misa","viettel"] },
+  { "key": "deposit", "url": "deposit.html", "title": "Đặt cọc", "section": "Tài chính",
+    "description": "Cọc trả trước, trừ vào hoá đơn cuối, ảnh hưởng công nợ và sao kê.",
+    "keywords": ["cọc","coc","đặt cọc","dat coc","deposit","trả trước","tra truoc"] }
 ]
