@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nhà cung cấp HĐĐT — DentIQ Lab Help</title>
+<meta name="description" content="Các nhà cung cấp gateway hoá đơn điện tử (VNPT, MISA, Viettel…): cách cấu hình kết nối cấp labo, khác biệt giữa các provider và cách chọn nhà cung cấp phù hợp.">
+<link rel="canonical" href="https://help.dentiqlab.vn/e-invoice-providers.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Nhà cung cấp HĐĐT — DentIQ Lab Help">
+<meta property="og:description" content="Gateway HĐĐT VNPT/MISA/Viettel: cách cấu hình, khác biệt và cách chọn provider.">
+<meta property="og:url" content="https://help.dentiqlab.vn/e-invoice-providers.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nhà cung cấp HĐĐT">
+<meta name="twitter:description" content="Gateway HĐĐT VNPT/MISA/Viettel: cấu hình, khác biệt và cách chọn.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Nhà cung cấp HĐĐT","description":"Các nhà cung cấp gateway hoá đơn điện tử (VNPT, MISA, Viettel…): cách cấu hình kết nối cấp labo, khác biệt giữa các provider và cách chọn nhà cung cấp phù hợp.","url":"https://help.dentiqlab.vn/e-invoice-providers.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="e-invoice-providers">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Mạng lưới &amp; tích hợp<span class="sep"></span>Nhà cung cấp HĐĐT</nav>
+
+    <h1>Nhà cung cấp HĐĐT</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">HĐĐT không tự chế format — mọi phát hành đi qua một <strong>nhà cung cấp được công nhận</strong> (gateway). DentIQ Lab kết nối sẵn các gateway phổ biến, labo chỉ cần chọn và cấu hình.</p>
+    <p>Để phát hành <a href="e-invoice-issuance.html">hoá đơn điện tử</a> hợp lệ theo Nghị định 123/2020 và 70/2025, labo kết nối tới một nhà cung cấp gateway HĐĐT (VNPT, MISA, Viettel…). Gateway lo phần khó nhất: tạo XML chuẩn, ký số, báo cáo cơ quan thuế (GDT) same-day, lưu trữ 10 năm. DentIQ Lab <strong>tái sử dụng module e-invoice của DentIQ</strong>, vốn đã có sẵn adapter cho nhiều nhà cung cấp.</p>
+
+    <figure>
+      <img src="assets/e-invoice-providers/einvoice-config--settings.png" alt="Màn cấu hình nhà cung cấp HĐĐT cấp labo: chọn provider, thông tin người bán, mẫu số/ký hiệu" loading="lazy">
+      <figcaption>Cấu hình cấp labo: chọn nhà cung cấp (VNPT/MISA/Viettel), nhập thông tin người bán, mẫu số / ký hiệu hoá đơn — kèm công tắc bật/tắt toàn tính năng.</figcaption>
+    </figure>
+
+    <h2>So sánh các nhà cung cấp</h2>
+    <p>Các gateway đều đảm bảo cùng một mức tuân thủ pháp lý (XML chuẩn, ký số, GDT, lưu 10 năm) — khác biệt chủ yếu là hệ sinh thái sẵn có và độ phổ biến ở từng phân khúc:</p>
+    <table>
+      <thead><tr><th>Nhà cung cấp</th><th>Điểm mạnh</th><th>Phù hợp khi</th></tr></thead>
+      <tbody>
+        <tr><td><strong>VNPT</strong></td><td>Phủ sóng rộng, hạ tầng viễn thông lớn, phổ biến với doanh nghiệp mọi quy mô</td><td>Labo muốn nhà cung cấp phổ thông, dễ hỗ trợ tại địa phương</td></tr>
+        <tr><td><strong>MISA</strong></td><td>Gắn với hệ sinh thái kế toán MISA; thuận tiện nếu đã dùng phần mềm kế toán MISA</td><td>Labo đã dùng kế toán MISA, muốn liền mạch hoá đơn ↔ sổ sách</td></tr>
+        <tr><td><strong>Viettel</strong></td><td>Hạ tầng viễn thông lớn, mạng lưới hỗ trợ rộng</td><td>Labo ưu tiên nhà cung cấp Viettel / đã dùng dịch vụ Viettel</td></tr>
+      </tbody>
+    </table>
+    <p>DentIQ Lab kết nối qua <strong>adapter</strong> cho mỗi nhà cung cấp, nên việc chọn provider không thay đổi cách labo thao tác phát hành — chỉ khác kết nối bên dưới. Có thêm một adapter <em>Fake</em> để chạy thử / kiểm thử mà không phát hành thật.</p>
+
+    <h2>Cấu hình kết nối</h2>
+    <p>Cấu hình nằm ở <strong>cấp labo</strong>: mỗi labo là một người bán độc lập với thông tin riêng — mã số thuế, tên, địa chỉ người bán, kết nối nhà cung cấp, và <strong>mẫu số / ký hiệu</strong> hoá đơn. HĐĐT của labo này không bao giờ lẫn sang labo khác. Sau khi cấu hình, nút "Phát hành HĐĐT" xuất hiện ngay trên màn <a href="statement.html">sao kê</a> / công nợ, kèm bước xem trước (preview) trước khi phát hành.</p>
+    <p>Trước khi phát hành, thông tin <strong>người mua (phòng khám)</strong> — mã số thuế, tên, địa chỉ — phải đầy đủ; người mua thiếu/sai mã số thuế sẽ bị chặn phát hành. Nếu nhà cung cấp down/timeout, hệ thống không tạo hoá đơn "nửa vời" mà cho thử lại, không trùng số.</p>
+
+    <h2>Chọn nhà cung cấp nào</h2>
+    <p>Không có lựa chọn "đúng duy nhất" — cả ba đều hợp lệ về pháp lý. Gợi ý chọn theo bối cảnh labo:</p>
+    <ul>
+      <li>Đã dùng phần mềm kế toán của một nhà cung cấp (vd MISA) → chọn cùng nhà cung cấp để liền mạch hoá đơn ↔ sổ sách.</li>
+      <li>Ưu tiên phủ sóng &amp; hỗ trợ tại địa phương → VNPT hoặc Viettel.</li>
+      <li>Chưa chắc chắn → bắt đầu với nhà cung cấp phổ thông nhất tại khu vực; có thể đổi cấu hình sau vì thao tác phát hành không phụ thuộc provider.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="ctitle">Có thể tắt hoàn toàn</div>
+      <p>Nếu labo chưa cấu hình nhà cung cấp hoặc <strong>tắt</strong> tính năng, hệ thống <strong>không</strong> chặn phần quản công nợ — chỉ ẩn/khoá hành động phát hành và nêu rõ trạng thái. Không phát hành HĐĐT là một mặc định hợp lệ; labo vẫn dùng đủ phần còn lại của DentIQ Lab.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="zalo-bridge.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Zalo ZNS</div>
+      </a>
+      <a href="roles-permissions.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Vai trò &amp; phân quyền</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

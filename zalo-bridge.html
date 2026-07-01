@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zalo ZNS — DentIQ Lab Help</title>
+<meta name="description" content="Cầu nối Zalo ZNS gửi trạng thái case và nhắc công nợ tới phòng khám. Zalo là hạ tầng nhắn tin phổ biến của SME VN (~80%) — DentIQ Lab cộng sinh với Zalo, không thay thế.">
+<link rel="canonical" href="https://help.dentiqlab.vn/zalo-bridge.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Zalo ZNS — DentIQ Lab Help">
+<meta property="og:description" content="Gửi trạng thái case và nhắc công nợ tới phòng khám qua Zalo ZNS — kênh nhắn tin phổ biến của SME VN.">
+<meta property="og:url" content="https://help.dentiqlab.vn/zalo-bridge.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zalo ZNS">
+<meta name="twitter:description" content="Gửi trạng thái case và nhắc công nợ qua Zalo ZNS.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Zalo ZNS","description":"Cầu nối Zalo ZNS gửi trạng thái case và nhắc công nợ tới phòng khám. Zalo là hạ tầng nhắn tin phổ biến của SME VN (~80%) — DentIQ Lab cộng sinh với Zalo, không thay thế.","url":"https://help.dentiqlab.vn/zalo-bridge.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="zalo-bridge">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Mạng lưới &amp; tích hợp<span class="sep"></span>Zalo ZNS</nav>
+
+    <h1>Zalo ZNS</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Zalo là hạ tầng đặt hàng và nhắn tin hiện hữu của phần lớn SME VN (~80%). DentIQ Lab <strong>cộng sinh</strong> với Zalo — gửi thông báo tới đúng nơi phòng khám đã ở, không bắt họ đổi kênh.</p>
+    <p>Cầu nối Zalo (<strong>zalo bridge</strong>) chia sẻ trạng thái case và nhắc công nợ sang <strong>Zalo ZNS</strong> — kênh mà phòng khám vốn đã dùng — thay vì phụ thuộc email (ít được đọc ở phân khúc này). Đây là fallback ảnh + share-to-Zalo giữ chân người dùng, không phải một kênh thay thế trực diện.</p>
+
+    <h2>Vì sao là Zalo, không phải email</h2>
+    <p>Ở VN, phòng khám và labo giao tiếp hằng ngày qua <strong>Zalo</strong>, không qua email. Một thông báo "case đã QC, chờ giao" hay một lời nhắc nợ gửi qua email thường không được đọc; gửi qua Zalo thì tới đúng nơi quan hệ đã sẵn có. Vì vậy DentIQ Lab dùng Zalo ZNS làm kênh thông báo chính tới phòng khám, đồng bộ với cách <a href="lab-clinic-invitation.html">lời mời phòng khám</a> cũng gửi qua Zalo.</p>
+
+    <h2>Các loại thông báo gửi qua Zalo</h2>
+    <p>Zalo bridge phục vụ hai nhóm thông báo chính: <strong>trạng thái case</strong> (từ vòng đời sản xuất) và <strong>nhắc công nợ</strong> (từ chu kỳ billing). Cụ thể:</p>
+    <table>
+      <thead><tr><th>Loại thông báo</th><th>Kích hoạt khi</th><th>Nguồn</th></tr></thead>
+      <tbody>
+        <tr><td>Xác nhận tiếp nhận case</td><td>Labo tiếp nhận work order</td><td><a href="case-queue-assignment.html">Hàng đợi &amp; phân ca</a></td></tr>
+        <tr><td>Cập nhật trạng thái sản xuất</td><td>Case chuyển công đoạn (đang sản xuất / đã QC…)</td><td><a href="production-board.html">Bảng sản xuất</a></td></tr>
+        <tr><td>Sẵn sàng giao / đã giao</td><td>Case đạt <code>ready_to_ship</code> / <code>delivered</code></td><td><a href="shipment-delivery-tracking.html">Giao &amp; theo dõi</a></td></tr>
+        <tr><td>Yêu cầu redo / bảo hành</td><td>Phát sinh redo hoặc claim bảo hành</td><td><a href="redo-management.html">Quản lý redo</a></td></tr>
+        <tr><td>Gửi sao kê kỳ</td><td>Chốt kỳ, phát hành sao kê per clinic</td><td><a href="statement.html">Sao kê</a></td></tr>
+        <tr><td>Nhắc công nợ quá hạn</td><td>Số dư &gt; 0 và quá due date của sao kê</td><td><a href="accounts-receivable.html">Công nợ</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Nhắc nợ khéo qua Zalo</h2>
+    <p>Trong <a href="accounts-receivable.html">chu kỳ công nợ</a>, nhắc nợ (dunning) qua Zalo chỉ gửi cho phòng khám có số còn nợ <strong>quá hạn</strong> — tức số dư lớn hơn 0 và đã quá due date của sao kê (ngày chốt kỳ + hạn công nợ). Mỗi lời nhắc đính kèm / đối chiếu với sao kê kỳ tương ứng, để phòng khám xem được ngay mình đang nợ khoản nào. Đây là cách thay cho việc nhắc nợ thủ công qua tin nhắn tay.</p>
+
+    <div class="callout">
+      <div class="ctitle">Cộng sinh, không thay thế</div>
+      <p>DentIQ Lab không ép phòng khám rời Zalo sang một app mới. Thông báo đi qua Zalo ZNS đúng nơi phòng khám vốn đã ở; các <a href="connectionless-intake.html">luồng đặt đơn không cài</a> cũng dựa trên fallback ảnh + share-to-Zalo. Giữ Zalo là kênh giao tiếp giúp phòng khám không phải đổi thói quen.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="lab-clinic-connection.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Kết nối DentIQ</div>
+      </a>
+      <a href="e-invoice-providers.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Nhà cung cấp HĐĐT</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

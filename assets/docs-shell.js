@@ -40,6 +40,13 @@
       { key: 'e-invoice-issuance',       href: 'e-invoice-issuance.html',       label: 'Hoá đơn điện tử' },
       { key: 'deposit',                  href: 'deposit.html',                  label: 'Đặt cọc' },
     ]},
+
+    { section: 'Mạng lưới & tích hợp', items: [
+      { key: 'lab-clinic-invitation', href: 'lab-clinic-invitation.html', label: 'Mời phòng khám' },
+      { key: 'lab-clinic-connection', href: 'lab-clinic-connection.html', label: 'Kết nối DentIQ' },
+      { key: 'zalo-bridge',           href: 'zalo-bridge.html',           label: 'Zalo ZNS' },
+      { key: 'e-invoice-providers',   href: 'e-invoice-providers.html',   label: 'Nhà cung cấp HĐĐT' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -67,6 +74,10 @@
     'statement':                ['accounts-receivable', 'e-invoice-issuance', 'wf-month-end-ar', 'deposit'],
     'e-invoice-issuance':       ['statement', 'e-invoice-providers', 'wf-einvoice-failed', 'role-accountant'],
     'deposit':                  ['accounts-receivable', 'statement', 'pricing-material-catalog', 'role-accountant'],
+    'lab-clinic-invitation': ['lab-clinic-connection', 'wf-lab-go-live', 'role-lab-owner', 'connectionless-intake'],
+    'lab-clinic-connection': ['dentiq-connected-intake', 'wf-connect-dentiq', 'lab-clinic-invitation', 'concepts'],
+    'zalo-bridge':           ['notifications', 'accounts-receivable', 'wf-month-end-ar', 'shipment-delivery-tracking'],
+    'e-invoice-providers':   ['e-invoice-issuance', 'wf-einvoice-failed', 'role-accountant', 'statement'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';

@@ -64,5 +64,17 @@
     "keywords": ["hoá đơn điện tử","hoa don dien tu","e-invoice","hđđt","hddt","nghị định 70","nghi dinh 70","vnpt","misa","viettel"] },
   { "key": "deposit", "url": "deposit.html", "title": "Đặt cọc", "section": "Tài chính",
     "description": "Cọc trả trước, trừ vào hoá đơn cuối, ảnh hưởng công nợ và sao kê.",
-    "keywords": ["cọc","coc","đặt cọc","dat coc","deposit","trả trước","tra truoc"] }
+    "keywords": ["cọc","coc","đặt cọc","dat coc","deposit","trả trước","tra truoc"] },
+  { "key": "lab-clinic-invitation", "url": "lab-clinic-invitation.html", "title": "Mời phòng khám", "section": "Mạng lưới & tích hợp",
+    "description": "Labo mời phòng khám lên hệ thống bằng QR/link, seeding mạng lưới.",
+    "keywords": ["mời phòng khám","moi phong kham","invitation","seeding","mạng lưới","mang luoi","qr","network"] },
+  { "key": "lab-clinic-connection", "url": "lab-clinic-connection.html", "title": "Kết nối DentIQ", "section": "Mạng lưới & tích hợp",
+    "description": "Bắt tay đồng bộ work order 2 chiều giữa DentIQ và DentIQ Lab.",
+    "keywords": ["kết nối","ket noi","connection","dentiq","sync","đồng bộ","dong bo","2 chiều","2 chieu"] },
+  { "key": "zalo-bridge", "url": "zalo-bridge.html", "title": "Zalo ZNS", "section": "Mạng lưới & tích hợp",
+    "description": "Gửi trạng thái case và nhắc công nợ qua Zalo ZNS.",
+    "keywords": ["zalo","zns","nhắc nợ","nhac no","thông báo","thong bao","tin nhắn","tin nhan"] },
+  { "key": "e-invoice-providers", "url": "e-invoice-providers.html", "title": "Nhà cung cấp HĐĐT", "section": "Mạng lưới & tích hợp",
+    "description": "Các gateway HĐĐT VNPT/MISA/Viettel, cấu hình và so sánh.",
+    "keywords": ["nhà cung cấp","nha cung cap","provider","gateway","hđđt","hddt","vnpt","misa","viettel"] }
 ]

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mời phòng khám — DentIQ Lab Help</title>
+<meta name="description" content="Labo chủ động mời tập phòng khám của mình lên hệ thống bằng QR/link/Zalo (lab-first seeding), gắn phòng khám vào mạng lưới lab↔clinic và theo dõi tỉ lệ tham gia.">
+<link rel="canonical" href="https://help.dentiqlab.vn/lab-clinic-invitation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Mời phòng khám — DentIQ Lab Help">
+<meta property="og:description" content="Labo mời phòng khám lên hệ thống bằng QR/link (lab-first seeding), tăng mật độ mạng lưới lab↔clinic.">
+<meta property="og:url" content="https://help.dentiqlab.vn/lab-clinic-invitation.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mời phòng khám">
+<meta name="twitter:description" content="Labo mời phòng khám lên hệ thống bằng QR/link, seeding mạng lưới lab↔clinic.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Mời phòng khám","description":"Labo chủ động mời tập phòng khám của mình lên hệ thống bằng QR/link/Zalo (lab-first seeding), gắn phòng khám vào mạng lưới lab↔clinic và theo dõi tỉ lệ tham gia.","url":"https://help.dentiqlab.vn/lab-clinic-invitation.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="lab-clinic-invitation">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Mạng lưới &amp; tích hợp<span class="sep"></span>Mời phòng khám</nav>
+
+    <h1>Mời phòng khám</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Mạng lưới chỉ có giá trị khi đủ mật độ, nhưng không bên nào muốn vào trước. Lời giải là <strong>lab-first seeding</strong>: labo — bên trả tiền SaaS — chủ động mời chính tập phòng khám đã làm việc với mình lên hệ thống.</p>
+    <p>Tính năng cho phép một labo <strong>chủ động mời phòng khám</strong> của mình lên mạng lưới: tạo lời mời dưới dạng QR/link/Zalo, gắn phòng khám vào <strong>mạng lưới lab↔clinic</strong>, và theo dõi xem phòng khám đã tham gia chưa. Phòng khám nhận lời mời có thể <a href="connectionless-intake.html">đặt đơn ngay mà không cần cài app</a>. Đây là cách biến quan hệ ngoài đời (Zalo, điện thoại) thành một cạnh trong mạng lưới.</p>
+
+    <figure>
+      <img src="assets/lab-clinic-invitation/network--happy.png" alt="Màn mạng lưới của labo: danh sách phòng khám đã biết kèm rep phụ trách và trạng thái tham gia" loading="lazy">
+      <figcaption>Màn mạng lưới phía labo: danh sách phòng khám đã biết kèm <strong>rep phụ trách</strong> (TDV/CTV) và trạng thái — đã mời / đã tham gia / từ chối / hết hạn.</figcaption>
+    </figure>
+
+    <h2>Vì sao lab mời trước</h2>
+    <p>Rủi ro số một của cả dự án là <strong>two-sided cold-start</strong>: cả labo lẫn phòng khám đều không muốn là bên vào hệ thống trước. Vì labo là bên trả tiền SaaS và đã có sẵn tập phòng khám đối tác, họ là bên tự nhiên để khởi động mạng lưới. Mỗi phòng khám được mời gắn với đúng <strong>rep (TDV/CTV)</strong> đã chăm sóc nó — hệ thống <strong>không cắt cầu</strong> quan hệ rep–phòng khám mà tôn trọng nó.</p>
+    <p>Thực tế VN: labo không "đi viral" — họ giành và giữ phòng khám qua rep, quan hệ một-đối-một, dựa trên niềm tin và Zalo. Vì vậy tăng trưởng ở đây là <strong>từng quan hệ một, chậm</strong> — đúng bản chất lab-first seeding, không phải phép màu lan truyền.</p>
+
+    <h2>Tạo lời mời &amp; QR mỗi phòng khám</h2>
+    <p>Labo tạo một lời mời đích danh cho một phòng khám đã biết và <strong>gán rep phụ trách</strong>; hệ thống sinh một <strong>QR mỗi phòng khám</strong> + link + nội dung Zalo soạn sẵn. QR/link mang theo bối cảnh phòng khám (định danh nhẹ + rep) — thống nhất với quyết định "per-clinic QR" của <a href="connectionless-intake.html">đặt đơn không cài</a>, để phòng khám tham gia và đặt đơn mà không phải khai lại.</p>
+    <p>Kênh gửi mặc định là <strong>Zalo</strong> (<a href="zalo-bridge.html">Zalo bridge</a>) — gửi đúng nơi quan hệ với phòng khám đã sẵn có; QR in dán quầy / gửi link là <em>fallback</em> khi không gửi Zalo được. Một lời mời có thể phát qua nhiều kênh nhưng dùng chung một token — mọi kênh dẫn về cùng một bản ghi.</p>
+
+    <figure>
+      <img src="assets/lab-clinic-invitation/network--create.png" alt="Màn tạo lời mời: chọn phòng khám, gán rep phụ trách, sinh QR và nội dung Zalo soạn sẵn" loading="lazy">
+      <figcaption>Tạo lời mời đích danh: chọn phòng khám, gán rep, sinh <strong>QR mỗi phòng khám</strong> + link + nội dung Zalo soạn sẵn để rep chia sẻ.</figcaption>
+    </figure>
+
+    <h2>Phòng khám nhận lời mời</h2>
+    <p>Phòng khám mở link / quét QR → màn hình giới thiệu labo (và rep quen) → bấm <strong>tham gia</strong> (hoặc <strong>từ chối</strong>). Trang đích một màn hình, mobile-first, không cần cài app hay tài khoản đầy đủ — chỉ tạo/đính một <strong>danh tính phòng khám nhẹ</strong> (như đặt đơn không cài). Tham gia xong, phòng khám có thể đặt đơn ngay trong cùng phiên.</p>
+    <p>Khi tham gia, phòng khám được gắn vào mạng lưới của labo, <strong>quy về đúng rep đã gửi</strong> (attribution). Nếu phòng khám đã là một phần mạng lưới, lời mời nhận diện và <strong>không nhân đôi</strong> quan hệ — đưa thẳng vào màn đặt đơn. Lời mời hết hạn / bị thu hồi thì không cho tham gia nữa, hiển thị thông báo rõ, không tạo cạnh mồ côi.</p>
+
+    <figure>
+      <img src="assets/lab-clinic-invitation/invite-landing--happy.png" alt="Trang đích khi phòng khám nhận lời mời: giới thiệu labo, rep quen và nút tham gia" loading="lazy">
+      <figcaption>Trang đích phía phòng khám: giới thiệu labo + rep quen, nút <strong>Tham gia</strong> rồi chuyển thẳng sang form đặt đơn — không cài app.</figcaption>
+    </figure>
+
+    <h2>Theo dõi chuyển đổi theo rep</h2>
+    <p>Labo theo dõi trạng thái từng lời mời và tỉ lệ chuyển đổi (mời → tham gia → đặt đơn đầu tiên), <strong>phân tách theo rep</strong>. Mỗi mốc là một sự kiện đo được trong mạng lưới. Chỉ tiêu phải <strong>trung thực về tốc độ</strong>: đây là tăng trưởng từng quan hệ một, chậm — không kỳ vọng đường cong lan truyền.</p>
+
+    <div class="callout">
+      <div class="ctitle">Không cắt cầu quan hệ rep</div>
+      <p>Rep phụ trách rời labo hoặc được đổi thì cạnh vẫn giữ trong mạng lưới, attribution chuyển/ghi lịch sử theo chính sách labo — <strong>không mất phòng khám</strong>. Rep luôn nhìn thấy phòng khám mình đã đưa vào mạng lưới. DentIQ Lab cộng sinh với quan hệ rep–phòng khám, không thay thế.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="deposit.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Đặt cọc</div>
+      </a>
+      <a href="lab-clinic-connection.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Kết nối DentIQ</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>
