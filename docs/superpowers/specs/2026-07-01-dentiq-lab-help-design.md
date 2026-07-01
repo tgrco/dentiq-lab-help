@@ -115,10 +115,16 @@ Lab: `role-lab-owner`, `role-coordinator`, `role-technician`, `role-qc`, `role-s
 
 ## 6. Content sourcing & drift strategy
 
-- **No screenshots yet** — product is spec-phase. Figures use the existing
-  `<figure class="placeholder">` pattern with box placeholders + state-machine / flow diagrams
+- **Screenshots exist** — `dentlab/screenshots/` holds ~40 real PNGs across 15 feature folders,
+  named `<feature-slug>/<view>--<state>.png` (states: `happy`, `drawer`, `error`, `readonly`,
+  `technician`, etc.), plus `lab-manager-shell/` (login, owner + technician dashboards, gated nav).
+  Copy the relevant shots into `assets/<page>/` per page and reference via `<figure>` (real image,
+  not placeholder). Folder→page mapping is 1:1 for intake/production/logistics/finance/network
+  pages.
+- **Pages without a screenshot** (most workflows, some admin/reference, clinic-role) — use the
+  `<figure class="placeholder">` box, or compose from the nearest feature shot + a flow diagram
   derived from specs (e.g. case lifecycle states from `workflows/lab-case-lifecycle/states.md`).
-  Real screenshots swap in as UI ships.
+  Swap real shots in as they land in `dentlab/screenshots/`.
 - **Troubleshoot / FAQ** built from each workflow spec's "Khi nào hỏng & cách xử lý" table (already
   authored in specs) + glossary.
 - **AI-SYNC.md analog** — track last-synced **spec commit** in `dentlab/specs` (not a product-code
