@@ -94,5 +94,14 @@
     "keywords": ["giao nhận","giao nhan","shipper","tài xế","tai xe","giao hàng","giao hang"] },
   { "key": "role-accountant", "url": "role-accountant.html", "title": "Hướng dẫn cho kế toán labo", "section": "Theo vai trò",
     "description": "Phát hành hoá đơn, theo dõi công nợ phải thu, chốt sao kê.",
-    "keywords": ["kế toán","ke toan","accountant","công nợ","cong no","hoá đơn","hoa don","sao kê","sao ke"] }
+    "keywords": ["kế toán","ke toan","accountant","công nợ","cong no","hoá đơn","hoa don","sao kê","sao ke"] },
+  { "key": "role-clinic-dentist", "url": "role-clinic-dentist.html", "title": "Hướng dẫn cho nha sĩ (phòng khám)", "section": "Theo vai trò",
+    "description": "Nha sĩ tạo work order qua QR/web, đính ảnh + Rx, theo dõi, nhận hàng, báo bảo hành.",
+    "keywords": ["nha sĩ","nha si","bác sĩ","bac si","dentist","phòng khám","phong kham","qr","rx"] },
+  { "key": "role-clinic-assistant", "url": "role-clinic-assistant.html", "title": "Hướng dẫn cho phụ tá (phòng khám)", "section": "Theo vai trò",
+    "description": "Lễ tân/phụ tá điền đơn, chụp ảnh, nhận hàng, đối chiếu công nợ.",
+    "keywords": ["phụ tá","phu ta","lễ tân","le tan","assistant","điền đơn","dien don","chụp ảnh","chup anh"] },
+  { "key": "role-clinic-owner", "url": "role-clinic-owner.html", "title": "Hướng dẫn cho chủ phòng khám", "section": "Theo vai trò",
+    "description": "Chủ phòng khám xem tổng case ở labo, công nợ phải trả, tỉ lệ redo từng labo.",
+    "keywords": ["chủ phòng khám","chu phong kham","clinic owner","công nợ","cong no","redo","chất lượng","chat luong"] }
 ]

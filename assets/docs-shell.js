@@ -19,6 +19,9 @@
       { key: 'role-qc',               href: 'role-qc.html',               label: 'QC' },
       { key: 'role-shipper',          href: 'role-shipper.html',          label: 'Giao nhận' },
       { key: 'role-accountant',       href: 'role-accountant.html',       label: 'Kế toán labo' },
+      { key: 'role-clinic-dentist',   href: 'role-clinic-dentist.html',   label: 'Nha sĩ (clinic)' },
+      { key: 'role-clinic-assistant', href: 'role-clinic-assistant.html', label: 'Phụ tá (clinic)' },
+      { key: 'role-clinic-owner',     href: 'role-clinic-owner.html',     label: 'Chủ phòng khám' },
     ]},
 
     { section: 'Đặt đơn', items: [
@@ -94,6 +97,10 @@
     'role-qc':          ['qc-gate', 'redo-management', 'wf-qc-fail-rework', 'role-technician'],
     'role-shipper':     ['shipment-delivery-tracking', 'wf-case-lifecycle', 'role-coordinator', 'warranty-lookup-claims'],
     'role-accountant':  ['accounts-receivable', 'statement', 'e-invoice-issuance', 'deposit'],
+
+    'role-clinic-dentist':   ['connectionless-intake', 'rx-photo-capture', 'warranty-lookup-claims', 'wf-first-order'],
+    'role-clinic-assistant': ['connectionless-intake', 'lab-slip', 'accounts-receivable', 'role-clinic-dentist'],
+    'role-clinic-owner':     ['accounts-receivable', 'redo-management', 'reports-kpi', 'role-clinic-dentist'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';
