@@ -1,0 +1,92 @@
+# DentIQ Lab Help
+
+> Tài liệu hệ điều hành Labo ↔ Phòng khám cho labo nha khoa Việt Nam.
+
+## Bắt đầu
+
+- [Tổng quan DentIQ Lab](https://help.dentiqlab.vn/index.html): Giới thiệu DentIQ Lab — hệ điều hành realtime nối phòng khám và labo nha khoa.
+- [Bắt đầu nhanh](https://help.dentiqlab.vn/getting-started.html): Vòng đời một case từ đặt đơn đến bảo hành, cho người mới bắt đầu.
+- [Khái niệm cốt lõi](https://help.dentiqlab.vn/concepts.html): work order, case, unit, hai kênh đặt đơn, SLA tính từ nhận mẫu, redo vs bảo hành.
+- [Cấu hình labo lần đầu](https://help.dentiqlab.vn/lab-setup-wizard.html): Khai vật liệu, bảng giá, vai trò và tạo QR cho phòng khám đặt đơn.
+- [Chuyển từ Excel/Zalo](https://help.dentiqlab.vn/migrate-from-excel-zalo.html): Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab.
+
+## Đặt đơn
+
+- [Đặt đơn không cài (QR/web)](https://help.dentiqlab.vn/connectionless-intake.html): Phòng khám tạo work order qua QR/web link, không cài app, không đăng ký nặng.
+- [Rx & chụp ảnh](https://help.dentiqlab.vn/rx-photo-capture.html): Chuẩn hoá phiếu chỉ định Rx và ảnh; shade là bắt buộc.
+- [Đặt đơn qua DentIQ](https://help.dentiqlab.vn/dentiq-connected-intake.html): Phòng khám dùng DentIQ tự sync work order, hết double-entry.
+- [Tải STL / scan](https://help.dentiqlab.vn/stl-scan-upload.html): Đường nâng cấp cho clinic có máy scan: upload STL, xem scan.
+- [Phiếu labo](https://help.dentiqlab.vn/lab-slip.html): Phiếu labo đi kèm mẫu: các trường và cách map sang dữ liệu intake.
+
+## Sản xuất
+
+- [Hàng đợi & phân ca](https://help.dentiqlab.vn/case-queue-assignment.html): Nhận work order vào hàng đợi, chấp nhận, phân technician theo công đoạn, đặt hạn.
+- [Bảng sản xuất](https://help.dentiqlab.vn/production-board.html): Bảng kanban realtime các công đoạn milling/sinter/polish, technician cập nhật tiến độ.
+- [Công đoạn sản xuất](https://help.dentiqlab.vn/production-stages.html): Chuỗi công đoạn theo material: design, milling, sinter, polish/glaze, try-in.
+- [Cổng QC](https://help.dentiqlab.vn/qc-gate.html): Cổng QC chặn giao: kiểm tooth/shade/material, độ khít, thẩm mỹ; pass/fail.
+
+## Giao nhận & bảo hành
+
+- [Giao & theo dõi](https://help.dentiqlab.vn/shipment-delivery-tracking.html): Đánh dấu sẵn sàng giao, chọn phương thức, xác nhận đã nhận, theo dõi SLA.
+- [Quản lý redo](https://help.dentiqlab.vn/redo-management.html): Phân loại lý do redo, gán trách nhiệm labo/clinic, thống kê tỉ lệ redo.
+- [Bảo hành & tra cứu](https://help.dentiqlab.vn/warranty-lookup-claims.html): Tra cứu bảo hành theo material và thời hạn, xem lịch sử case, tạo claim.
+
+## Tài chính
+
+- [Bảng giá & vật liệu](https://help.dentiqlab.vn/pricing-material-catalog.html): Khai material + công đoạn, lập bảng giá theo unit/material, giá riêng theo phòng khám.
+- [Công nợ](https://help.dentiqlab.vn/accounts-receivable.html): Theo dõi công nợ từng phòng khám theo tháng, ghi nợ/ghi có, số dư.
+- [Sao kê](https://help.dentiqlab.vn/statement.html): Sao kê tháng: số dư đầu kỳ + phát sinh − thanh toán − cọc = số dư cuối kỳ.
+- [Hoá đơn điện tử](https://help.dentiqlab.vn/e-invoice-issuance.html): Phát hành HĐĐT theo Nghị định 70/2025, ký số qua VNPT/MISA/Viettel.
+- [Đặt cọc](https://help.dentiqlab.vn/deposit.html): Cọc trả trước, trừ vào hoá đơn cuối, ảnh hưởng công nợ và sao kê.
+
+## Mạng lưới & tích hợp
+
+- [Mời phòng khám](https://help.dentiqlab.vn/lab-clinic-invitation.html): Labo mời phòng khám lên hệ thống bằng QR/link, seeding mạng lưới.
+- [Kết nối DentIQ](https://help.dentiqlab.vn/lab-clinic-connection.html): Bắt tay đồng bộ work order 2 chiều giữa DentIQ và DentIQ Lab.
+- [Zalo ZNS](https://help.dentiqlab.vn/zalo-bridge.html): Gửi trạng thái case và nhắc công nợ qua Zalo ZNS.
+- [Nhà cung cấp HĐĐT](https://help.dentiqlab.vn/e-invoice-providers.html): Các gateway HĐĐT VNPT/MISA/Viettel, cấu hình và so sánh.
+
+## Theo vai trò
+
+- [Hướng dẫn cho chủ labo](https://help.dentiqlab.vn/role-lab-owner.html): Cấu hình bảng giá/vật liệu, xem doanh thu/công nợ/năng suất, mời phòng khám.
+- [Hướng dẫn cho điều phối](https://help.dentiqlab.vn/role-coordinator.html): Nhận work order, phân technician, đặt hạn, điều phối sản xuất.
+- [Hướng dẫn cho kỹ thuật viên](https://help.dentiqlab.vn/role-technician.html): Cập nhật tiến độ công đoạn milling/sinter/polish được giao.
+- [Hướng dẫn cho QC](https://help.dentiqlab.vn/role-qc.html): Kiểm tooth/shade/material, độ khít, thẩm mỹ; duyệt hoặc đánh trượt.
+- [Hướng dẫn cho giao nhận](https://help.dentiqlab.vn/role-shipper.html): Cập nhật trạng thái giao, xác nhận đã giao.
+- [Hướng dẫn cho kế toán labo](https://help.dentiqlab.vn/role-accountant.html): Phát hành hoá đơn, theo dõi công nợ phải thu, chốt sao kê.
+- [Hướng dẫn cho nha sĩ (phòng khám)](https://help.dentiqlab.vn/role-clinic-dentist.html): Nha sĩ tạo work order qua QR/web, đính ảnh + Rx, theo dõi, nhận hàng, báo bảo hành.
+- [Hướng dẫn cho phụ tá (phòng khám)](https://help.dentiqlab.vn/role-clinic-assistant.html): Lễ tân/phụ tá điền đơn, chụp ảnh, nhận hàng, đối chiếu công nợ.
+- [Hướng dẫn cho chủ phòng khám](https://help.dentiqlab.vn/role-clinic-owner.html): Chủ phòng khám xem tổng case ở labo, công nợ phải trả, tỉ lệ redo từng labo.
+
+## Quản trị
+
+- [Vai trò & phân quyền](https://help.dentiqlab.vn/roles-permissions.html): Đăng nhập loginId, role mặc định (lab_admin, coordinator, technician, qc, shipper, accountant), lab permission.
+- [Cấu hình labo](https://help.dentiqlab.vn/lab-settings.html): Các mục cấu hình labo: catalog, bảng giá, điều khoản bảo hành, e-invoice.
+- [Báo cáo & KPI](https://help.dentiqlab.vn/reports-kpi.html): Tỉ lệ redo, năng suất, doanh thu, công nợ (AR aging).
+- [Thông báo](https://help.dentiqlab.vn/notifications.html): Thông báo trạng thái case, nhắc công nợ, giao hàng; kênh Zalo-first.
+- [Bảo mật & dữ liệu](https://help.dentiqlab.vn/security.html): Cô lập dữ liệu theo tenant, đăng nhập loginId, quyền theo lab permission.
+
+## Tình huống thực tế
+
+- [Đơn đầu tiên của phòng khám](https://help.dentiqlab.vn/wf-first-order.html): Phòng khám chưa có tài khoản quét QR gửi work order đầu tiên.
+- [Vòng đời một case A→Z](https://help.dentiqlab.vn/wf-case-lifecycle.html): Case đi từ đặt đơn qua sản xuất, QC, giao, tới bảo hành.
+- [Đơn gấp (48h)](https://help.dentiqlab.vn/wf-rush-order.html): Đơn ưu tiên 48h, SLA đo từ nhận mẫu.
+- [Case có mẫu vật lý](https://help.dentiqlab.vn/wf-physical-impression.html): Mẫu vật lý gửi riêng; SLA và sản xuất chờ nhận mẫu.
+- [Case digital (STL)](https://help.dentiqlab.vn/wf-stl-digital.html): Clinic có máy scan gửi STL, vào sản xuất ngay.
+- [QC trượt → làm lại](https://help.dentiqlab.vn/wf-qc-fail-rework.html): QC đánh trượt, case quay lại công đoạn tương ứng.
+- [Redo sau khi giao](https://help.dentiqlab.vn/wf-redo-claim.html): Sau giao phát hiện sai, tạo redo, phân loại lỗi labo/clinic.
+- [Yêu cầu bảo hành](https://help.dentiqlab.vn/wf-warranty-claim.html): Trong thời hạn bảo hành, tra cứu lịch sử case và sửa/làm lại phục hình hỏng.
+- [Chốt công nợ cuối tháng](https://help.dentiqlab.vn/wf-month-end-ar.html): Chốt công nợ, xuất sao kê, phát hành e-invoice, nhắc nợ Zalo.
+- [Hoá đơn điện tử thất bại](https://help.dentiqlab.vn/wf-einvoice-failed.html): HĐĐT lỗi provider/gateway: đọc lỗi, sửa, retry, không mất dữ liệu công nợ.
+- [Nâng cấp tài khoản phòng khám](https://help.dentiqlab.vn/wf-clinic-claim-account.html): Phòng khám nhẹ (theo SĐT) claim nâng lên tài khoản đầy đủ với RBAC.
+- [Liên kết phòng khám dùng DentIQ](https://help.dentiqlab.vn/wf-connect-dentiq.html): Bắt tay link DentIQ ↔ DentIQ Lab, đồng bộ work order 2 chiều.
+- [Labo lên hệ thống (go-live)](https://help.dentiqlab.vn/wf-lab-go-live.html): Labo mới cấu hình xong, mời phòng khám, chạy thật đơn đầu tiên.
+
+## Tài liệu khác
+
+- [Xử lý sự cố](https://help.dentiqlab.vn/troubleshoot.html): Tổng hợp triệu chứng → nguyên nhân → khắc phục theo từng khu vực nghiệp vụ.
+- [Câu hỏi thường gặp](https://help.dentiqlab.vn/faq.html): Giải đáp: ai trả tiền, có cần cài app, SLA tính từ đâu, phạm vi sản phẩm.
+- [Thuật ngữ](https://help.dentiqlab.vn/glossary.html): Định nghĩa các thuật ngữ: work order, case, unit, shade, redo, công nợ, sao kê…
+- [Phím tắt](https://help.dentiqlab.vn/shortcuts.html): Phím tắt: ⌘K/Ctrl+K mở tìm kiếm, điều hướng kết quả.
+- [Changelog](https://help.dentiqlab.vn/changelog.html): Lịch sử cập nhật help site DentIQ Lab.
+

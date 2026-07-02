@@ -17,4 +17,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://help.dentiq.vn/sitemap.xml
+Sitemap: https://help.dentiqlab.vn/sitemap.xml
