@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QC trượt → làm lại công đoạn — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: QC đánh trượt một hạng mục checklist. Case bắt buộc ghi lý do + chọn công đoạn quay lại + ảnh nêu lỗi, đẩy về in_production đúng công đoạn, rồi kiểm lại.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-qc-fail-rework.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="QC trượt → làm lại công đoạn — DentIQ Lab Help">
+<meta property="og:description" content="QC đánh trượt → ghi lý do + công đoạn quay lại + ảnh lỗi → về in_production đúng công đoạn → kiểm lại.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-qc-fail-rework.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QC trượt → làm lại">
+<meta name="twitter:description" content="QC trượt đẩy case về đúng công đoạn lỗi kèm lý do + ảnh; mỗi lần fail là một bản ghi redo.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"QC trượt → làm lại công đoạn","description":"QC đánh trượt một hạng mục checklist; case bắt buộc ghi lý do + chọn công đoạn quay lại + ảnh nêu lỗi, đẩy về in_production đúng công đoạn, rồi kiểm lại.","url":"https://help.dentiqlab.vn/wf-qc-fail-rework.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-qc-fail-rework">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>QC trượt → làm lại</nav>
+
+    <h1>QC trượt → làm lại công đoạn</h1>
+    <p>Cổng QC là chốt chặn cứng trước khi giao: khi QC đánh <strong>trượt</strong> một hạng mục, case không đi tiếp đường giao mà bị đẩy ngược về đúng công đoạn sản xuất gây lỗi để làm lại, rồi kiểm lại. Fail bắt buộc ghi lý do, chọn công đoạn quay lại và đính ảnh nêu lỗi — mỗi lần fail tạo một bản ghi feed thống kê redo, để lộ điểm yếu và cải tiến theo thời gian.</p>
+
+    <figure>
+      <img src="assets/qc-gate/qc-inspection--checklist.png" alt="Màn QC một case: ảnh và thông tin đặt hàng bên trái để đối chiếu, checklist 6 hạng mục pass/fail bên phải" loading="lazy">
+      <figcaption>Màn QC: đối chiếu ảnh + thông tin đặt hàng bên trái; checklist 6 hạng mục toggle đạt/không-đạt bên phải. Còn ≥1 hạng mục không đạt thì không cho pass.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Một mão zirconia răng 36 đã xong công đoạn, vào trạng thái <code>qc</code>. Nhân viên QC mở case, đối chiếu ảnh thành phẩm với mã shade + ảnh tab/stump đã gửi kèm đơn và thấy <strong>màu sai</strong> so với mã VITA đã đặt — lỗi shade, nguyên nhân làm-lại số 1 ở VN. Vì còn một hạng mục không đạt, nút Pass không sáng; QC phải fail case về công đoạn glaze/staining để chỉnh màu.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nhân viên QC (lab)</td><td>Vai QC; case ở trạng thái <code>qc</code></td><td>Chấm checklist, đánh trượt hạng mục lỗi, ghi lý do + công đoạn quay lại + ảnh nêu lỗi, mở cổng fail</td></tr>
+        <tr><td>Điều phối (lab)</td><td>Vai điều phối</td><td>Nhận case quay lại, phân/điều lại technician cho công đoạn cần sửa</td></tr>
+        <tr><td>Technician (lab)</td><td>Được phân case</td><td>Làm lại đúng công đoạn lỗi rồi đẩy lên QC lại</td></tr>
+        <tr><td>Chủ labo / điều phối (lab)</td><td>Vai quản lý</td><td>Theo dõi tỉ lệ trượt theo technician/công đoạn từ thống kê redo</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>QC chấm checklist.</strong> QC đối chiếu từng hạng mục trong 6 hạng mục (shade, khớp cắn, độ khít, đúng tooth, đúng material, thẩm mỹ). Case nhiều unit chấm theo từng unit.</li>
+      <li><strong>Phát hiện hạng mục không đạt.</strong> Còn ≥1 hạng mục không đạt (hoặc ≥1 unit chưa đạt) → nút Pass không sáng. QC buộc phải fail.</li>
+      <li><strong>Ghi hồ sơ fail bắt buộc.</strong> Chọn <strong>công đoạn cần quay lại</strong> + ghi <strong>lý do</strong> + đính <strong>≥1 ảnh nêu lỗi</strong>. Thiếu một trong ba, hệ thống chặn không cho chuyển trạng thái.</li>
+      <li><strong>Đẩy về sản xuất.</strong> Case chuyển <code>qc → in_production</code> đúng công đoạn lỗi. Mỗi lần fail sinh một bản ghi feed thống kê redo (hạng mục lỗi, công đoạn, bên chịu trách nhiệm).</li>
+      <li><strong>Làm lại công đoạn.</strong> Technician sửa đúng công đoạn được chỉ (ví dụ glaze lại để đúng shade), không phải làm lại từ đầu.</li>
+      <li><strong>Kiểm lại.</strong> Xong công đoạn → case quay lại <code>qc</code>. QC chấm lại đủ 6 hạng mục. Pass (đủ hạng mục đạt + ảnh thành phẩm + đã ghi phôi/lô) → <code>ready_to_ship</code>.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Case không rời labo với lỗi — chỉ đi giao sau một lần QC pass thật sự.</li>
+      <li>Fail luôn có lý do + công đoạn quay lại + ảnh nêu lỗi (bằng chứng truy nguồn).</li>
+      <li>Case quay về đúng công đoạn gây lỗi, không làm lại từ đầu.</li>
+      <li>Mỗi lần fail là một bản ghi redo, nuôi thống kê tỉ lệ trượt theo technician/công đoạn.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Nút Pass không sáng</td><td>Còn hạng mục checklist trống/không đạt, hoặc chưa đính ảnh thành phẩm, hoặc chưa ghi phôi/lô</td><td>Chấm đủ 6 hạng mục, đính ≥1 ảnh thành phẩm, ghi mã phôi/lô từng unit (BR-04, BR-08, BR-09)</td></tr>
+        <tr><td>Fail nhưng không chuyển được trạng thái</td><td>Thiếu lý do / chưa chọn công đoạn quay lại / chưa đính ảnh lỗi</td><td>Ghi đủ lý do + công đoạn + ảnh nêu lỗi; đây là chốt chặn cứng, không phải lỗi hệ thống (BR-05)</td></tr>
+        <tr><td>Case nhiều unit: một số đạt, một số trượt</td><td>Chỉ một phần unit đạt</td><td>Ghi nhận theo unit; cả case vẫn fail tới khi tất cả unit đạt (BR-07)</td></tr>
+        <tr><td>Trượt nhiều lần liên tiếp cùng công đoạn</td><td>Công đoạn đó yếu / technician cần đào tạo</td><td>Vẫn cho phép, mỗi lần là một bản ghi redo riêng; dùng thống kê để lộ điểm yếu và cải tiến (BR-06)</td></tr>
+        <tr><td>Phôi/lô thực dùng không khớp material đã đặt</td><td>Nhập/dùng sai phôi</td><td>Đánh hạng mục material KHÔNG ĐẠT → không cho pass → fail về công đoạn tương ứng, ghi rõ ở lý do (BR-05 + BR-09)</td></tr>
+        <tr><td>Người không phải QC cố mở cổng</td><td>Sai vai</td><td>Từ chối theo quyền — chỉ vai QC được ghi kết quả và mở cổng (BR-02)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>QC trượt (redo nội bộ trước khi giao) khác với <a href="wf-redo-claim.html">redo sau khi giao</a>: trượt QC xảy ra trong lúc kiểm định, case chưa từng rời labo. Case redo sau giao đi qua <code>delivered → redo</code>. Cả hai đều phải qua QC lại — không case nào giao thẳng sau khi làm lại mà bỏ qua QC.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-stl-digital.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Case digital (STL)</div>
+      </a>
+      <a href="wf-redo-claim.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Redo sau giao</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

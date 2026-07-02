@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case có mẫu vật lý gửi kèm — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: đơn số tới trước, mẫu vật lý (alginate/silicone) ship riêng và tới sau. SLA và sản xuất bị gác cho tới khi labo nhận được mẫu (sampleReceived=true).">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-physical-impression.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Case có mẫu vật lý gửi kèm — DentIQ Lab Help">
+<meta property="og:description" content="Mẫu vật lý ship riêng, tới sau đơn số; SLA và sản xuất chờ tới khi labo nhận được mẫu.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-physical-impression.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Case có mẫu vật lý gửi kèm">
+<meta name="twitter:description" content="Mẫu vật lý ship riêng; SLA và sản xuất chờ tới khi nhận mẫu (sampleReceived=true).">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Case có mẫu vật lý gửi kèm","description":"Đơn số tới trước, mẫu vật lý ship riêng tới sau; SLA và sản xuất bị gác cho tới khi labo nhận được mẫu.","url":"https://help.dentiqlab.vn/wf-physical-impression.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-physical-impression">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Mẫu vật lý gửi kèm</nav>
+
+    <h1>Case có mẫu vật lý gửi kèm</h1>
+    <p>Ở VN mẫu vật lý là <strong>mặc định, không phải ngoại lệ</strong>: phần lớn phòng khám chưa có máy scan nên gửi dấu alginate/silicone hoặc mẫu hàm cùng đơn. Đơn số tới labo trước, mẫu vật lý đi tách rời (shipper/Grab/xe ôm/xe khách bến xe/lab pickup) và tới sau. Điểm cốt lõi: <strong>labo chưa thật sự bắt đầu được cho tới khi nhận được mẫu</strong> — và SLA cũng đếm từ mốc đó.</p>
+
+    <figure class="placeholder">
+      <figcaption>Sơ đồ hai chân của một case: <strong>chân số</strong> (đơn <code>submitted</code> tới ngay, realtime) và <strong>chân vật lý</strong> (mẫu ship riêng, tới sau). Điều phối "Nhận mẫu" để đóng leg inbound → set cờ <code>sampleReceived=true</code> + mốc <code>sampleReceivedAt</code>, mở cổng vào sản xuất và khởi động đồng hồ SLA.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Phòng khám A (không có máy scan) đặt một cầu răng, lấy dấu silicone tại ghế. Phụ tá tạo đơn số ngay (chụp ảnh mẫu + tab shade + phiếu), rồi đóng gói mẫu vật lý gửi shipper về labo B. Đơn số xuất hiện trong hàng đợi labo lúc 10h, nhưng mẫu silicone tới nơi lúc 16h chiều. Labo B không thể đổ mẫu, dựng cùi hay milling trước khi cầm được mẫu thật.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / phụ tá (clinic)</td><td>Clinic-side của cạnh</td><td>Tạo đơn số tại ghế; đóng gói &amp; gửi mẫu vật lý riêng; ghi phương thức ship</td></tr>
+        <tr><td>Điều phối (lab)</td><td>Vai điều phối</td><td><strong>Ghi nhận mẫu vào</strong> (đóng leg inbound → <code>sampleReceived=true</code> + <code>sampleReceivedAt</code>); accept đơn về giấy tờ trước khi mẫu tới</td></tr>
+        <tr><td>Giao nhận (lab)</td><td>Vai giao nhận</td><td>Tạo/đóng leg inbound, xử lý sự cố mẫu thất lạc</td></tr>
+        <tr><td>Technician (lab)</td><td>Được phân case + mẫu đã tới</td><td>Bắt đầu sản xuất khi <code>sampleReceived=true</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Đơn số tới trước.</strong> Phòng khám tạo work order tại ghế; case vào <code>submitted</code> với <code>sampleReceived=false</code> mặc định. Đơn số <code>submitted</code> <strong>không</strong> đồng nghĩa labo đã có mẫu.</li>
+      <li><strong>Accept về giấy tờ (tùy chọn).</strong> Điều phối có thể <code>accepted</code>, xác nhận giá + hạn ngay, dù mẫu chưa tới — nhưng chưa được vào sản xuất.</li>
+      <li><strong>Mẫu vật lý trên đường.</strong> Mẫu đi theo chân vật lý riêng (shipper/Grab/xe ôm/relay bến xe/lab pickup). Đây là leg inbound, tách biệt với đơn số.</li>
+      <li><strong>Nhận mẫu — mở cổng.</strong> Khi mẫu tới, điều phối quét/xác nhận → đóng leg inbound → <code>sampleReceived=true</code> và ghi <code>sampleReceivedAt</code>. Đây vừa là mốc mở cổng vào sản xuất, vừa là mốc SLA bắt đầu.</li>
+      <li><strong>Vào sản xuất.</strong> Có technician được phân <strong>và</strong> <code>sampleReceived=true</code> → chuyển <code>accepted → in_production</code>. Từ đây case chạy như thường (công đoạn → QC → giao).</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Case đứng ở "chờ nhận mẫu" cho tới khi mẫu vật lý thực sự tới — không nhầm là labo đã có mẫu.</li>
+      <li>Cờ <code>sampleReceived</code> và mốc <code>sampleReceivedAt</code> được ghi chính xác.</li>
+      <li>Sản xuất chỉ bắt đầu sau khi <code>sampleReceived=true</code> (guard BR-W1).</li>
+      <li>SLA/trễ hạn tính từ <code>sampleReceivedAt</code>, không từ lúc gửi đơn số.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Không đẩy được case vào sản xuất dù đơn đã <code>accepted</code></td><td>Mẫu vật lý chưa tới (<code>sampleReceived=false</code>)</td><td>Chờ mẫu; điều phối bấm "Nhận mẫu" khi mẫu tới để mở cổng (guard BR-W1)</td></tr>
+        <tr><td>Đơn số đã có nhưng mẫu quá hạn dự kiến chưa tới</td><td>Mẫu thất lạc / trễ trên đường ship</td><td>Mở sự cố mẫu vào, cảnh báo hai phía qua Zalo, không tự set <code>sampleReceived</code>; yêu cầu gửi lại / lấy dấu lại</td></tr>
+        <tr><td>Tưởng labo đã bắt đầu làm khi vừa gửi đơn</td><td>Nhầm đơn số <code>submitted</code> với "đã nhận mẫu"</td><td>Hiển thị rõ trạng thái "chờ nhận mẫu"; đơn số và leg inbound là hai mốc tách biệt (BR-09)</td></tr>
+        <tr><td>Relay bến xe: mẫu đến bến nhưng chưa ai ra nhận</td><td>Không có người ra bến, trễ chuyến</td><td>Leg inbound treo; nhắc + ghi chú "đang ở bến", cử người nhận; không auto thất lạc tới khi quá ngưỡng</td></tr>
+        <tr><td>Mẫu tới nhưng hỏng/không dùng được</td><td>Dấu rách, biến dạng khi vận chuyển</td><td>Không đóng leg inbound; báo phòng khám lấy dấu lại; sản xuất vẫn bị gác</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đây là điểm khác biệt lớn nhất so với <a href="wf-stl-digital.html">case digital (STL)</a>: case có mẫu vật lý bị gác chân vật lý, còn case STL-only coi như <code>sampleReceived=true</code> ngay khi <code>submitted</code> và vào sản xuất được luôn. Vì mẫu vật lý là mặc định ở VN, leg inbound là first-class — đừng đối xử như ngoại lệ.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-rush-order.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Đơn gấp (48h)</div>
+      </a>
+      <a href="wf-stl-digital.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Case digital (STL)</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vòng đời một case từ A đến Z — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: một case đi hết vòng đời từ lúc phòng khám đặt (submitted) qua tiếp nhận, sản xuất, QC, giao, đến redo/bảo hành và đóng case — kèm máy trạng thái.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-case-lifecycle.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Vòng đời một case từ A đến Z — DentIQ Lab Help">
+<meta property="og:description" content="Case đi từ submitted qua sản xuất, QC, giao, tới redo/bảo hành và đóng — theo máy trạng thái.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-case-lifecycle.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vòng đời một case A→Z">
+<meta name="twitter:description" content="Submitted → accepted → in_production → qc → ready_to_ship → shipped → delivered → redo/warranty → closed.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Vòng đời một case từ A đến Z","description":"Một case đi hết vòng đời từ submitted qua tiếp nhận, sản xuất, QC, giao, đến redo/bảo hành và đóng case theo máy trạng thái.","url":"https://help.dentiqlab.vn/wf-case-lifecycle.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-case-lifecycle">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Vòng đời case A→Z</nav>
+
+    <h1>Vòng đời một case từ A đến Z</h1>
+    <p>Đây là luồng xương sống của DentIQ Lab: một work order đi từ lúc phòng khám đặt đến tận bảo hành, trên <strong>một bản ghi case duy nhất</strong> mà cả phòng khám lẫn labo cùng đọc realtime. Trang này kể toàn bộ hành trình theo máy trạng thái, để bạn hình dung mỗi bước ai làm gì và điều gì gác không cho nhảy bước.</p>
+
+    <figure>
+      <img src="assets/case-queue-assignment/case-board--happy.png" alt="Bảng case của labo hiển thị các case theo trạng thái, mức ưu tiên và người phụ trách" loading="lazy">
+      <figcaption>Bảng case của labo: mỗi case mang một trạng thái trong vòng đời; điều phối theo dõi tiến độ và cảnh báo trễ hạn từ đây.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Phòng khám A đặt một mão zirconia răng 36 cho một bệnh nhân, gửi labo B. Đơn số tới trước, mẫu vật lý (dấu silicone) ship riêng và tới sau. Ta theo case này chạy hết một vòng đời "sạch": đặt → sản xuất → QC pass → giao → phòng khám nhận, rồi điểm qua các nhánh phát sinh (redo, bảo hành) có thể rẽ ra sau khi giao.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / lễ tân (clinic)</td><td>Clinic-side của cạnh clinic↔lab</td><td>Đặt đơn (<code>submitted</code>), xác nhận đã nhận (<code>delivered</code>), báo lỗi (<code>redo</code>/<code>warranty</code>)</td></tr>
+        <tr><td>Điều phối (lab)</td><td>Lab-side; vai điều phối</td><td>Tiếp nhận (<code>accepted</code>), phân technician, ghi nhận mẫu vật lý, đẩy vào sản xuất</td></tr>
+        <tr><td>Technician (lab)</td><td>Được phân case</td><td>Chạy các công đoạn sản xuất (<code>in_production</code>)</td></tr>
+        <tr><td>QC (lab)</td><td>Vai QC</td><td>Chấm cổng QC: pass → <code>ready_to_ship</code>, trượt → về <code>in_production</code></td></tr>
+        <tr><td>Giao nhận (lab)</td><td>Vai giao nhận</td><td>Tạo chuyến giao (<code>shipped</code> → <code>delivered</code>)</td></tr>
+        <tr><td>Kế toán (lab)</td><td>Vai kế toán</td><td>Ghi công nợ / thanh toán, đóng case (<code>closed</code>)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Đặt — <code>submitted</code>.</strong> Phòng khám gửi work order (qua quét QR, không cài app). Cờ <code>sampleReceived=false</code> mặc định vì mẫu vật lý còn trên đường.</li>
+      <li><strong>Tiếp nhận — <code>accepted</code>.</strong> Điều phối nhận đơn, xác nhận giá + hạn. Có thể accept trước khi mẫu tới (nhận về mặt giấy tờ), nhưng chưa được vào sản xuất. Thiếu thông tin → <code>rejected</code> → phòng khám sửa và gửi lại.</li>
+      <li><strong>Nhận mẫu vật lý.</strong> Khi mẫu tới labo, điều phối xác nhận → <code>sampleReceived=true</code> + ghi <code>sampleReceivedAt</code> (mốc tính SLA). Đây là cờ song song, không phải một state riêng — nhưng nó <strong>gác</strong> cạnh vào sản xuất.</li>
+      <li><strong>Sản xuất — <code>in_production</code>.</strong> Chỉ vào được khi có technician được phân <strong>và</strong> <code>sampleReceived=true</code> (hoặc case STL-only). Case chạy qua các công đoạn design → milling → sinter → polish/glaze. Có thể tạm dừng <code>on_hold</code> hoặc gửi thử <code>try_in</code> cho ca phức tạp.</li>
+      <li><strong>Kiểm định — <code>qc</code>.</strong> Xong công đoạn → vào cổng QC. QC chấm checklist 6 hạng mục. <strong>Pass</strong> → <code>ready_to_ship</code>; <strong>trượt</strong> → quay lại <code>in_production</code> đúng công đoạn lỗi.</li>
+      <li><strong>Chờ giao &amp; giao — <code>ready_to_ship</code> → <code>shipped</code>.</strong> Đạt QC, giao nhận tạo chuyến giao, chọn phương thức (tự giao / shipper / Grab-xe ôm / đối tác / relay bến xe), ghi bằng chứng.</li>
+      <li><strong>Đã nhận — <code>delivered</code>.</strong> Phòng khám xác nhận đã nhận (hoặc lab ghi nhận thay mặt, có ghi rõ ai/lúc nào). Không case nào vào <code>delivered</code> nếu chưa từng qua một lần QC pass.</li>
+      <li><strong>Nhánh phát sinh (nếu có).</strong> Sau giao có thể rẽ: <code>redo</code> (lỗi phát hiện lúc/ngay sau giao — ghi lý do + bên chịu trách nhiệm, quay lại <code>in_production</code>) hoặc <code>warranty</code> (hỏng sau giao, còn hạn bảo hành). Mọi vòng lặp đều đi lại qua QC.</li>
+      <li><strong>Đóng — <code>closed</code>.</strong> Đã giao + đã thanh toán/ghi công nợ, hết phát sinh → kế toán đóng case. Mọi nhánh cuối cùng hội tụ về <code>closed</code>.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Case đi đúng đường <code>submitted → accepted → in_production → qc → ready_to_ship → shipped → delivered → closed</code>.</li>
+      <li>SLA/trễ hạn được tính từ <code>sampleReceivedAt</code>, không phải từ lúc gửi đơn số.</li>
+      <li>Không case nào vào <code>delivered</code> mà chưa từng đạt QC pass (bất biến BR-W2).</li>
+      <li>Mọi redo/warranty đều ghi lý do + bên chịu trách nhiệm; case giữ bản ghi truy được (ai chỉ định shade/material, phôi/lô nào thực dùng).</li>
+      <li>Cả phòng khám và labo thấy cùng một trạng thái realtime.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Không đẩy được case sang <code>in_production</code></td><td>Mẫu vật lý chưa tới (<code>sampleReceived=false</code>) hoặc chưa phân technician</td><td>Ghi nhận mẫu vào (đóng leg inbound) + phân technician; case STL-only thì coi như đã nhận mẫu ngay</td></tr>
+        <tr><td>Case treo ở <code>submitted</code> nhưng mẫu quá hạn dự kiến chưa tới</td><td>Sự cố mẫu vào (thất lạc trên đường ship)</td><td>Mở trạng thái sự cố mẫu vào, cảnh báo hai phía qua Zalo, yêu cầu gửi lại / lấy dấu lại; sản xuất vẫn bị gác</td></tr>
+        <tr><td>Cố chuyển thẳng sang <code>delivered</code> mà chưa qua QC</td><td>Bỏ qua cổng QC</td><td>Bất khả thi theo máy trạng thái — phải qua <code>qc → ready_to_ship</code> bằng một lần QC pass (BR-W2)</td></tr>
+        <tr><td>Trễ due date</td><td>SLA chạy từ khi nhận mẫu; công đoạn kéo dài</td><td>Cảnh báo trễ nổi ở lab board + đẩy Zalo cho clinic; ghi lý do trễ</td></tr>
+        <tr><td>Thao tác chuyển trạng thái bị từ chối</td><td>Sai cạnh clinic↔lab hoặc sai vai (mặc định từ chối)</td><td>Chỉ đúng actor trong đúng cạnh mới trigger được transition (BR-W4); kiểm lại vai và quyền</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p><code>sampleReceived</code> là một <strong>cờ trên case</strong> (chân vật lý), không phải một state — nó gác cạnh <code>accepted → in_production</code>. Case full-digital (STL-only) coi như <code>sampleReceived=true</code> ngay khi <code>submitted</code>. Vòng <code>in_production ↔ try_in</code> có thể lặp nhiều lần cho ca phức tạp (răng trước/cầu).</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-first-order.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Đơn đầu tiên (clinic)</div>
+      </a>
+      <a href="wf-rush-order.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Đơn gấp (48h)</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

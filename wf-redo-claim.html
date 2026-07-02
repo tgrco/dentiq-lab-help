@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redo sau khi giao — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: phòng khám báo lỗi sau khi nhận hàng. Labo mở redo, ghi lý do theo taxonomy, quy trách nhiệm do-labo hay do-clinic tựa lưng vào lab slip, và xác định ai trả tiền làm lại.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-redo-claim.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Redo sau khi giao — DentIQ Lab Help">
+<meta property="og:description" content="Phòng khám báo lỗi sau giao → labo mở redo, ghi lý do + quy trách nhiệm do-labo/do-clinic dựa trên lab slip → xác định ai trả tiền.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-redo-claim.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redo sau khi giao">
+<meta name="twitter:description" content="Cốt lõi redo ở VN là tranh chấp lỗi-của-ai; lịch sử đơn truy được là trọng tài dàn xếp và quyết ai trả tiền.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Redo sau khi giao","description":"Phòng khám báo lỗi sau khi nhận hàng; labo mở redo, ghi lý do theo taxonomy cố định và quy trách nhiệm do-labo hay do-clinic tựa lưng vào lab slip truy được, rồi xác định ai trả tiền làm lại.","url":"https://help.dentiqlab.vn/wf-redo-claim.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-redo-claim">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Redo sau giao</nav>
+
+    <h1>Redo sau khi giao</h1>
+    <p>Case đã <code>delivered</code> nhưng phòng khám phát hiện sai khi gắn thử — sai màu, cấn khớp, không khít, hoặc vỡ. Labo mở một <strong>redo</strong>, ghi lý do theo taxonomy cố định và <strong>quy trách nhiệm</strong>: do labo hay do phòng khám. Ở Việt Nam, phần khó của redo không phải thao tác làm lại — mà là tranh chấp thương mại <strong>"lỗi của ai"</strong>, và ai gánh tiền. Lịch sử đơn truy được cùng <a href="lab-slip.html">lab slip</a> đã ghi là trọng tài dàn xếp.</p>
+
+    <figure>
+      <img src="assets/redo-management/redo-worklist--happy.png" alt="Danh sách redo: mỗi dòng là một ca làm lại kèm lý do, bên chịu trách nhiệm và liên kết case gốc" loading="lazy">
+      <figcaption>Worklist redo: mỗi ca làm lại gắn lý do theo taxonomy, bên chịu trách nhiệm (do-labo/do-clinic) và liên kết về case gốc + phôi/lô đã dùng.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Mão zirconia răng 36 giao tuần trước. Hôm nay nha sĩ gắn thử thấy màu tối hơn răng bên cạnh — nghi <strong>sai shade</strong>. Nha sĩ báo lỗi qua link theo dõi. Điều phối labo mở case, tạo redo, và phải trả lời câu hỏi thương mại: lỗi này do labo chế tác sai, hay do phòng khám ghi sai mã shade / bỏ qua stump shade lúc đặt? Câu trả lời quyết định ai trả tiền làm lại.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / lễ tân (clinic)</td><td>Chủ đơn qua cạnh clinic↔lab</td><td>Báo lỗi khi nhận hàng; đính ảnh minh hoạ. Không tự chuyển trạng thái sản xuất</td></tr>
+        <tr><td>QC / điều phối (lab)</td><td>Vai QC/điều phối; case ở <code>delivered</code></td><td>Mở redo, chọn lý do (taxonomy), gán bên chịu trách nhiệm, đính bằng chứng từ lab slip</td></tr>
+        <tr><td>Technician (lab)</td><td>Được phân case redo</td><td>Làm lại phục hình; case redo liên kết case gốc + kéo theo phôi/lô</td></tr>
+        <tr><td>Chủ labo / kế toán (lab)</td><td>Vai quản lý / tài chính</td><td>Đọc cờ <code>who_pays</code>; nếu <code>do-clinic</code> thì tính phí làm lại; xem tỉ lệ redo</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Clinic báo lỗi.</strong> Phòng khám báo qua link theo dõi kèm mô tả + ảnh. Case còn ở <code>delivered</code>.</li>
+      <li><strong>Labo mở redo.</strong> QC/điều phối tạo redo từ case gốc; case đi <code>delivered → redo</code>. Redo mới liên kết case gốc để giữ lịch sử.</li>
+      <li><strong>Ghi lý do (BR-01).</strong> Chọn <strong>một lý do chính</strong> theo taxonomy cố định: <code>sai-shade</code>, <code>khop-can-cao</code>, <code>khong-khit</code>, <code>vo</code>, <code>sai-tooth</code>, <code>sai-material</code>, <code>khac</code>. Nhiều nguyên nhân → một lý do chính + lý do phụ ghi ở chú thích (để thống kê sạch).</li>
+      <li><strong>Quy trách nhiệm (BR-02, BR-08).</strong> Gán bắt buộc <code>do-labo</code> hoặc <code>do-clinic</code>. Hệ thống đính kèm bằng chứng từ <a href="lab-slip.html">lab slip</a>/lịch sử đơn: ai đã chỉ định shade/material, ảnh tab màu/cùi đã gửi, ghi chú khớp cắn — đây là cơ chế dàn xếp tranh chấp.</li>
+      <li><strong>Xác định ai trả tiền (BR-09).</strong> <code>do-labo</code> → labo gánh (làm lại miễn phí). <code>do-clinic</code> → mặc định phòng khám gánh (tính phí theo bảng giá), trừ thiện chí của labo. Hệ thống ghi cờ <code>who_pays</code>, <strong>không</strong> tự ghi công nợ — chỉ gắn cờ để <a href="accounts-receivable.html">công nợ</a> xử lý.</li>
+      <li><strong>Làm lại và kéo provenance (BR-10).</strong> Technician làm lại; redo kéo theo <a href="warranty-lookup-claims.html">material provenance</a> (phôi/lô thực dùng của case gốc) — bằng chứng cốt lõi khi lý do là <code>vo</code>/<code>sai-material</code>.</li>
+      <li><strong>Qua QC lại rồi giao.</strong> Case làm lại phải qua <a href="qc-gate.html">cổng QC</a> lại — không giao thẳng bỏ qua QC — rồi giao lại như bình thường.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Mỗi redo là dữ liệu chất lượng có cấu trúc: lý do + bên chịu trách nhiệm + liên kết case gốc.</li>
+      <li>Tranh chấp "lỗi của ai" dàn xếp bằng bằng chứng từ lab slip, không phải cãi tay đôi.</li>
+      <li>Cờ <code>who_pays</code> rõ ràng: labo không "ngậm bồ hòn" làm lại miễn phí các ca lỗi từ clinic.</li>
+      <li>Tỉ lệ redo theo technician/clinic/material lên <a href="reports-kpi.html">báo cáo KPI</a> để cải thiện.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Không mở được redo</td><td>Chưa gán bên chịu trách nhiệm (để trống)</td><td>Gán bắt buộc <code>do-labo</code> hoặc <code>do-clinic</code> — không cho để trống (BR-02)</td></tr>
+        <tr><td>Tranh cãi lỗi shade do ai</td><td>Không có bằng chứng ai chỉ định shade</td><td>Mở lab slip/lịch sử đơn: mã shade đã ghi + ảnh tab màu/cùi đã gửi là trọng tài (BR-08)</td></tr>
+        <tr><td>Nghi vỡ do phôi sai chứ không do technician</td><td>Chưa đối chiếu phôi/lô thực dùng</td><td>Kéo material provenance của case gốc; phôi sai → có thể lỗi nhập vật liệu của labo (BR-10)</td></tr>
+        <tr><td>Redo do-clinic nhưng không thu được tiền</td><td>Chưa chốt trách nhiệm trước khi tính phí</td><td>Chốt bằng bằng chứng BR-08 trước; <code>who_pays=do-clinic</code> → tính phí ở feature công nợ (BR-09)</td></tr>
+        <tr><td>Một ca nhiều nguyên nhân, thống kê nhiễu</td><td>Ghi nhiều lý do chính</td><td>Chọn một lý do chính + liệt kê lý do phụ ở ghi chú (BR-01a)</td></tr>
+        <tr><td>Clinic tự ý đổi trạng thái sản xuất</td><td>Sai cổng quyền</td><td>Clinic chỉ được báo lỗi; mở redo và quy trách nhiệm là thao tác phía labo (QC/điều phối)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Redo (làm lại do lỗi) khác <a href="wf-warranty-claim.html">bảo hành</a> (hỏng trong thời hạn bảo hành sau thời gian sử dụng) và khác <a href="wf-qc-fail-rework.html">QC trượt</a> (redo nội bộ, case chưa từng rời labo). Cả ba đều phải qua QC lại trước khi giao. Cốt lõi của redo là <strong>quy trách nhiệm</strong> — mọi kết luận "lỗi của ai" phải tựa lưng vào lab slip đã ghi.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-qc-fail-rework.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">QC trượt → làm lại</div>
+      </a>
+      <a href="wf-warranty-claim.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Yêu cầu bảo hành</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

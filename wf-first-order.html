@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đơn đầu tiên của phòng khám — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: phòng khám chưa có tài khoản quét QR của labo, điền work order đầu tiên và gửi; labo nhận realtime, không cần cài app hay đăng ký nặng.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-first-order.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Đơn đầu tiên của phòng khám — DentIQ Lab Help">
+<meta property="og:description" content="Phòng khám chưa có tài khoản quét QR gửi work order đầu tiên; labo nhận realtime, không cài app.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-first-order.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Đơn đầu tiên của phòng khám">
+<meta name="twitter:description" content="Quét QR → điền phiếu → gửi. Labo nhận realtime, không cần tài khoản.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Đơn đầu tiên của phòng khám","description":"Phòng khám chưa có tài khoản quét QR của labo, điền work order đầu tiên và gửi; labo nhận realtime, không cần cài app.","url":"https://help.dentiqlab.vn/wf-first-order.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-first-order">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Đơn đầu tiên (clinic)</nav>
+
+    <h1>Đơn đầu tiên của phòng khám</h1>
+    <p>Một phòng khám mới, chưa có tài khoản, chưa cài gì — vẫn đặt được đơn labo trong vài phút chỉ bằng cách quét QR. Đây là điểm chạm đầu tiên giữa phòng khám và DentIQ Lab, và nguyên tắc nền là <strong>zero-friction phía clinic</strong>: không đăng ký nặng, không tường đăng nhập chặn việc đặt hàng. Đơn gửi xong xuất hiện <strong>realtime</strong> trong hàng đợi của đúng labo phát QR.</p>
+
+    <figure>
+      <img src="assets/connectionless-intake/intake-form--happy.png" alt="Form đặt đơn không-tài-khoản trên điện thoại: camera chụp mẫu và tab shade, chọn răng FDI, material, due date, một nút gửi" loading="lazy">
+      <figcaption>Form đặt đơn không-tài-khoản, mobile-first, camera-first: chụp mẫu + tab VITA, chạm răng FDI, chọn material/shade, due date, một nút gửi.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Phòng khám A ở tỉnh, quen đặt răng qua Zalo và điện thoại, chưa từng dùng DentIQ Lab. Labo B (đang dùng DentIQ Lab) đã in QR dán tại quầy hoặc gửi link qua Zalo cho phòng khám của mình (lab-first seeding). Hôm nay phụ tá của phòng khám A cần gửi một mão zirconia răng 36 cho một bệnh nhân, gấp trong tuần. Họ không muốn cài app, không muốn tạo tài khoản — chỉ muốn gửi đơn cho nhanh, đúng như cách họ nhắn Zalo bấy lâu.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / phụ tá (clinic)</td><td>Không cần đăng nhập nặng; chỉ cần mở QR/link của labo</td><td>Quét QR → điền phiếu tối thiểu → gửi; xác thực nhẹ bằng OTP Zalo/SMS khi cần</td></tr>
+        <tr><td>Chủ labo (lab)</td><td>Sở hữu QR/link đã phát</td><td>Phát QR/link cho tập phòng khám của mình (lab-first seeding)</td></tr>
+        <tr><td>Điều phối (lab)</td><td>Vai điều phối, thuộc cạnh clinic↔lab</td><td>Nhận đơn realtime trong hàng đợi, tiếp nhận (accept), xác nhận giá/hạn</td></tr>
+        <tr><td>Hệ thống</td><td>—</td><td>Tự tạo <strong>danh tính nhẹ</strong> khóa theo số điện thoại; gộp trùng theo SĐT; phát link theo dõi</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Quét QR / mở link.</strong> Phụ tá mở camera quét QR của labo B (hoặc bấm link Zalo). Mỗi QR/link gắn với một labo cụ thể, nên đơn vào đúng hàng đợi của labo đó — không cần chọn labo.</li>
+      <li><strong>Điền phiếu tối thiểu (camera-first).</strong> Form mở thẳng camera: chụp mẫu + tab VITA, chạm răng 36 (FDI), chọn material zirconia, shade A2 kèm ảnh tab/stump, ghi chú khớp cắn, chọn due date, đính ≥1 ảnh. Thiết kế để <strong>nhanh hơn gõ Zalo</strong>, tối thiểu gõ phím. STL không bắt buộc.</li>
+      <li><strong>Gửi.</strong> Một nút gửi. Không cài app, không tạo tài khoản đầy đủ. Hệ thống tự tạo một <strong>danh tính nhẹ</strong> khóa theo số điện thoại của phòng khám.</li>
+      <li><strong>Labo nhận realtime.</strong> Đơn xuất hiện ngay trong hàng đợi của labo B với <strong>đủ</strong> thông tin — hết cảnh gọi điện hỏi lại shade/tooth. Case vào trạng thái <code>submitted</code>.</li>
+      <li><strong>Chia sẻ &amp; theo dõi qua Zalo.</strong> Sau khi gửi, phòng khám nhận một link theo dõi trạng thái (không cần tài khoản) và nút chia sẻ đơn/trạng thái sang Zalo — cộng sinh với kênh chat hiện hữu.</li>
+      <li><strong>(Về sau) Claim tài khoản.</strong> Khi muốn có tài khoản đầy đủ, phòng khám bấm claim → nhập OTP gửi về đúng số đã đăng ký → nâng cấp danh tính nhẹ thành tài khoản. Mọi đơn cũ vẫn gắn về tài khoản sau claim.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Case đầu tiên ở trạng thái <code>submitted</code> trong hàng đợi labo, đủ trường tối thiểu (tooth, material, shade + ảnh tab, due date, ≥1 ảnh).</li>
+      <li>Phòng khám có một <strong>danh tính nhẹ</strong> khóa theo số điện thoại — không cần tài khoản để tiếp tục đặt đơn.</li>
+      <li>Phòng khám có link theo dõi trạng thái và có thể share sang Zalo.</li>
+      <li>Labo không phải gọi điện hỏi lại thông tin thiếu.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Quét QR báo hết hạn / labo ngừng nhận</td><td>QR đã bị vô hiệu hoặc labo tạm dừng nhận đơn</td><td>Thông báo rõ, không tạo đơn mồ côi; xin QR/link mới của labo, hoặc dùng fallback ảnh gửi qua Zalo</td></tr>
+        <tr><td>Không mở được form / không quét được QR</td><td>Máy cũ, mạng yếu, camera lỗi</td><td>Fallback ảnh: chụp phiếu giấy + ảnh gửi qua Zalo như cũ; labo nhập hộ đơn</td></tr>
+        <tr><td>Ảnh quá lớn, upload đứng (mạng VN yếu)</td><td>File nặng, băng thông kém</td><td>Hệ thống nén ảnh, cho gửi lại, lưu nháp — không mất dữ liệu đã điền</td></tr>
+        <tr><td>Cùng phòng khám có nhiều danh tính (trùng tên/số)</td><td>Đặt nhiều lần trước khi claim, seed trùng</td><td>Hệ thống gộp theo số điện thoại đã chuẩn hóa (E.164, +84); giữ toàn bộ lịch sử đơn, không tạo đơn mồ côi</td></tr>
+        <tr><td>Link công khai bị spam / lạm dụng</td><td>Ai đó gửi đơn rác qua link</td><td>Chống bằng rate-limit + OTP qua Zalo/SMS, không dựng tường đăng nhập chặn phòng khám thật</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đặt đơn <strong>không bao giờ</strong> bị chặn bởi trạng thái danh tính: ở <code>light</code>, <code>invited</code> hay <code>claim_pending</code> phòng khám vẫn tạo được work order. Xác minh/claim là luồng song song, không phải cổng chặn đặt hàng. Danh tính khóa theo số điện thoại và xác minh qua OTP Zalo/SMS — hợp hạ tầng VN, không cần email/đăng nhập nặng.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="security.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Bảo mật &amp; dữ liệu</div>
+      </a>
+      <a href="wf-case-lifecycle.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Vòng đời case A→Z</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

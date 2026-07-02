@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case digital (STL) — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: phòng khám có máy scan gửi file STL/PLY/OBJ, không gửi mẫu vật lý. Case full-digital coi như sampleReceived=true ngay khi submitted và vào sản xuất luôn.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-stl-digital.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Case digital (STL) — DentIQ Lab Help">
+<meta property="og:description" content="Clinic có máy scan gửi STL, không mẫu vật lý; case full-digital vào sản xuất ngay, không chờ mẫu.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-stl-digital.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Case digital (STL)">
+<meta name="twitter:description" content="Clinic scan gửi STL/PLY/OBJ, không mẫu vật lý; vào sản xuất ngay (sampleReceived=true).">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Case digital (STL)","description":"Phòng khám có máy scan gửi file STL/PLY/OBJ, không gửi mẫu vật lý; case full-digital coi như sampleReceived=true ngay khi submitted và vào sản xuất luôn.","url":"https://help.dentiqlab.vn/wf-stl-digital.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-stl-digital">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Case digital (STL)</nav>
+
+    <h1>Case digital (STL)</h1>
+    <p>Một số phòng khám hiện đại ở VN đã có máy scan trong miệng (~30–35%) và muốn gửi file số thay vì dấu vật lý. Với những case này, giá trị thật là <strong>bỏ được chân vật lý</strong>: case full-digital (chỉ STL, không gửi mẫu) không phải chờ mẫu hàm tới labo mới chạy được — coi như <code>sampleReceived=true</code> ngay khi <code>submitted</code>. Lưu ý: STL <strong>mãi mãi là tùy chọn</strong>, ảnh + dấu vật lý vẫn là đường chính.</p>
+
+    <figure>
+      <img src="assets/stl-scan-upload/scan-viewer--happy.png" alt="Trình xem mesh 3D của một file scan STL đã tải lên, để labo và phòng khám xác nhận đúng file" loading="lazy">
+      <figcaption>Preview mesh 3D sau khi tải file scan: labo và phòng khám xác nhận đúng file trước khi vào sản xuất.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Phòng khám A có máy scan iTero, đặt một mão zirconia cho bệnh nhân và quét trực tiếp trong miệng thay vì lấy dấu. Khi tạo work order, phụ tá đính thêm file <code>.stl</code> export từ máy scan vào đơn (ảnh vẫn là đường chính, STL là bước tùy chọn thêm). Không có mẫu vật lý nào phải gửi — nên labo B không phải chờ mẫu, vào sản xuất được ngay khi phân ca.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / KTV phòng khám (clinic)</td><td>Có máy scan; clinic-side của cạnh; không cần đăng nhập nặng</td><td>Quét → export STL/PLY/OBJ → đính vào đơn khi đặt (bước tùy chọn)</td></tr>
+        <tr><td>Điều phối (lab)</td><td>Vai điều phối</td><td>Xác nhận đơn full-digital; phân technician (không cần chờ mẫu)</td></tr>
+        <tr><td>Chủ labo / technician (lab)</td><td>Được phân case</td><td>Tải file về, xem preview mesh, dùng cho thiết kế/sản xuất</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Scan &amp; export.</strong> Phòng khám quét trong miệng, export file <code>.stl</code>/<code>.ply</code>/<code>.obj</code> (gồm export từ 3Shape, Medit, iTero ở dạng chung).</li>
+      <li><strong>Đính file vào đơn.</strong> Trong form đặt đơn, ở vùng "Đính file scan (tùy chọn)", kéo-thả hoặc chọn file. File lớn (hàng trăm MB) upload phân mảnh, tiếp tục được (resumable) khi mạng yếu/đứt.</li>
+      <li><strong>Preview xác nhận.</strong> Sau khi tải lên, hệ thống dựng preview mesh để labo và phòng khám xác nhận đúng file, đúng răng/quadrant, trước khi vào sản xuất.</li>
+      <li><strong>Đánh dấu full-digital.</strong> Nếu đơn chỉ có scan, không gửi mẫu vật lý → đánh dấu case full-digital → <code>sampleReceived=true</code> ngay tại <code>submitted</code>. Không bị gác chân vật lý.</li>
+      <li><strong>Vào sản xuất ngay.</strong> Điều phối phân technician → <code>accepted → in_production</code> mà không phải chờ mẫu tới. Từ đây case chạy như thường (công đoạn → QC → giao).</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>File scan gắn đúng work order và đúng răng/quadrant, có preview để xác nhận.</li>
+      <li>Case full-digital coi như <code>sampleReceived=true</code> ngay khi <code>submitted</code> — không chờ mẫu.</li>
+      <li>Labo vào sản xuất được ngay khi phân ca, SLA đếm từ lúc <code>submitted</code>.</li>
+      <li>Upload resumable, file nén lossless, không tạo file mồ côi khi hủy giữa chừng.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Upload đứng / đứt giữa chừng (mạng VN yếu)</td><td>File nặng, băng thông kém</td><td>Upload resumable nối lại từ phần đã tải, không phải tải lại từ đầu (BR-03)</td></tr>
+        <tr><td>Hệ thống từ chối file</td><td>Định dạng lạ (<code>.dcm</code>, <code>.zip</code> linh tinh) ngoài STL/PLY/OBJ</td><td>Báo rõ định dạng chấp nhận; export lại đúng STL/PLY/OBJ (BR-02)</td></tr>
+        <tr><td>File quá lớn / vượt quota</td><td>Mesh dày, quá giới hạn cấu hình</td><td>Báo &amp; chặn (không lưu âm thầm); gợi ý nén hoặc tách hàm (BR-07)</td></tr>
+        <tr><td>Preview mesh lỗi</td><td>File hỏng khi export/truyền</td><td>Báo phòng khám tải lại; STL là tùy chọn nên không chặn việc gửi đơn (BR-01, BR-06)</td></tr>
+        <tr><td>Phòng khám không có máy scan</td><td>Chỉ ~30–35% có scanner ở VN</td><td>Bỏ qua bước này hoàn toàn; gửi đơn bằng ảnh + dấu vật lý (đường chính, P2) — xem <a href="wf-physical-impression.html">mẫu vật lý gửi kèm</a></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>STL <strong>không bao giờ bắt buộc</strong> — một work order hợp lệ vẫn gửi được mà không có file scan; ảnh + dấu vật lý là đủ (P2). Nếu đơn vừa có scan vừa gửi mẫu vật lý, case vẫn theo chân vật lý bình thường (chờ nhận mẫu). Chỉ khi <strong>chỉ có scan, không mẫu vật lý</strong> thì mới là full-digital và vào sản xuất ngay.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-physical-impression.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Mẫu vật lý gửi kèm</div>
+      </a>
+      <a href="wf-qc-fail-rework.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">QC trượt → làm lại</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

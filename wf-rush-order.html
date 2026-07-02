@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đơn gấp (48h) — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: đơn ưu tiên 48h. Đồng hồ SLA đo từ lúc labo nhận mẫu vật lý (sampleReceivedAt), không phải từ lúc gửi đơn số — cảnh báo trễ nổi ở lab board và đẩy Zalo.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-rush-order.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Đơn gấp (48h) — DentIQ Lab Help">
+<meta property="og:description" content="Đơn ưu tiên 48h; SLA đo từ lúc nhận mẫu, không từ lúc gửi đơn số. Cảnh báo trễ nổi ở board và Zalo.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-rush-order.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Đơn gấp (48h)">
+<meta name="twitter:description" content="Đơn ưu tiên 48h; SLA tính từ sampleReceivedAt, không từ lúc gửi đơn số.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Đơn gấp (48h)","description":"Đơn ưu tiên 48h; đồng hồ SLA đo từ lúc labo nhận mẫu vật lý (sampleReceivedAt), không phải từ lúc gửi đơn số.","url":"https://help.dentiqlab.vn/wf-rush-order.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-rush-order">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Đơn gấp (48h)</nav>
+
+    <h1>Đơn gấp (48h)</h1>
+    <p>Có những case phải xong trong 48 giờ. Điều dễ hiểu lầm nhất về đơn gấp ở VN là <strong>đồng hồ chạy từ đâu</strong>: SLA rush 48h đo từ lúc <strong>labo nhận được mẫu vật lý</strong> (<code>sampleReceivedAt</code>), không phải từ lúc phòng khám bấm gửi đơn số — vì mẫu vật lý đi tách rời và labo chưa làm được gì trước khi có mẫu.</p>
+
+    <figure>
+      <img src="assets/shipment-delivery-tracking/shipping-console--happy.png" alt="Bảng điều khiển giao nhận: các chuyến giao theo phương thức, trạng thái và mốc thời gian" loading="lazy">
+      <figcaption>Console giao nhận: leg inbound (nhận mẫu) mở đồng hồ SLA; leg outbound giao thành phẩm chốt due date. Cảnh báo trễ nổi khi sắp quá hạn.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Phòng khám A cần một mão sứ gấp cho bệnh nhân đang chờ, đặt đơn ưu tiên và yêu cầu 48h. Đơn số được tạo tại ghế lúc 9h sáng thứ Hai, nhưng mẫu silicone gửi shipper và tới labo B lúc 15h chiều cùng ngày. Với đơn thường labo tính 2–5 ngày; với rush, cam kết là 48h — nhưng bắt đầu đếm từ 15h thứ Hai (lúc nhận mẫu), không phải 9h sáng.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / lễ tân (clinic)</td><td>Clinic-side của cạnh</td><td>Đặt đơn, đánh dấu ưu tiên/gấp, đặt due date 48h; theo dõi qua link/Zalo</td></tr>
+        <tr><td>Điều phối (lab)</td><td>Vai điều phối</td><td><strong>Ghi nhận mẫu vào</strong> (set <code>sampleReceived=true</code> + <code>sampleReceivedAt</code> — mốc mở đồng hồ SLA); ưu tiên phân ca</td></tr>
+        <tr><td>Technician (lab)</td><td>Được phân case</td><td>Chạy công đoạn với mức ưu tiên cao trên production board</td></tr>
+        <tr><td>QC (lab)</td><td>Vai QC</td><td>Chấm QC không bỏ bước — rush vẫn phải qua cổng QC đầy đủ</td></tr>
+        <tr><td>Giao nhận (lab)</td><td>Vai giao nhận</td><td>Chọn phương thức giao nhanh (Grab/xe ôm cho đơn gấp), ghi bằng chứng, chốt due date</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Đặt đơn ưu tiên.</strong> Phòng khám đặt đơn và đánh dấu gấp, đặt due date theo mốc 48h. Đơn vào <code>submitted</code>.</li>
+      <li><strong>Nhận mẫu — mở đồng hồ.</strong> Điều phối ghi nhận mẫu vật lý tới → <code>sampleReceived=true</code> và ghi <code>sampleReceivedAt</code>. <strong>Đây</strong> là mốc SLA rush bắt đầu đếm 48h, không phải lúc gửi đơn.</li>
+      <li><strong>Ưu tiên phân ca.</strong> Điều phối phân technician và đẩy case lên đầu hàng đợi trên production board. Vào <code>in_production</code>.</li>
+      <li><strong>Sản xuất nhanh nhưng đủ công đoạn.</strong> Case chạy các công đoạn; rush không cắt bước, chỉ ưu tiên thứ tự và nguồn lực.</li>
+      <li><strong>QC không bỏ bước.</strong> Vào <code>qc</code>, QC chấm đủ checklist 6 hạng mục. Rush vẫn phải pass mới đi giao — không có ngoại lệ QC cho đơn gấp.</li>
+      <li><strong>Giao nhanh.</strong> Đạt QC → <code>ready_to_ship</code>. Giao nhận chọn phương thức nhanh (Grab/xe ôm cho đơn lẻ gấp), ghi bằng chứng → <code>shipped</code> → <code>delivered</code>.</li>
+      <li><strong>Theo dõi SLA suốt hành trình.</strong> Nếu sắp/đã quá 48h kể từ <code>sampleReceivedAt</code>, cảnh báo trễ nổi ở lab board và đẩy sang Zalo cho phòng khám.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Đồng hồ 48h đo từ <code>sampleReceivedAt</code>, hiển thị đúng cho cả hai phía.</li>
+      <li>Case được ưu tiên trên production board nhưng vẫn qua đủ công đoạn và QC pass.</li>
+      <li>Cảnh báo trễ nổi ở lab board + Zalo khi sắp/đã quá hạn.</li>
+      <li>Giao đúng hạn với bằng chứng giao đầy đủ.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Phòng khám tưởng trễ dù labo chưa quá 48h</td><td>Hiểu SLA đếm từ lúc gửi đơn, không phải từ lúc nhận mẫu</td><td>Giải thích &amp; hiển thị rõ mốc <code>sampleReceivedAt</code>; 48h đếm từ lúc nhận mẫu (BR-W1)</td></tr>
+        <tr><td>Đồng hồ rush chưa chạy dù đơn đã gửi lâu</td><td>Mẫu vật lý chưa tới labo (<code>sampleReceived=false</code>)</td><td>Rush chờ mẫu; nếu mẫu trễ, mở sự cố mẫu vào, giục phòng khám gửi lại. Case STL-only đếm ngay từ <code>submitted</code></td></tr>
+        <tr><td>Rush trễ hạn</td><td>Công đoạn kéo dài, thiếu nhân lực, giao chậm</td><td>Cảnh báo trễ nổi ở lab board + đẩy Zalo; ghi lý do trễ; điều phối tái ưu tiên</td></tr>
+        <tr><td>Muốn giao gấp bỏ qua QC</td><td>Áp lực thời gian</td><td>Không được — rush vẫn phải QC pass mới đi giao (bất biến BR-W2). Ưu tiên thứ tự chấm QC thay vì bỏ bước</td></tr>
+        <tr><td>Giao gấp thất lạc / giao nhầm</td><td>Phương thức nhanh dễ sự cố (Grab/xe ôm)</td><td>Mở trạng thái sự cố, không auto <code>delivered</code>; thu hồi/giao lại đúng, giữ bằng chứng để truy nguồn</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đặt "rush" không rút ngắn cổng QC. Điểm mấu chốt của đơn gấp là quản đúng <strong>mốc SLA</strong> (từ khi nhận mẫu) và ưu tiên nguồn lực trên production board — không phải cắt bước kiểm định. Với đơn tỉnh xa gửi relay bến xe, cả leg inbound lẫn outbound đều ăn vào 48h, nên chọn phương thức giao phù hợp ngay từ đầu.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-case-lifecycle.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Vòng đời case A→Z</div>
+      </a>
+      <a href="wf-physical-impression.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Mẫu vật lý gửi kèm</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

@@ -67,6 +67,15 @@
       { key: 'notifications',     href: 'notifications.html',     label: 'Thông báo' },
       { key: 'security',          href: 'security.html',          label: 'Bảo mật & dữ liệu' },
     ]},
+    { section: 'Tình huống thực tế', items: [
+      { key: 'wf-first-order',         href: 'wf-first-order.html',         label: 'Đơn đầu tiên (clinic)' },
+      { key: 'wf-case-lifecycle',      href: 'wf-case-lifecycle.html',      label: 'Vòng đời case A→Z' },
+      { key: 'wf-rush-order',          href: 'wf-rush-order.html',          label: 'Đơn gấp (48h)' },
+      { key: 'wf-physical-impression', href: 'wf-physical-impression.html', label: 'Mẫu vật lý gửi kèm' },
+      { key: 'wf-stl-digital',         href: 'wf-stl-digital.html',         label: 'Case digital (STL)' },
+      { key: 'wf-qc-fail-rework',      href: 'wf-qc-fail-rework.html',      label: 'QC trượt → làm lại' },
+      { key: 'wf-redo-claim',          href: 'wf-redo-claim.html',          label: 'Redo sau giao' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -115,6 +124,14 @@
     'role-clinic-dentist':   ['connectionless-intake', 'rx-photo-capture', 'warranty-lookup-claims', 'wf-first-order'],
     'role-clinic-assistant': ['connectionless-intake', 'lab-slip', 'accounts-receivable', 'role-clinic-dentist'],
     'role-clinic-owner':     ['accounts-receivable', 'redo-management', 'reports-kpi', 'role-clinic-dentist'],
+
+    'wf-first-order':         ['connectionless-intake', 'role-clinic-dentist', 'wf-case-lifecycle', 'lab-clinic-invitation'],
+    'wf-case-lifecycle':      ['getting-started', 'case-queue-assignment', 'qc-gate', 'shipment-delivery-tracking'],
+    'wf-rush-order':          ['shipment-delivery-tracking', 'wf-case-lifecycle', 'case-queue-assignment', 'production-board'],
+    'wf-physical-impression': ['concepts', 'case-queue-assignment', 'wf-case-lifecycle', 'rx-photo-capture'],
+    'wf-stl-digital':         ['stl-scan-upload', 'production-board', 'wf-case-lifecycle', 'dentiq-connected-intake'],
+    'wf-qc-fail-rework':      ['qc-gate', 'redo-management', 'production-stages', 'role-qc'],
+    'wf-redo-claim':          ['redo-management', 'warranty-lookup-claims', 'qc-gate', 'wf-warranty-claim'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';
