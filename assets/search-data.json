@@ -157,5 +157,20 @@
     "keywords": ["liên kết","lien ket","connect","dentiq","sync","đồng bộ","dong bo","pms"] },
   { "key": "wf-lab-go-live", "url": "wf-lab-go-live.html", "title": "Labo lên hệ thống (go-live)", "section": "Tình huống thực tế",
     "description": "Labo mới cấu hình xong, mời phòng khám, chạy thật đơn đầu tiên.",
-    "keywords": ["go-live","go live","labo mới","labo moi","lên hệ thống","len he thong","mời phòng khám","moi phong kham"] }
+    "keywords": ["go-live","go live","labo mới","labo moi","lên hệ thống","len he thong","mời phòng khám","moi phong kham"] },
+  { "key": "troubleshoot", "url": "troubleshoot.html", "title": "Xử lý sự cố", "section": "Tài liệu khác",
+    "description": "Tổng hợp triệu chứng → nguyên nhân → khắc phục theo từng khu vực nghiệp vụ.",
+    "keywords": ["xử lý sự cố","xu ly su co","troubleshoot","lỗi","loi","khắc phục","khac phuc","sự cố","su co"] },
+  { "key": "faq", "url": "faq.html", "title": "Câu hỏi thường gặp", "section": "Tài liệu khác",
+    "description": "Giải đáp: ai trả tiền, có cần cài app, SLA tính từ đâu, phạm vi sản phẩm.",
+    "keywords": ["faq","câu hỏi","cau hoi","thường gặp","thuong gap","hỏi đáp","hoi dap"] },
+  { "key": "glossary", "url": "glossary.html", "title": "Thuật ngữ", "section": "Tài liệu khác",
+    "description": "Định nghĩa các thuật ngữ: work order, case, unit, shade, redo, công nợ, sao kê…",
+    "keywords": ["thuật ngữ","thuat ngu","glossary","định nghĩa","dinh nghia","từ điển","tu dien"] },
+  { "key": "shortcuts", "url": "shortcuts.html", "title": "Phím tắt", "section": "Tài liệu khác",
+    "description": "Phím tắt: ⌘K/Ctrl+K mở tìm kiếm, điều hướng kết quả.",
+    "keywords": ["phím tắt","phim tat","shortcut","keyboard","cmd k","ctrl k","tìm kiếm","tim kiem"] },
+  { "key": "changelog", "url": "changelog.html", "title": "Changelog", "section": "Tài liệu khác",
+    "description": "Lịch sử cập nhật help site DentIQ Lab.",
+    "keywords": ["changelog","cập nhật","cap nhat","lịch sử","lich su","phiên bản","phien ban"] }
 ]

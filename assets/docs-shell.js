@@ -82,6 +82,14 @@
       { key: 'wf-connect-dentiq',       href: 'wf-connect-dentiq.html',       label: 'Liên kết clinic DentIQ' },
       { key: 'wf-lab-go-live',          href: 'wf-lab-go-live.html',          label: 'Labo go-live' },
     ]},
+
+    { section: 'Tài liệu khác', items: [
+      { key: 'troubleshoot', href: 'troubleshoot.html', label: 'Xử lý sự cố' },
+      { key: 'faq',          href: 'faq.html',          label: 'FAQ' },
+      { key: 'glossary',     href: 'glossary.html',     label: 'Thuật ngữ' },
+      { key: 'shortcuts',    href: 'shortcuts.html',    label: 'Phím tắt' },
+      { key: 'changelog',    href: 'changelog.html',    label: 'Changelog' },
+    ]},
   ];
 
   // Related-links map. Each entry: target pageKey → 3-5 related pageKeys.
@@ -144,6 +152,12 @@
     'wf-clinic-claim-account': ['connectionless-intake', 'lab-clinic-invitation', 'role-clinic-owner', 'concepts'],
     'wf-connect-dentiq':       ['dentiq-connected-intake', 'lab-clinic-connection', 'wf-clinic-claim-account', 'concepts'],
     'wf-lab-go-live':          ['lab-setup-wizard', 'lab-clinic-invitation', 'migrate-from-excel-zalo', 'role-lab-owner'],
+
+    'troubleshoot': ['faq', 'wf-qc-fail-rework', 'wf-einvoice-failed', 'shortcuts'],
+    'faq':          ['glossary', 'troubleshoot', 'getting-started', 'concepts'],
+    'glossary':     ['concepts', 'faq', 'production-stages', 'overview'],
+    'shortcuts':    ['troubleshoot', 'faq', 'glossary', 'overview'],
+    'changelog':    ['faq', 'overview', 'getting-started', 'glossary'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xử lý sự cố — DentIQ Lab Help</title>
+<meta name="description" content="Tổng hợp triệu chứng → nguyên nhân → khắc phục theo từng khu vực nghiệp vụ: đặt đơn, sản xuất & QC, giao nhận & bảo hành, tài chính & HĐĐT, mạng lưới & kết nối.">
+<link rel="canonical" href="https://help.dentiqlab.vn/troubleshoot.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Xử lý sự cố — DentIQ Lab Help">
+<meta property="og:description" content="Tổng hợp triệu chứng → nguyên nhân → khắc phục theo từng khu vực nghiệp vụ của DentIQ Lab.">
+<meta property="og:url" content="https://help.dentiqlab.vn/troubleshoot.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xử lý sự cố">
+<meta name="twitter:description" content="Triệu chứng → nguyên nhân → khắc phục theo từng khu vực: đặt đơn, sản xuất, giao nhận, tài chính, mạng lưới.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Xử lý sự cố","description":"Tổng hợp triệu chứng → nguyên nhân → khắc phục theo từng khu vực nghiệp vụ: đặt đơn, sản xuất & QC, giao nhận & bảo hành, tài chính & HĐĐT, mạng lưới & kết nối.","url":"https://help.dentiqlab.vn/troubleshoot.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="troubleshoot">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tài liệu khác<span class="sep"></span>Xử lý sự cố</nav>
+
+    <h1>Xử lý sự cố</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Gặp một triệu chứng lạ? Tra bảng theo khu vực nghiệp vụ — hầu hết "lỗi" thực ra là một chốt chặn cố ý đang làm đúng việc của nó.</p>
+    <p>Trang này gom các bảng <strong>"Khi nào hỏng &amp; cách xử lý"</strong> rải rác trong các tình huống thực tế về một chỗ, xếp theo năm khu vực. Nguyên tắc chung của DentIQ Lab: <strong>mặc định từ chối</strong>, <strong>không tạo dữ liệu nửa vời</strong>, và <strong>mọi bước chặn đều có lý do</strong> (thường là một business rule bảo vệ tính đúng của case). Khi một thao tác bị chặn, hãy đọc cột "Nguyên nhân" trước khi coi đó là bug.</p>
+
+    <h2>Đặt đơn (intake)</h2>
+    <p>Từ quét QR, gửi ảnh/Rx, tới nhận mẫu vật lý và tải STL. Chi tiết ở <a href="wf-first-order.html">Đơn đầu tiên</a>, <a href="wf-physical-impression.html">Mẫu vật lý gửi kèm</a> và <a href="wf-stl-digital.html">Case digital (STL)</a>.</p>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Quét QR báo hết hạn / labo ngừng nhận</td><td>QR đã bị vô hiệu hoặc labo tạm dừng nhận đơn</td><td>Thông báo rõ, không tạo đơn mồ côi; xin QR/link mới của labo, hoặc dùng fallback ảnh gửi qua Zalo</td></tr>
+        <tr><td>Không mở được form / không quét được QR</td><td>Máy cũ, mạng yếu, camera lỗi</td><td>Fallback ảnh: chụp phiếu giấy + ảnh gửi qua Zalo như cũ; labo nhập hộ đơn</td></tr>
+        <tr><td>Ảnh quá lớn, upload đứng (mạng VN yếu)</td><td>File nặng, băng thông kém</td><td>Hệ thống nén ảnh, cho gửi lại, lưu nháp — không mất dữ liệu đã điền</td></tr>
+        <tr><td>Cùng phòng khám có nhiều danh tính (trùng tên/số)</td><td>Đặt nhiều lần trước khi claim, seed trùng</td><td>Hệ thống gộp theo số điện thoại đã chuẩn hóa (E.164, +84); giữ toàn bộ lịch sử đơn, không tạo đơn mồ côi</td></tr>
+        <tr><td>Link công khai bị spam / lạm dụng</td><td>Ai đó gửi đơn rác qua link</td><td>Chống bằng rate-limit + OTP qua Zalo/SMS, không dựng tường đăng nhập chặn phòng khám thật</td></tr>
+        <tr><td>Không đẩy được case vào sản xuất dù đơn đã <code>accepted</code></td><td>Mẫu vật lý chưa tới (<code>sampleReceived=false</code>)</td><td>Chờ mẫu; điều phối bấm "Nhận mẫu" khi mẫu tới để mở cổng (guard BR-W1)</td></tr>
+        <tr><td>Đơn số đã có nhưng mẫu quá hạn dự kiến chưa tới</td><td>Mẫu thất lạc / trễ trên đường ship</td><td>Mở sự cố mẫu vào, cảnh báo hai phía qua Zalo, không tự set <code>sampleReceived</code>; yêu cầu gửi lại / lấy dấu lại</td></tr>
+        <tr><td>Tưởng labo đã bắt đầu làm khi vừa gửi đơn</td><td>Nhầm đơn số <code>submitted</code> với "đã nhận mẫu"</td><td>Hiển thị rõ trạng thái "chờ nhận mẫu"; đơn số và leg inbound là hai mốc tách biệt (BR-09)</td></tr>
+        <tr><td>Relay bến xe: mẫu đến bến nhưng chưa ai ra nhận</td><td>Không có người ra bến, trễ chuyến</td><td>Leg inbound treo; nhắc + ghi chú "đang ở bến", cử người nhận; không auto thất lạc tới khi quá ngưỡng</td></tr>
+        <tr><td>Mẫu tới nhưng hỏng/không dùng được</td><td>Dấu rách, biến dạng khi vận chuyển</td><td>Không đóng leg inbound; báo phòng khám lấy dấu lại; sản xuất vẫn bị gác</td></tr>
+        <tr><td>Upload STL đứng / đứt giữa chừng (mạng VN yếu)</td><td>File nặng, băng thông kém</td><td>Upload resumable nối lại từ phần đã tải, không phải tải lại từ đầu (BR-03)</td></tr>
+        <tr><td>Hệ thống từ chối file STL</td><td>Định dạng lạ (<code>.dcm</code>, <code>.zip</code> linh tinh) ngoài STL/PLY/OBJ, hoặc vượt quota</td><td>Báo rõ định dạng chấp nhận, export lại đúng STL/PLY/OBJ; file quá lớn thì nén hoặc tách hàm (BR-02, BR-07)</td></tr>
+        <tr><td>Preview mesh lỗi</td><td>File hỏng khi export/truyền</td><td>Báo phòng khám tải lại; STL là tùy chọn nên không chặn việc gửi đơn (BR-01, BR-06)</td></tr>
+        <tr><td>Phòng khám không có máy scan</td><td>Chỉ ~30–35% có scanner ở VN</td><td>Bỏ qua bước STL hoàn toàn; gửi đơn bằng ảnh + dấu vật lý (đường chính, P2)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Sản xuất &amp; QC</h2>
+    <p>Từ chuyển trạng thái case, phân technician, tới cổng QC pass/fail. Chi tiết ở <a href="wf-case-lifecycle.html">Vòng đời case A→Z</a>, <a href="wf-rush-order.html">Đơn gấp (48h)</a> và <a href="wf-qc-fail-rework.html">QC trượt → làm lại</a>.</p>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Không đẩy được case sang <code>in_production</code></td><td>Mẫu vật lý chưa tới (<code>sampleReceived=false</code>) hoặc chưa phân technician</td><td>Ghi nhận mẫu vào (đóng leg inbound) + phân technician; case STL-only thì coi như đã nhận mẫu ngay</td></tr>
+        <tr><td>Case treo ở <code>submitted</code> nhưng mẫu quá hạn dự kiến chưa tới</td><td>Sự cố mẫu vào (thất lạc trên đường ship)</td><td>Mở trạng thái sự cố mẫu vào, cảnh báo hai phía qua Zalo, yêu cầu gửi lại / lấy dấu lại; sản xuất vẫn bị gác</td></tr>
+        <tr><td>Cố chuyển thẳng sang <code>delivered</code> mà chưa qua QC</td><td>Bỏ qua cổng QC</td><td>Bất khả thi theo máy trạng thái — phải qua <code>qc → ready_to_ship</code> bằng một lần QC pass (BR-W2)</td></tr>
+        <tr><td>Trễ due date</td><td>SLA chạy từ khi nhận mẫu; công đoạn kéo dài</td><td>Cảnh báo trễ nổi ở lab board + đẩy Zalo cho clinic; ghi lý do trễ, điều phối tái ưu tiên</td></tr>
+        <tr><td>Thao tác chuyển trạng thái bị từ chối</td><td>Sai cạnh clinic↔lab hoặc sai vai (mặc định từ chối)</td><td>Chỉ đúng actor trong đúng cạnh mới trigger được transition (BR-W4); kiểm lại vai và quyền</td></tr>
+        <tr><td>Phòng khám tưởng trễ dù labo chưa quá 48h (rush)</td><td>Hiểu SLA đếm từ lúc gửi đơn, không phải từ lúc nhận mẫu</td><td>Giải thích &amp; hiển thị rõ mốc <code>sampleReceivedAt</code>; 48h đếm từ lúc nhận mẫu (BR-W1)</td></tr>
+        <tr><td>Muốn giao gấp bỏ qua QC</td><td>Áp lực thời gian</td><td>Không được — rush vẫn phải QC pass mới đi giao (bất biến BR-W2); ưu tiên thứ tự chấm QC thay vì bỏ bước</td></tr>
+        <tr><td>Nút Pass QC không sáng</td><td>Còn hạng mục checklist trống/không đạt, chưa đính ảnh thành phẩm, hoặc chưa ghi phôi/lô</td><td>Chấm đủ 6 hạng mục, đính ≥1 ảnh thành phẩm, ghi mã phôi/lô từng unit (BR-04, BR-08, BR-09)</td></tr>
+        <tr><td>Fail nhưng không chuyển được trạng thái</td><td>Thiếu lý do / chưa chọn công đoạn quay lại / chưa đính ảnh lỗi</td><td>Ghi đủ lý do + công đoạn + ảnh nêu lỗi; đây là chốt chặn cứng, không phải lỗi hệ thống (BR-05)</td></tr>
+        <tr><td>Case nhiều unit: một số đạt, một số trượt</td><td>Chỉ một phần unit đạt</td><td>Ghi nhận theo unit; cả case vẫn fail tới khi tất cả unit đạt (BR-07)</td></tr>
+        <tr><td>Phôi/lô thực dùng không khớp material đã đặt</td><td>Nhập/dùng sai phôi</td><td>Đánh hạng mục material KHÔNG ĐẠT → không cho pass → fail về công đoạn tương ứng, ghi rõ ở lý do (BR-05 + BR-09)</td></tr>
+        <tr><td>Người không phải QC cố mở cổng</td><td>Sai vai</td><td>Từ chối theo quyền — chỉ vai QC được ghi kết quả và mở cổng (BR-02)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Giao nhận &amp; bảo hành</h2>
+    <p>Từ giao thành phẩm, redo sau giao, tới yêu cầu bảo hành. Chi tiết ở <a href="wf-redo-claim.html">Redo sau giao</a> và <a href="wf-warranty-claim.html">Yêu cầu bảo hành</a>.</p>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Giao gấp thất lạc / giao nhầm</td><td>Phương thức nhanh dễ sự cố (Grab/xe ôm)</td><td>Mở trạng thái sự cố, không auto <code>delivered</code>; thu hồi/giao lại đúng, giữ bằng chứng để truy nguồn</td></tr>
+        <tr><td>Không mở được redo</td><td>Chưa gán bên chịu trách nhiệm (để trống)</td><td>Gán bắt buộc <code>do-labo</code> hoặc <code>do-clinic</code> — không cho để trống (BR-02)</td></tr>
+        <tr><td>Tranh cãi lỗi shade do ai</td><td>Không có bằng chứng ai chỉ định shade</td><td>Mở lab slip/lịch sử đơn: mã shade đã ghi + ảnh tab màu/cùi đã gửi là trọng tài (BR-08)</td></tr>
+        <tr><td>Nghi vỡ do phôi sai chứ không do technician</td><td>Chưa đối chiếu phôi/lô thực dùng</td><td>Kéo material provenance của case gốc; phôi sai → có thể lỗi nhập vật liệu của labo (BR-10)</td></tr>
+        <tr><td>Redo do-clinic nhưng không thu được tiền</td><td>Chưa chốt trách nhiệm trước khi tính phí</td><td>Chốt bằng bằng chứng BR-08 trước; <code>who_pays=do-clinic</code> → tính phí ở feature công nợ (BR-09)</td></tr>
+        <tr><td>Clinic tự ý đổi trạng thái sản xuất</td><td>Sai cổng quyền</td><td>Clinic chỉ được báo lỗi; mở redo và quy trách nhiệm là thao tác phía labo (QC/điều phối)</td></tr>
+        <tr><td>Nút tạo claim bảo hành bị khóa</td><td>Case đã hết hạn bảo hành, hoặc không ở <code>delivered</code></td><td>Xử lý như đơn mới (work order mới), không phải claim; màn tra cứu vẫn hiện lịch sử + provenance để báo giá có cơ sở (BR-08)</td></tr>
+        <tr><td>Ngày giao thiếu/sai trong dữ liệu cũ</td><td>Dữ liệu nhập trước khi lên hệ thống</td><td>Không tự suy hạn; đánh dấu "cần xác minh ngày giao" trước khi cho tạo claim</td></tr>
+        <tr><td>Case cũ thiếu nguồn gốc phôi</td><td>Phôi/lô không được ghi khi làm</td><td>Hiển thị "thiếu nguồn gốc" thay vì bịa; vẫn cho tra cứu/claim nhưng nhắc bổ sung khi làm lại (BR-10)</td></tr>
+        <tr><td>Báo lại cùng một hỏng hóc</td><td>Claim trùng</td><td>Gộp vào claim đang mở, không tạo bản sao</td></tr>
+        <tr><td>Tranh chấp bên chịu trách nhiệm bảo hành</td><td>Chưa rõ lỗi labo hay clinic</td><td>Cho "tạm duyệt làm lại" nhưng treo cờ tranh chấp để kế toán đối soát sau</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Tài chính &amp; HĐĐT</h2>
+    <p>Từ chốt công nợ cuối kỳ tới phát hành hóa đơn điện tử. Chi tiết ở <a href="wf-month-end-ar.html">Chốt công nợ cuối tháng</a> và <a href="wf-einvoice-failed.html">HĐĐT thất bại</a>.</p>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Cần sửa số sau khi đã chốt sao kê</td><td>Sao kê đã chốt là bất biến</td><td>Không sửa số cũ; tạo bút toán điều chỉnh sang kỳ sau (BR-W3)</td></tr>
+        <tr><td>Deposit lớn hơn nợ trong kỳ</td><td>Cọc trả trước vượt phát sinh</td><td>Trừ tối đa về 0, không âm; phần thừa giữ on-account, trừ tiếp kỳ sau (BR-W2)</td></tr>
+        <tr><td>Cả labo và phòng khám cùng định phát hành HĐĐT một kỳ</td><td>Nguy cơ xuất hóa đơn hai lần</td><td>Mặc định chỉ labo phát hành; một sao kê kỳ chỉ xuất HĐĐT một lần (BR-W4)</td></tr>
+        <tr><td>Clinic cố sửa số trên sao kê</td><td>Sai vai — clinic chỉ được xem</td><td>Từ chối theo quyền; chỉ role tài chính của labo chốt/phát hành/ghi nhận (BR-W6)</td></tr>
+        <tr><td>Quá due date vẫn chưa thu đủ</td><td>Clinic trả trễ</td><td>Chuyển <code>overdue</code>, nhắc nợ khéo qua Zalo kèm sao kê; thu nốt hội tụ về <code>paid</code> (BR-W5)</td></tr>
+        <tr><td>Provider down / timeout khi phát hành HĐĐT</td><td>Hạ tầng nhà cung cấp lỗi</td><td>Không tạo hoá đơn nửa vời; cho thử lại, hệ thống không cấp trùng số</td></tr>
+        <tr><td>Chặn phát hành, báo thiếu/sai MST người mua</td><td>Hồ sơ phòng khám chưa đủ</td><td>Bổ sung MST, tên, địa chỉ người mua; link DentIQ có thể lấy từ identity phòng khám (BR-10)</td></tr>
+        <tr><td>Chữ ký số hết hạn / thông tin người bán sai</td><td>Cấu hình labo lỗi thời</td><td>Chặn phát hành, báo lỗi rõ; cấu hình lại người bán/chữ ký số rồi thử lại</td></tr>
+        <tr><td>Đã phát hành nhưng "chờ xác nhận GDT"</td><td>Báo cáo GDT same-day thất bại</td><td>Retry tự động; chưa coi là hoàn tất, không phát hành trùng (BR-09)</td></tr>
+        <tr><td>Cố phát hành khi labo chưa bật HĐĐT</td><td>Feature tắt / provider chưa cấu hình</td><td>Khóa hành động, gợi ý bật + cấu hình; công nợ vẫn dùng đủ (BR-04/BR-05)</td></tr>
+        <tr><td>Phát hành nhầm rồi cần sửa</td><td>Sai dữ liệu sau khi đã phát hành</td><td>Dùng hủy/điều chỉnh/thay thế, không xóa cứng (giữ lưu trữ 10 năm) (BR-06)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Mạng lưới &amp; kết nối</h2>
+    <p>Từ nâng cấp tài khoản clinic, liên kết clinic DentIQ, tới go-live một labo. Chi tiết ở <a href="wf-clinic-claim-account.html">Nâng cấp tài khoản clinic</a>, <a href="wf-connect-dentiq.html">Liên kết clinic DentIQ</a> và <a href="wf-lab-go-live.html">Labo go-live</a>.</p>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>OTP không tới (đổi SIM, mất số, sai số khi seed)</td><td>Số đã đăng ký không còn dùng</td><td>Nhánh <strong>lab vouch</strong>: labo có quan hệ xác nhận đúng phòng khám → cập nhật số mới rồi phát OTP về số mới; vẫn phải có OTP đạt trước khi lên <code>claimed</code> (BR-W6)</td></tr>
+        <tr><td>Nhập sai OTP nhiều lần / hết hạn thử thách</td><td>Quá 5 lần sai hoặc quá 10 phút</td><td>Tự quay <code>claim_pending → light</code> (không mất đơn); resend bị rate-limit; tín hiệu lạm dụng thì <code>→ blocked</code> (BR-W8, BR-W5)</td></tr>
+        <tr><td>Hai bên cùng đòi một danh tính</td><td>Tranh chấp sở hữu / OTP fail và không có vouch</td><td>Chuyển <code>disputed</code>: tạm dừng nâng cấp nhưng <strong>vẫn cho đặt đơn</strong>; người có quyền đối chiếu bằng chứng rồi kết về <code>claimed</code>/<code>light</code>/<code>blocked</code> (BR-W7)</td></tr>
+        <tr><td>Labo cố tự claim hộ phòng khám</td><td>Sai mô hình quyền</td><td>Từ chối — chỉ chủ thực claim/merge được; labo chỉ <em>vouch</em>, không chiếm danh tính (BR-W4)</td></tr>
+        <tr><td>Dán mã kết nối DentIQ không đồng ý được</td><td>Mã đã hết TTL hoặc đã dùng rồi (dùng-một-lần)</td><td>Cạnh <code>→ expired</code>; labo phát mã mới rồi dán lại (LC-4)</td></tr>
+        <tr><td>Cạnh tự chuyển <code>suspended</code>, đơn không chảy</td><td>Webhook lỗi quá ngưỡng hoặc đang xoay secret</td><td>Đơn được xếp hàng không mất; sửa webhook/secret rồi nối lại — không cần tạo case lại (LC-5)</td></tr>
+        <tr><td>Đồng ý lại/phát lại tạo cạnh trùng</td><td>Lo nhân đôi cạnh kết nối</td><td>Không xảy ra: idempotent theo external-ref, một labo ↔ một phòng khám DentIQ đúng một cạnh (LC-1)</td></tr>
+        <tr><td>Phòng khám lo mất dữ liệu khi gỡ kết nối</td><td>Hiểu nhầm gỡ = xoá</td><td><code>revoked</code>/<code>suspended</code>/<code>expired</code> không xoá case đã sync; giữ <code>lab_work_order</code>, rớt về thủ công (LC-5)</td></tr>
+        <tr><td>Mời nhiều nhưng không lên đơn</td><td>Cạnh dừng ở <code>invited</code>, chưa <code>active</code></td><td>Thước đo là <strong>mật độ cạnh sống</strong>, không phải số lời mời (NG-3); rep hâm nóng qua Zalo đúng lúc</td></tr>
+        <tr><td>Phòng khám im lâu, không đặt đơn</td><td>Quá N ngày không đơn</td><td>Hệ thống suy ra <code>dormant</code>; labo/rep hâm nóng → <code>reactivated → active</code>; bỏ lâu hơn khép lại <code>churned</code> (NG-4)</td></tr>
+        <tr><td>Cùng phòng khám xuất hiện nhiều cạnh</td><td>Mời trùng</td><td>Không tạo cạnh trùng: một labo ↔ một phòng khám đúng một cạnh (NG-1)</td></tr>
+        <tr><td>Đơn đầu tính giá sai / thiếu vật liệu</td><td>Chưa cấu hình xong nền trước khi mời</td><td>Hoàn tất <a href="lab-setup-wizard.html">wizard</a> (vật liệu + công đoạn + bảng giá) trước khi phát lời mời</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Vẫn chưa gỡ được?</div>
+      <p>Nếu triệu chứng không nằm trong bảng nào ở trên, xem <a href="faq.html">Câu hỏi thường gặp</a> để hiểu vì sao hệ thống hành xử như vậy, hoặc tra <a href="glossary.html">Thuật ngữ</a> nếu một khái niệm chưa rõ. Cần hỗ trợ trực tiếp: <a href="mailto:support@dentiq.vn">support@dentiq.vn</a>.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-lab-go-live.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Labo go-live</div>
+      </a>
+      <a href="faq.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">FAQ</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>
