@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chốt công nợ cuối tháng — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: cuối tháng kế toán chốt công nợ từng phòng khám, xuất sao kê (đầu kỳ + phát sinh − thanh toán − cọc = cuối kỳ), phát hành e-invoice và nhắc nợ qua Zalo.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-month-end-ar.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Chốt công nợ cuối tháng — DentIQ Lab Help">
+<meta property="og:description" content="Chốt công nợ per clinic → xuất sao kê → phát hành e-invoice → nhắc nợ Zalo.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-month-end-ar.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chốt công nợ cuối tháng">
+<meta name="twitter:description" content="Cuối tháng: chốt kỳ per clinic, trừ cọc, xuất sao kê, phát hành e-invoice, nhắc nợ Zalo.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Chốt công nợ cuối tháng","description":"Cuối tháng kế toán chốt công nợ từng phòng khám, xuất sao kê (đầu kỳ + phát sinh − thanh toán − cọc = cuối kỳ), phát hành e-invoice và nhắc nợ qua Zalo.","url":"https://help.dentiqlab.vn/wf-month-end-ar.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-month-end-ar">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Chốt công nợ cuối tháng</nav>
+
+    <h1>Chốt công nợ cuối tháng</h1>
+    <p>Mô hình thanh toán B2B áp đảo ở labo VN là <strong>công nợ-tháng</strong>: labo ghi nợ khi giao case, gom theo kỳ tháng cho từng phòng khám, chốt một sao kê, trừ đặt cọc, rồi thu tiền net theo tháng. Cuối tháng, kế toán chốt kỳ per clinic, phát hành sao kê (số dư đầu kỳ + phát sinh − thanh toán − cọc = cuối kỳ), phát hành hoá đơn điện tử (e-invoice), rồi nhắc nợ khéo qua Zalo với clinic quá hạn — thay cho Excel và sổ tay.</p>
+
+    <figure>
+      <img src="assets/accounts-receivable/ar-overview--happy.png" alt="Màn tổng quan công nợ: danh sách phòng khám với số dư nợ từng clinic và số tổng phải thu theo kỳ" loading="lazy">
+      <figcaption>Màn tổng quan công nợ: mỗi phòng khám một dòng với số dư đang theo dõi; gom mọi debit đã ghi nhận (accrued) chờ chốt kỳ per clinic.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Trong tháng, mỗi case chuyển <code>delivered</code> đã sinh đúng một bút toán debit vào công nợ của phòng khám tương ứng (trạng thái <code>accrued</code>), tích luỹ chờ chốt. Đến cuối tháng, kế toán labo mở màn công nợ của phòng khám A: có deposit đã trả trước đầu kỳ, nhiều case giao trong tháng, và một phần đã thanh toán. Kế toán chốt kỳ để ra sao kê một con số cuối kỳ, phát hành HĐĐT cho clinic là bên mua, gửi qua Zalo/PDF. Mọi số tiền tính bằng VND.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Kế toán / chủ labo (lab)</td><td>Vai tài chính của chính labo</td><td>Chốt kỳ, phát hành sao kê, phát hành HĐĐT, ghi nhận thanh toán, nhắc nợ</td></tr>
+        <tr><td>Nha sĩ / lễ tân / chủ phòng khám (clinic)</td><td>Trên công nợ của chính phòng khám</td><td>Nhận sao kê + HĐĐT, đối chiếu, trả tiền — chỉ <strong>xem</strong>, không sửa số</td></tr>
+        <tr><td>Cổng Zalo (actor hệ thống)</td><td>Kênh tích hợp</td><td>Gửi sao kê + nhắc nợ quá hạn</td></tr>
+        <tr><td>Nhà cung cấp HĐĐT (actor hệ thống)</td><td>Adapter đã cấu hình</td><td>Ký số + phát hành hoá đơn (qua feature e-invoice)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Ghi nợ suốt kỳ.</strong> Mỗi case <code>delivered</code> sinh đúng một debit <code>accrued</code> vào công nợ của clinic tương ứng, tích luỹ chờ chốt (BR-W1).</li>
+      <li><strong>Chốt kỳ (period close) per clinic.</strong> Cuối tháng, gom mọi debit <code>accrued</code> của clinic trong kỳ, <strong>trừ deposit</strong> đã trả trước. Deposit không làm tổng nợ âm dưới 0; phần thừa giữ on-account, trừ tiếp kỳ sau (BR-W2).</li>
+      <li><strong>Phát hành sao kê.</strong> Ra sao kê: <em>số dư đầu kỳ + phát sinh − thanh toán − cọc = cuối kỳ</em>, trạng thái <code>statement_issued</code>, gửi qua Zalo/PDF. Số trên sao kê đã chốt là <strong>bất biến</strong> — điều chỉnh phải tạo bút toán mới sang kỳ sau (BR-W3).</li>
+      <li><strong>Phát hành HĐĐT.</strong> Từ sao kê đã chốt → phát hành e-invoice (<code>invoiced</code>), uỷ thác cho feature E-invoice Issuance. Labo là bên phát hành, clinic là bên mua; mỗi sao kê kỳ chỉ phát hành HĐĐT một lần để tránh xuất trùng (BR-W4). Nhánh này tuỳ chọn, có thể tắt.</li>
+      <li><strong>Ghi nhận thanh toán.</strong> Theo hạn tháng: thu đủ → <code>paid</code>; thu một phần → <code>partially_paid</code> (BR-W6 — chỉ role tài chính của labo được ghi nhận).</li>
+      <li><strong>Nhắc nợ quá hạn qua Zalo.</strong> Quá due date (= ngày chốt kỳ + hạn công nợ) mà còn nợ → <code>overdue</code> + nhắc nợ khéo qua Zalo, đính kèm sao kê kỳ tương ứng; thu nốt → hội tụ về <code>paid</code> (BR-W5).</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Mỗi phòng khám có một sao kê kỳ đã chốt với một con số cuối kỳ rõ ràng, đối chiếu khớp.</li>
+      <li>Deposit được trừ đúng khi chốt, không làm tổng nợ âm; phần thừa giữ on-account.</li>
+      <li>HĐĐT phát hành đúng một lần từ sao kê, truy ngược được về các work order cấu thành.</li>
+      <li>Clinic quá hạn được nhắc nợ khéo qua Zalo kèm sao kê; số liệu đủ lịch sử để đối soát.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Cần sửa số sau khi đã chốt sao kê</td><td>Sao kê đã chốt là bất biến</td><td>Không sửa số cũ; tạo bút toán điều chỉnh sang kỳ sau (BR-W3)</td></tr>
+        <tr><td>Deposit lớn hơn nợ trong kỳ</td><td>Cọc trả trước vượt phát sinh</td><td>Trừ tối đa về 0, không âm; phần thừa giữ on-account, trừ tiếp kỳ sau (BR-W2)</td></tr>
+        <tr><td>Cả labo và phòng khám cùng định phát hành HĐĐT một kỳ</td><td>Nguy cơ xuất hóa đơn hai lần</td><td>Mặc định chỉ labo phát hành; một sao kê kỳ chỉ xuất HĐĐT một lần (BR-W4)</td></tr>
+        <tr><td>Clinic cố sửa số trên sao kê</td><td>Sai vai — clinic chỉ được xem</td><td>Từ chối theo quyền; chỉ role tài chính của labo chốt/phát hành/ghi nhận (BR-W6)</td></tr>
+        <tr><td>Quá due date vẫn chưa thu đủ</td><td>Clinic trả trễ</td><td>Chuyển <code>overdue</code>, nhắc nợ khéo qua Zalo kèm sao kê; thu nốt hội tụ về <code>paid</code> (BR-W5)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Luồng này <strong>soạn hợp</strong> hai feature: <a href="statement.html">sao kê / công nợ (AR)</a> sở hữu sổ công nợ + deposit + nhắc nợ, còn việc phát hành HĐĐT được <strong>uỷ thác</strong> cho <a href="e-invoice-issuance.html">E-invoice Issuance</a> — luồng billing chỉ feed dữ liệu và đánh dấu trạng thái, không tự dựng XML/ký số. Nếu bước phát hành HĐĐT lỗi, xem <a href="wf-einvoice-failed.html">Hoá đơn điện tử thất bại</a>.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-warranty-claim.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Yêu cầu bảo hành</div>
+      </a>
+      <a href="wf-einvoice-failed.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Hoá đơn điện tử thất bại</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

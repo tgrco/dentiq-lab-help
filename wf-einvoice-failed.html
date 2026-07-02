@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoá đơn điện tử thất bại — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: phát hành HĐĐT lỗi (provider/gateway trả lỗi, sai thông tin người mua). Cách đọc lỗi, sửa, retry mà không mất dữ liệu công nợ và không xuất trùng số.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-einvoice-failed.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Hoá đơn điện tử thất bại — DentIQ Lab Help">
+<meta property="og:description" content="HĐĐT lỗi provider/gateway/sai thông tin: đọc lỗi, sửa, retry, không mất dữ liệu công nợ.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-einvoice-failed.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hoá đơn điện tử thất bại">
+<meta name="twitter:description" content="HĐĐT lỗi provider/gateway: đọc lỗi, sửa, retry an toàn, không trùng số, không mất công nợ.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Hoá đơn điện tử thất bại","description":"Phát hành HĐĐT lỗi provider/gateway hoặc sai thông tin người mua: cách đọc lỗi, sửa, retry mà không mất dữ liệu công nợ và không xuất trùng số.","url":"https://help.dentiqlab.vn/wf-einvoice-failed.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-einvoice-failed">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Hoá đơn điện tử thất bại</nav>
+
+    <h1>Hoá đơn điện tử thất bại</h1>
+    <p>Phát hành HĐĐT có thể lỗi ở nhiều điểm: nhà cung cấp (VNPT/MISA/Viettel) down hoặc timeout, chữ ký số hết hạn, thông tin người bán sai, hoặc người mua (phòng khám) thiếu/sai mã số thuế. Nguyên tắc xuyên suốt: <strong>không tạo hoá đơn "nửa vời", không xuất trùng số, và không để mất dữ liệu công nợ</strong>. Trang này hướng dẫn đọc lỗi, sửa và retry an toàn.</p>
+
+    <figure>
+      <img src="assets/e-invoice-issuance/einvoice-list--happy.png" alt="Màn danh sách hoá đơn điện tử: mỗi dòng là một HĐĐT với trạng thái đã phát hành, đã hủy hay đã thay thế, kèm link tải XML/PDF" loading="lazy">
+      <figcaption>Màn danh sách HĐĐT: trạng thái mỗi hoá đơn hiển thị rõ — đã phát hành / chờ xác nhận GDT / đã hủy / đã thay thế — kèm link tải XML/PDF.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Sau khi chốt sao kê phòng khám A, kế toán bấm "Phát hành HĐĐT". Hệ thống dựng dữ liệu hoá đơn (người bán = labo, người mua = clinic, dòng hàng theo unit, thuế per-line) rồi gọi adapter nhà cung cấp. Lần này provider trả lỗi: mã số thuế người mua thiếu. Hoá đơn <strong>không</strong> được phát hành — không có số hoá đơn nào bị "đốt", công nợ vẫn nguyên. Kế toán đọc thông báo lỗi, bổ sung hồ sơ phòng khám, rồi thử lại từ cùng nguồn sao kê.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Kế toán / chủ labo (lab)</td><td>Vai tài chính của chính labo</td><td>Đọc lỗi, sửa thông tin người mua/người bán, retry phát hành, dùng hủy/điều chỉnh/thay thế</td></tr>
+        <tr><td>Chủ labo (lab)</td><td>Vai quản lý cấu hình</td><td>Cấu hình lại kết nối nhà cung cấp, chữ ký số, thông tin người bán, mẫu số/ký hiệu</td></tr>
+        <tr><td>Nhà cung cấp HĐĐT (actor hệ thống)</td><td>Adapter VNPT/MISA/Viettel</td><td>Trả mã lỗi/timeout; ký số + phát hành khi dữ liệu hợp lệ; báo cáo GDT same-day</td></tr>
+        <tr><td>Phòng khám (clinic)</td><td>Là bên mua trên hoá đơn</td><td>Cung cấp/đối chiếu MST, tên, địa chỉ khi được yêu cầu (không phát hành)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Đọc lỗi.</strong> Trạng thái hoá đơn cho biết vấn đề: chưa phát hành (chặn trước khi gọi provider), hay "chờ xác nhận GDT" (đã phát hành nhưng báo cáo thuế chưa xong). Đọc thông báo lỗi cụ thể của adapter.</li>
+      <li><strong>Phân loại nguyên nhân.</strong> Ba nhóm: (a) dữ liệu — người mua thiếu/sai MST, người bán sai; (b) cấu hình — chữ ký số hết hạn, provider chưa cấu hình; (c) hạ tầng — provider down/timeout.</li>
+      <li><strong>Sửa dữ liệu / cấu hình.</strong> Thiếu MST người mua → bổ sung hồ sơ phòng khám (BR-10). Chữ ký số hết hạn / người bán sai → cấu hình lại rồi thử lại (edge case). Provider chưa cấu hình → bật + cấu hình adapter (BR-04/BR-05).</li>
+      <li><strong>Retry an toàn.</strong> Với lỗi down/timeout, cho thử lại từ cùng nguồn sao kê; hệ thống <strong>không</strong> cấp trùng số hoá đơn (edge case). Công nợ không đổi trong suốt quá trình.</li>
+      <li><strong>Xử lý "chờ xác nhận GDT".</strong> Nếu đã phát hành nhưng báo cáo GDT same-day thất bại, hoá đơn ở trạng thái "chờ xác nhận GDT", retry tự động; chưa coi là phát hành hoàn tất, không phát hành trùng (BR-09).</li>
+      <li><strong>Nếu đã phát hành nhầm.</strong> Không xóa cứng (vi phạm lưu trữ 10 năm). Dùng hủy / điều chỉnh / thay thế, mỗi hành động ghi vết và giữ nguyên bản gốc (BR-06).</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Không có hoá đơn "nửa vời"; lỗi phát hành để lại trạng thái rõ ràng, không đốt số.</li>
+      <li>Dữ liệu công nợ không đổi khi phát hành lỗi — quản công nợ không bị chặn (BR-05).</li>
+      <li>Retry sau khi sửa dùng lại cùng nguồn sao kê, không cấp trùng số hoá đơn.</li>
+      <li>Sai sót sau phát hành xử lý bằng hủy/điều chỉnh/thay thế, ghi vết đầy đủ, giữ bản gốc.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Provider down / timeout khi phát hành</td><td>Hạ tầng nhà cung cấp lỗi</td><td>Không tạo hoá đơn nửa vời; cho thử lại, hệ thống không cấp trùng số (edge case)</td></tr>
+        <tr><td>Chặn phát hành, báo thiếu/sai MST người mua</td><td>Hồ sơ phòng khám chưa đủ</td><td>Bổ sung MST, tên, địa chỉ người mua; link DentIQ có thể lấy từ identity phòng khám (BR-10)</td></tr>
+        <tr><td>Chữ ký số hết hạn / thông tin người bán sai</td><td>Cấu hình labo lỗi thời</td><td>Chặn phát hành, báo lỗi rõ; cấu hình lại người bán/chữ ký số rồi thử lại (edge case)</td></tr>
+        <tr><td>Đã phát hành nhưng "chờ xác nhận GDT"</td><td>Báo cáo GDT same-day thất bại</td><td>Retry tự động; chưa coi là hoàn tất, không phát hành trùng (BR-09)</td></tr>
+        <tr><td>Cố phát hành khi labo chưa bật HĐĐT</td><td>Feature tắt / provider chưa cấu hình</td><td>Khóa hành động, gợi ý bật + cấu hình; công nợ vẫn dùng đủ (BR-04/BR-05)</td></tr>
+        <tr><td>Phát hành nhầm rồi cần sửa</td><td>Sai dữ liệu sau khi đã phát hành</td><td>Dùng hủy/điều chỉnh/thay thế, không xóa cứng (giữ lưu trữ 10 năm) (BR-06)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Phát hành HĐĐT là một bước của <a href="wf-month-end-ar.html">chu kỳ công nợ lab</a> (workflow sở hữu vòng đời sao kê → công nợ → thu tiền). Feature <a href="e-invoice-issuance.html">E-invoice Issuance</a> chỉ sở hữu <em>hành động phát hành + cấu hình + bật/tắt</em>. Kết nối nhà cung cấp và mẫu số/ký hiệu cấu hình ở <a href="e-invoice-providers.html">Nhà cung cấp HĐĐT</a>. HĐĐT có thể <strong>tắt</strong> ở cấp labo — không có HĐĐT là một mặc định hợp lệ (BR-04).</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-month-end-ar.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Chốt công nợ cuối tháng</div>
+      </a>
+      <a href="wf-clinic-claim-account.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Clinic nhận & lập tài khoản</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

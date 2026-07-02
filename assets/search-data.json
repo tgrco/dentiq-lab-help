@@ -139,5 +139,14 @@
     "keywords": ["qc trượt","qc truot","fail","rework","làm lại","lam lai","công đoạn","cong doan"] },
   { "key": "wf-redo-claim", "url": "wf-redo-claim.html", "title": "Redo sau khi giao", "section": "Tình huống thực tế",
     "description": "Sau giao phát hiện sai, tạo redo, phân loại lỗi labo/clinic.",
-    "keywords": ["redo","làm lại","lam lai","sau giao","lỗi","loi","phân loại","phan loai"] }
+    "keywords": ["redo","làm lại","lam lai","sau giao","lỗi","loi","phân loại","phan loai"] },
+  { "key": "wf-warranty-claim", "url": "wf-warranty-claim.html", "title": "Yêu cầu bảo hành", "section": "Tình huống thực tế",
+    "description": "Trong thời hạn bảo hành, tra cứu lịch sử case và sửa/làm lại phục hình hỏng.",
+    "keywords": ["bảo hành","bao hanh","warranty","claim","yêu cầu","yeu cau","tra cứu","tra cuu"] },
+  { "key": "wf-month-end-ar", "url": "wf-month-end-ar.html", "title": "Chốt công nợ cuối tháng", "section": "Tình huống thực tế",
+    "description": "Chốt công nợ, xuất sao kê, phát hành e-invoice, nhắc nợ Zalo.",
+    "keywords": ["chốt công nợ","chot cong no","cuối tháng","cuoi thang","sao kê","sao ke","month end","ar"] },
+  { "key": "wf-einvoice-failed", "url": "wf-einvoice-failed.html", "title": "Hoá đơn điện tử thất bại", "section": "Tình huống thực tế",
+    "description": "HĐĐT lỗi provider/gateway: đọc lỗi, sửa, retry, không mất dữ liệu công nợ.",
+    "keywords": ["hoá đơn thất bại","hoa don that bai","e-invoice failed","lỗi hóa đơn","loi hoa don","retry","gateway"] }
 ]

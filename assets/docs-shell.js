@@ -75,6 +75,9 @@
       { key: 'wf-stl-digital',         href: 'wf-stl-digital.html',         label: 'Case digital (STL)' },
       { key: 'wf-qc-fail-rework',      href: 'wf-qc-fail-rework.html',      label: 'QC trượt → làm lại' },
       { key: 'wf-redo-claim',          href: 'wf-redo-claim.html',          label: 'Redo sau giao' },
+      { key: 'wf-warranty-claim',      href: 'wf-warranty-claim.html',      label: 'Yêu cầu bảo hành' },
+      { key: 'wf-month-end-ar',        href: 'wf-month-end-ar.html',        label: 'Chốt công nợ cuối tháng' },
+      { key: 'wf-einvoice-failed',     href: 'wf-einvoice-failed.html',     label: 'HĐĐT thất bại' },
     ]},
   ];
 
@@ -132,6 +135,9 @@
     'wf-stl-digital':         ['stl-scan-upload', 'production-board', 'wf-case-lifecycle', 'dentiq-connected-intake'],
     'wf-qc-fail-rework':      ['qc-gate', 'redo-management', 'production-stages', 'role-qc'],
     'wf-redo-claim':          ['redo-management', 'warranty-lookup-claims', 'qc-gate', 'wf-warranty-claim'],
+    'wf-warranty-claim':  ['warranty-lookup-claims', 'wf-redo-claim', 'role-clinic-dentist', 'redo-management'],
+    'wf-month-end-ar':    ['accounts-receivable', 'statement', 'e-invoice-issuance', 'deposit'],
+    'wf-einvoice-failed': ['e-invoice-issuance', 'e-invoice-providers', 'wf-month-end-ar', 'statement'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';
