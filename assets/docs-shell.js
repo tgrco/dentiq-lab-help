@@ -173,7 +173,7 @@
   <div class="container docs-topbar-inner">
     <a href="index.html" class="brand">
       <span class="brand-mark">${BRAND_LOGO}</span>
-      DentIQ <span class="docs-mark">HELP</span>
+      DentIQ Lab <span class="docs-mark">HELP</span>
     </a>
     <div class="docs-topbar-search">
       <span class="icon">${SEARCH_SVG}</span>
@@ -202,7 +202,7 @@
   <div class="docs-sidebar-header">
     <a href="index.html" class="brand">
       <span class="brand-mark" style="width:22px;height:22px;border-radius:6px;">${BRAND_LOGO}</span>
-      DentIQ Help
+      DentIQ Lab Help
     </a>
     <button type="button" class="docs-sidebar-close" id="docsSidebarClose" aria-label="Đóng menu">${CLOSE_SVG}</button>
   </div>
@@ -257,9 +257,9 @@ ${cards}
     return `
 <footer class="docs-footer">
   <div class="container docs-footer-inner">
-    <div>© 2026 DentIQ. Made in Vietnam.</div>
+    <div>© 2026 DentIQ Lab. Made in Vietnam.</div>
     <div class="docs-footer-meta">
-      <a href="mailto:support@dentiq.vn">support@dentiq.vn</a>
+      <a href="mailto:support@dentiqlab.vn">support@dentiqlab.vn</a>
       <span class="mono">vi · v1.0</span>
     </div>
   </div>
@@ -339,7 +339,7 @@ ${cards}
     if (!query.trim()) {
       var hint = document.createElement('div');
       hint.className = 'docs-sr-hint';
-      hint.textContent = 'Gõ để tìm kiếm tài liệu DentIQ…';
+      hint.textContent = 'Gõ để tìm kiếm tài liệu DentIQ Lab…';
       container.appendChild(hint);
       return;
     }
