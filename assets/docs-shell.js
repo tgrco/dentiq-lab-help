@@ -78,6 +78,9 @@
       { key: 'wf-warranty-claim',      href: 'wf-warranty-claim.html',      label: 'Yêu cầu bảo hành' },
       { key: 'wf-month-end-ar',        href: 'wf-month-end-ar.html',        label: 'Chốt công nợ cuối tháng' },
       { key: 'wf-einvoice-failed',     href: 'wf-einvoice-failed.html',     label: 'HĐĐT thất bại' },
+      { key: 'wf-clinic-claim-account', href: 'wf-clinic-claim-account.html', label: 'Nâng cấp tài khoản clinic' },
+      { key: 'wf-connect-dentiq',       href: 'wf-connect-dentiq.html',       label: 'Liên kết clinic DentIQ' },
+      { key: 'wf-lab-go-live',          href: 'wf-lab-go-live.html',          label: 'Labo go-live' },
     ]},
   ];
 
@@ -138,6 +141,9 @@
     'wf-warranty-claim':  ['warranty-lookup-claims', 'wf-redo-claim', 'role-clinic-dentist', 'redo-management'],
     'wf-month-end-ar':    ['accounts-receivable', 'statement', 'e-invoice-issuance', 'deposit'],
     'wf-einvoice-failed': ['e-invoice-issuance', 'e-invoice-providers', 'wf-month-end-ar', 'statement'],
+    'wf-clinic-claim-account': ['connectionless-intake', 'lab-clinic-invitation', 'role-clinic-owner', 'concepts'],
+    'wf-connect-dentiq':       ['dentiq-connected-intake', 'lab-clinic-connection', 'wf-clinic-claim-account', 'concepts'],
+    'wf-lab-go-live':          ['lab-setup-wizard', 'lab-clinic-invitation', 'migrate-from-excel-zalo', 'role-lab-owner'],
   };
 
   const BRAND_LOGO = '<img src="assets/icons/logo.png" alt="DentIQ Lab logo" width="24" height="24">';

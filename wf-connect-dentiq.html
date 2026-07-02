@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liên kết phòng khám dùng DentIQ — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: phòng khám dùng DentIQ PMS bắt tay đồng thuận link với DentIQ Lab, từ đó tạo đơn là tự đồng bộ work order 2 chiều — một case, hai projection, hết double-entry.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-connect-dentiq.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Liên kết phòng khám dùng DentIQ — DentIQ Lab Help">
+<meta property="og:description" content="Bắt tay đồng thuận link DentIQ ↔ DentIQ Lab: lab phát mã, clinic đồng ý, sync work order 2 chiều, gỡ được bất cứ lúc nào mà không mất dữ liệu.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-connect-dentiq.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Liên kết phòng khám dùng DentIQ">
+<meta name="twitter:description" content="Lab phát mã → clinic đồng ý → linked → tự sync work order 2 chiều; gỡ được, không mất dữ liệu.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Liên kết phòng khám dùng DentIQ","description":"Phòng khám dùng DentIQ PMS bắt tay đồng thuận link với DentIQ Lab; từ đó tạo đơn là tự đồng bộ work order 2 chiều — một case, hai projection, hết double-entry.","url":"https://help.dentiqlab.vn/wf-connect-dentiq.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-connect-dentiq">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Liên kết clinic DentIQ</nav>
+
+    <h1>Liên kết phòng khám dùng DentIQ</h1>
+    <p>Khi một phòng khám đã dùng <strong>DentIQ</strong> làm PMS, ta không muốn họ gõ tay đơn hai nơi. Luồng này dựng một <strong>cạnh kết nối kỹ thuật</strong> có đồng thuận giữa DentIQ và DentIQ Lab: labo phát mã, phòng khám đồng ý, rồi từ trạng thái <code>linked</code>, tạo đơn lab bên DentIQ là <strong>tự sync</strong> sang DentIQ Lab và trạng thái sản xuất map ngược về cho phòng khám. Một case, hai projection — hết double-entry.</p>
+
+    <figure>
+      <img src="assets/dentiq-connected-intake/dentiq-links--happy.png" alt="Bảng kết nối phía labo: danh sách phòng khám DentIQ đã/để kết nối, trạng thái cạnh, nút phát mã và gỡ" loading="lazy">
+      <figcaption>Bảng kết nối phía labo: mỗi dòng là một phòng khám DentIQ với trạng thái cạnh, nút phát mã kết nối và nút gỡ. Đơn từ cạnh <code>linked</code> tự chảy sang DentIQ Lab.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Labo đã có tài khoản DentIQ Lab. Một phòng khám đối tác đang dùng DentIQ và đã có dòng "nhà cung cấp lab" trỏ tới labo này, nhưng <strong>chưa</strong> có cạnh kết nối kỹ thuật — hôm nay họ vẫn chép đơn thủ công qua Zalo/điện thoại. Hai bên muốn bật đồng bộ tự động: một lần bắt tay, sau đó mỗi đơn lab bên DentIQ tự thành work order <code>submitted</code> bên DentIQ Lab, và tiến độ sản xuất hiện ngược cho phòng khám. Kết nối là <strong>tùy chọn cộng thêm</strong>: chưa link thì mọi thứ chạy y hệt như trước.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Chủ / quản lý labo</td><td>Vai quản lý labo trên DentIQ Lab</td><td>Phát mã kết nối (QR/mã), thu hồi/tạm dừng, theo dõi các cạnh đã kết nối</td></tr>
+        <tr><td>Admin phòng khám (trên DentIQ)</td><td>Quyền quản master-data "nhà cung cấp lab"</td><td>Dán mã vào dòng nhà cung cấp lab → đồng ý kết nối; gỡ bất cứ lúc nào</td></tr>
+        <tr><td>Hệ thống (connector)</td><td>—</td><td>Xác thực handshake, lập secret webhook, suy ra <code>suspended</code> khi webhook lỗi quá ngưỡng, giữ idempotency theo external-ref</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Lab phát mã.</strong> Labo sinh một mã kết nối (QR/mã) <strong>ngắn hạn, dùng-một-lần</strong>. Cạnh chuyển <code>unlinked → code_issued</code>.</li>
+      <li><strong>Clinic đồng ý.</strong> Admin phòng khám dán mã vào dòng "nhà cung cấp lab" trên DentIQ → handshake xác thực hai phía → lập secret webhook. Cạnh <code>code_issued → linked</code>. Nếu mã hết hạn trước khi đồng ý → <code>code_issued → expired</code>.</li>
+      <li><strong>Sync chạy.</strong> Từ <code>linked</code>, khi DentIQ gửi đơn lab → tự đẩy sang DentIQ Lab thành work order <code>submitted</code> (kênh DentIQ-connected intake), không gõ lại.</li>
+      <li><strong>Map ngược trạng thái.</strong> Vòng đời sản xuất của case bên DentIQ Lab map ngược về DentIQ, phòng khám thấy tiến độ mà không cần hỏi. Transport (webhook/outbox/idempotency) và bảng map trạng thái nằm ở tài liệu kỹ thuật dentiq-sync.</li>
+      <li><strong>Tạm dừng / gỡ.</strong> Webhook lỗi quá ngưỡng hoặc xoay secret → <code>suspended</code> (đơn xếp hàng, không mất). Bên nào cũng gỡ được → <code>revoked</code>. Muốn nối lại → labo phát mã mới (<code>→ code_issued</code>).</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Cạnh ở <code>linked</code>: tạo đơn lab một phía tự dựng projection phía kia — hết double-entry.</li>
+      <li>Đồng thuận hai chiều: lab phát, clinic đồng ý; không bên nào tự kết nối bên kia. Cả hai gỡ được bất cứ lúc nào.</li>
+      <li>Handshake an toàn: mã ngắn hạn dùng-một-lần, secret xoay được, payload webhook ký + verify, replay idempotent.</li>
+      <li>Gỡ/hết hạn <strong>không</strong> mất dữ liệu: case đã sync giữ nguyên, hai bên rớt về cập nhật thủ công, không hồi quy.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Dán mã không đồng ý được</td><td>Mã đã hết TTL hoặc đã dùng rồi (dùng-một-lần)</td><td>Cạnh <code>→ expired</code>; labo phát mã mới rồi dán lại (LC-4)</td></tr>
+        <tr><td>Cạnh tự chuyển <code>suspended</code>, đơn không chảy</td><td>Webhook lỗi quá ngưỡng hoặc đang xoay secret</td><td>Đơn được xếp hàng không mất; sửa webhook/secret rồi nối lại — không cần tạo case lại (LC-5)</td></tr>
+        <tr><td>Đồng ý lại/phát lại tạo cạnh trùng</td><td>Lo nhân đôi cạnh kết nối</td><td>Không xảy ra: idempotent theo external-ref, một labo ↔ một phòng khám DentIQ đúng một cạnh (LC-1)</td></tr>
+        <tr><td>Phòng khám lo mất dữ liệu khi gỡ</td><td>Hiểu nhầm gỡ = xoá</td><td><code>revoked</code>/<code>suspended</code>/<code>expired</code> không xoá case đã sync; giữ <code>lab_work_order</code>, rớt về thủ công (LC-5)</td></tr>
+        <tr><td>Bên thứ ba tự ý kết nối</td><td>Sai mô hình đồng thuận</td><td>Từ chối: lab chỉ phát, clinic phải chủ động đồng ý — đồng thuận hai chiều (LC-3)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đây là <strong>kênh kết nối kỹ thuật</strong> cho phòng khám dùng DentIQ, khác với kênh quan hệ ở <a href="wf-lab-go-live.html">Labo go-live</a> / <a href="wf-clinic-claim-account.html">nâng cấp tài khoản clinic</a> (mời phòng khám không dùng PMS qua connectionless intake). Chưa kết nối thì phòng khám DentIQ vận hành <strong>y hệt hôm nay</strong> — sync là cộng thêm, không bao giờ bắt buộc, không hồi quy.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-clinic-claim-account.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Nâng cấp tài khoản clinic</div>
+      </a>
+      <a href="wf-lab-go-live.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Labo go-live</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

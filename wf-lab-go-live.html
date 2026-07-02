@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labo lên hệ thống (go-live) — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: một labo mới lên DentIQ Lab — cấu hình vật liệu, bảng giá, vai trò xong, mời tập phòng khám quen của mình, rồi chạy thật những đơn đầu tiên.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-lab-go-live.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Labo lên hệ thống (go-live) — DentIQ Lab Help">
+<meta property="og:description" content="Labo mới: cấu hình vật liệu/bảng giá/vai trò xong, mời tập phòng khám quen qua QR/Zalo, chạy thật đơn đầu tiên — cạnh invited → active.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-lab-go-live.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Labo lên hệ thống (go-live)">
+<meta name="twitter:description" content="Cấu hình xong → mời tập phòng khám quen → đơn đầu đưa cạnh invited → active. Tăng trưởng theo quan hệ, không viral.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Labo lên hệ thống (go-live)","description":"Một labo mới lên DentIQ Lab: cấu hình vật liệu, bảng giá, vai trò xong, mời tập phòng khám quen của mình, rồi chạy thật những đơn đầu tiên.","url":"https://help.dentiqlab.vn/wf-lab-go-live.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-lab-go-live">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Labo go-live</nav>
+
+    <h1>Labo lên hệ thống (go-live)</h1>
+    <p>Đưa một labo mới từ con số không lên chạy thật trên DentIQ Lab đi qua ba nhịp: <strong>cấu hình</strong> (vật liệu, bảng giá, vai trò), <strong>mời tập phòng khám quen</strong> của mình, rồi <strong>chạy thật những đơn đầu tiên</strong>. Đây là luồng tăng trưởng theo quan hệ — biến mỗi mối quan hệ ngoài đời (Zalo, điện thoại) thành một cạnh sống trong mạng lưới, từng quan hệ một. Không viral: thắng bằng kỷ luật mời qua rep/CTV, UX không ma sát và hâm nóng đúng lúc.</p>
+
+    <figure>
+      <img src="assets/lab-clinic-invitation/network--happy.png" alt="Bảng mạng lưới phòng khám của labo: các cạnh kết nối theo trạng thái invited/active, quy công rep/CTV nguồn" loading="lazy">
+      <figcaption>Bảng mạng lưới: mỗi phòng khám được mời là một cạnh, chuyển từ <code>invited</code> sang <code>active</code> khi đơn đầu về; mỗi cạnh ghi rep/CTV nguồn để quy công kích hoạt.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Một labo vừa trả tiền SaaS và có sẵn một tập phòng khám quen — quan hệ ngoài đời, phần lớn đi qua trình dược viên / CTV (TDV). Chưa có cạnh nào trong mạng lưới. Trước khi mời, labo cần cấu hình xong nền: khai vật liệu + công đoạn, lập bảng giá, và bộ vai trò mặc định đã được seed sẵn. Xong nền, labo tạo QR/link để phòng khám đặt đơn, mời tập phòng khám của mình, và chờ đơn đầu tiên — cột mốc "go-live" thật sự là khi cạnh đầu chuyển sang <code>active</code>.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Chủ / quản lý labo</td><td>Đã trả SaaS; vai quản lý</td><td>Cấu hình vật liệu/bảng giá/vai trò; mời tập phòng khám; theo dõi cạnh; hâm nóng cạnh nguội</td></tr>
+        <tr><td>Rep / CTV (TDV) của labo</td><td>Nắm quan hệ ngoài đời</td><td>Phát lời mời cho chính phòng khám mình phụ trách; được quy công kích hoạt khi đơn đầu về</td></tr>
+        <tr><td>Nha sĩ / lễ tân (clinic)</td><td>Nhận lời mời</td><td>Tham gia, đặt đơn không cần cài app</td></tr>
+        <tr><td>Hệ thống</td><td>—</td><td>Suy ra <code>dormant</code>/<code>churned</code> theo ngưỡng ngày không đơn; tính chuyển đổi + mật độ; nhắc hâm nóng</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Cấu hình nền.</strong> Chạy <a href="lab-setup-wizard.html">wizard cấu hình lần đầu</a>: khai vật liệu + công đoạn, lập bảng giá, nhận bộ vai trò mặc định đã seed. Đây là điều kiện để đặt đơn và tính giá chạy đúng.</li>
+      <li><strong>Tạo QR / link đặt đơn.</strong> Labo sinh QR/link để phòng khám đặt đơn không cần cài app — mặt tiền của kênh không ma sát.</li>
+      <li><strong>Mời tập phòng khám.</strong> Labo (thường để rep/CTV) phát lời mời qua QR/link/Zalo cho các phòng khám quen. Cạnh chuyển <code>none → invited</code>, <strong>ghi rep/CTV nguồn</strong>.</li>
+      <li><strong>Đơn đầu không ma sát.</strong> Phòng khám đặt đơn qua connectionless intake — không cài app, không tài khoản nặng. Đơn đầu đưa cạnh <code>invited → active</code> và quy công kích hoạt cho rep/CTV nguồn.</li>
+      <li><strong>Giữ nhịp + hâm nóng.</strong> Đơn đều giữ cạnh <code>active</code>. Quá N ngày không đơn → hệ thống suy ra <code>dormant</code>; labo/rep nhắc qua Zalo → <code>reactivated → active</code>; bỏ lâu hơn → <code>churned</code>.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Labo cấu hình xong nền (vật liệu, bảng giá, vai trò) — đặt đơn và tính giá chạy đúng ngay từ đơn đầu.</li>
+      <li>Các quan hệ thật trở thành cạnh <code>active</code> trong mạng lưới; mật độ cạnh sống tăng từng quan hệ một.</li>
+      <li>Mỗi cạnh ghi rep/CTV nguồn; đơn đầu (kích hoạt) được quy công đúng cho rep đó.</li>
+      <li>Phòng khám đặt đơn được mà không phải cài app hay lập tài khoản nặng.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>Mời nhiều nhưng không lên đơn</td><td>Cạnh dừng ở <code>invited</code>, chưa <code>active</code></td><td>Thước đo là <strong>mật độ cạnh sống</strong>, không phải số lời mời (NG-3); rep hâm nóng qua Zalo đúng lúc, không kỳ vọng viral</td></tr>
+        <tr><td>Phòng khám im lâu, không đặt đơn</td><td>Quá N ngày không đơn</td><td>Hệ thống suy ra <code>dormant</code>; labo/rep hâm nóng → <code>reactivated → active</code>; bỏ lâu hơn khép lại <code>churned</code> (NG-4)</td></tr>
+        <tr><td>Lời mời không bao giờ nở</td><td>Hết hạn mà chưa có đơn nào</td><td>Cạnh <code>invited → churned</code>; phát lại lời mời khi quan hệ ấm lên</td></tr>
+        <tr><td>Cùng phòng khám xuất hiện nhiều cạnh</td><td>Mời trùng</td><td>Không tạo cạnh trùng: một labo ↔ một phòng khám đúng một cạnh (NG-1)</td></tr>
+        <tr><td>Rep/CTV bị bỏ qua khỏi quan hệ</td><td>Disintermediate rep</td><td>Mỗi cạnh ghi rep nguồn; sự kiện kích hoạt quy công cho rep — đừng thiết kế bỏ qua rep (NG-5)</td></tr>
+        <tr><td>Đơn đầu tính giá sai / thiếu vật liệu</td><td>Chưa cấu hình xong nền trước khi mời</td><td>Hoàn tất <a href="lab-setup-wizard.html">wizard</a> (vật liệu + công đoạn + bảng giá) trước khi phát lời mời</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Đây là kênh tăng trưởng <strong>theo quan hệ</strong> cho phòng khám <strong>không</strong> dùng PMS (mời qua QR/Zalo, đặt đơn connectionless). Phòng khám đang dùng DentIQ đi kênh kỹ thuật khác — xem <a href="wf-connect-dentiq.html">Liên kết phòng khám dùng DentIQ</a>. Vòng tăng trưởng này <strong>chậm, từng quan hệ một</strong>, không có cấu trúc tự khuếch đại; đừng đo như một sản phẩm viral.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-connect-dentiq.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Liên kết clinic DentIQ</div>
+      </a>
+      <a href="troubleshoot.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Xử lý sự cố</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

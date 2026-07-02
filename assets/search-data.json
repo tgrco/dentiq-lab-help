@@ -148,5 +148,14 @@
     "keywords": ["chốt công nợ","chot cong no","cuối tháng","cuoi thang","sao kê","sao ke","month end","ar"] },
   { "key": "wf-einvoice-failed", "url": "wf-einvoice-failed.html", "title": "Hoá đơn điện tử thất bại", "section": "Tình huống thực tế",
     "description": "HĐĐT lỗi provider/gateway: đọc lỗi, sửa, retry, không mất dữ liệu công nợ.",
-    "keywords": ["hoá đơn thất bại","hoa don that bai","e-invoice failed","lỗi hóa đơn","loi hoa don","retry","gateway"] }
+    "keywords": ["hoá đơn thất bại","hoa don that bai","e-invoice failed","lỗi hóa đơn","loi hoa don","retry","gateway"] },
+  { "key": "wf-clinic-claim-account", "url": "wf-clinic-claim-account.html", "title": "Nâng cấp tài khoản phòng khám", "section": "Tình huống thực tế",
+    "description": "Phòng khám nhẹ (theo SĐT) claim nâng lên tài khoản đầy đủ với RBAC.",
+    "keywords": ["nâng cấp","nang cap","claim","tài khoản","tai khoan","clinic account","rbac","onboarding"] },
+  { "key": "wf-connect-dentiq", "url": "wf-connect-dentiq.html", "title": "Liên kết phòng khám dùng DentIQ", "section": "Tình huống thực tế",
+    "description": "Bắt tay link DentIQ ↔ DentIQ Lab, đồng bộ work order 2 chiều.",
+    "keywords": ["liên kết","lien ket","connect","dentiq","sync","đồng bộ","dong bo","pms"] },
+  { "key": "wf-lab-go-live", "url": "wf-lab-go-live.html", "title": "Labo lên hệ thống (go-live)", "section": "Tình huống thực tế",
+    "description": "Labo mới cấu hình xong, mời phòng khám, chạy thật đơn đầu tiên.",
+    "keywords": ["go-live","go live","labo mới","labo moi","lên hệ thống","len he thong","mời phòng khám","moi phong kham"] }
 ]

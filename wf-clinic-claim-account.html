@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nâng cấp tài khoản phòng khám — DentIQ Lab Help</title>
+<meta name="description" content="Tình huống thực tế: phòng khám danh tính nhẹ (khoá theo SĐT, đặt đơn qua QR) claim nâng lên tài khoản đầy đủ với RBAC — xác minh OTP chống mạo danh, giữ nguyên mọi đơn cũ.">
+<link rel="canonical" href="https://help.dentiqlab.vn/wf-clinic-claim-account.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Nâng cấp tài khoản phòng khám — DentIQ Lab Help">
+<meta property="og:description" content="Phòng khám nhẹ (khoá theo SĐT) claim lên tài khoản đầy đủ: xác minh OTP chống mạo danh, không gãy việc đặt đơn, giữ nguyên đơn cũ.">
+<meta property="og:url" content="https://help.dentiqlab.vn/wf-clinic-claim-account.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nâng cấp tài khoản phòng khám">
+<meta name="twitter:description" content="Claim danh tính nhẹ theo SĐT lên tài khoản đầy đủ với RBAC, xác minh OTP chống mạo danh, giữ nguyên đơn cũ.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Nâng cấp tài khoản phòng khám","description":"Phòng khám danh tính nhẹ (khoá theo SĐT, đặt đơn qua QR) claim nâng lên tài khoản đầy đủ với RBAC; xác minh OTP chống mạo danh, không gãy việc đặt đơn, giữ nguyên mọi đơn cũ.","url":"https://help.dentiqlab.vn/wf-clinic-claim-account.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="wf-clinic-claim-account">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Tình huống thực tế<span class="sep"></span>Nâng cấp tài khoản clinic</nav>
+
+    <h1>Nâng cấp tài khoản phòng khám</h1>
+    <p>Nhiều phòng khám vào hệ thống dưới dạng <strong>danh tính nhẹ</strong> — không tài khoản, khoá theo số điện thoại — khi lần đầu đặt đơn qua QR hoặc được labo mời. Đến lúc muốn kiểm soát truy cập theo vai (RBAC), quản hoá đơn và người dùng riêng, phòng khám <strong>claim</strong> danh tính đó lên một tài khoản đầy đủ đã xác minh. Điểm cốt lõi: việc đặt đơn <strong>không bao giờ</strong> bị gián đoạn, và mọi đơn cũ tạo dưới danh tính nhẹ vẫn được giữ nguyên, gắn về tài khoản mới.</p>
+
+    <figure>
+      <img src="assets/lab-clinic-invitation/invite-landing--happy.png" alt="Trang đích lời mời phòng khám: giới thiệu labo mời, nút tham gia/nhận danh tính, có thể đặt đơn ngay mà chưa cần tài khoản đầy đủ" loading="lazy">
+      <figcaption>Trang đích lời mời: phòng khám nhận danh tính do labo seed, đặt đơn được ngay; từ đây có thể bấm claim để nâng lên tài khoản đầy đủ đã xác minh.</figcaption>
+    </figure>
+
+    <h2>Bối cảnh</h2>
+    <p>Một phòng khám ở VN sống trên Zalo/điện thoại, không cài app. Họ đặt hàng bằng cách quét QR của labo, nên hệ thống tạo cho họ một danh tính <code>light</code> khoá theo số điện thoại (hoặc labo đã seed sẵn khi mời → <code>invited</code>). Sau vài đơn, phòng khám muốn một tài khoản thật: nhiều lễ tân/nha sĩ đăng nhập với quyền khác nhau, xem lịch sử đơn, nhận hoá đơn. Chủ phòng khám bấm <strong>claim</strong> — hệ thống phải chắc chắn đúng chủ số điện thoại mới nhận được danh tính, tránh người lạ chiếm mất.</p>
+
+    <h2>Diễn viên &amp; quyền cần</h2>
+    <table>
+      <thead><tr><th>Vai trò</th><th>Quyền/điều kiện</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <tr><td>Nha sĩ / Lễ tân (clinic)</td><td>Đang cầm số điện thoại của danh tính</td><td>Đặt đơn đầu (sinh danh tính nhẹ); bấm claim; nhập OTP</td></tr>
+        <tr><td>Chủ phòng khám</td><td>Chủ thực của danh tính (đúng SĐT)</td><td>Sở hữu tài khoản sau claim; gộp các danh tính trùng của mình</td></tr>
+        <tr><td>Chủ labo / Điều phối (lab)</td><td>Có quan hệ với phòng khám</td><td>Seed danh tính khi mời; <em>vouch</em> khi OTP không tới (không tự claim hộ)</td></tr>
+        <tr><td>Hệ thống</td><td>—</td><td>Tự tạo danh tính theo SĐT; phát OTP về đúng số; phát hiện trùng; áp rate-limit</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Quy trình từng bước</h2>
+    <ol>
+      <li><strong>Danh tính nhẹ có sẵn.</strong> Phòng khám đã tồn tại ở <code>light</code> (tự đặt đơn qua QR/connectionless) hoặc <code>invited</code> (labo mời). Việc đặt đơn vẫn chạy bình thường ở mọi trạng thái này.</li>
+      <li><strong>Bấm claim.</strong> Phòng khám yêu cầu nhận danh tính → chuyển <code>claim_pending</code>. Hệ thống phát OTP về <strong>đúng số điện thoại đã đăng ký</strong> của danh tính (không phải số người claim tự khai) qua Zalo/SMS.</li>
+      <li><strong>Xác minh chống mạo danh.</strong> Nhập đúng OTP → danh tính lên <code>claimed</code>, thành tài khoản đầy đủ đã xác minh chủ. Đây là rào mạo danh chính: ai cầm được điện thoại đó mới là chủ.</li>
+      <li><strong>Gộp trùng (nếu có).</strong> Nếu cùng một số điện thoại tồn tại nhiều danh tính nhẹ, hệ thống gộp theo SĐT chuẩn hoá (E.164, +84) về một bản sống → các bản còn lại <code>merged</code>, chuyển toàn bộ đơn và cạnh quan hệ về bản sống, không tạo đơn mồ côi.</li>
+      <li><strong>Bật kiểm soát truy cập.</strong> Sau claim, phòng khám có tài khoản đầy đủ: thêm người dùng, gán vai (RBAC), xem lịch sử đơn và nhận hoá đơn theo quyền.</li>
+    </ol>
+
+    <h2>Kết quả mong đợi</h2>
+    <ul>
+      <li>Phòng khám lên tài khoản đầy đủ đã xác minh chủ (<code>claimed</code>) mà không phải nhập lại gì.</li>
+      <li>Mọi đơn cũ tạo dưới danh tính nhẹ được giữ nguyên và gắn về tài khoản mới.</li>
+      <li>Chỉ đúng chủ số điện thoại mới claim được — chống người lạ chiếm danh tính.</li>
+      <li>Đặt đơn không bị chặn ở bất kỳ bước nào; claim/xác minh là luồng song song, không phải cổng chặn.</li>
+    </ul>
+
+    <h2>Khi nào hỏng &amp; cách xử lý</h2>
+    <table>
+      <thead><tr><th>Triệu chứng</th><th>Nguyên nhân</th><th>Khắc phục</th></tr></thead>
+      <tbody>
+        <tr><td>OTP không tới (đổi SIM, mất số, sai số khi seed)</td><td>Số đã đăng ký không còn dùng</td><td>Nhánh <strong>lab vouch</strong>: labo có quan hệ xác nhận đúng phòng khám → cập nhật số mới rồi phát OTP về số mới; vẫn phải có OTP đạt trước khi lên <code>claimed</code> (BR-W6)</td></tr>
+        <tr><td>Nhập sai OTP nhiều lần / hết hạn thử thách</td><td>Quá 5 lần sai hoặc quá 10 phút</td><td>Tự quay <code>claim_pending → light</code> (không mất đơn); resend bị rate-limit; tín hiệu lạm dụng thì <code>→ blocked</code> (BR-W8, BR-W5)</td></tr>
+        <tr><td>Hai bên cùng đòi một danh tính</td><td>Tranh chấp sở hữu / OTP fail và không có vouch</td><td>Chuyển <code>disputed</code>: tạm dừng nâng cấp nhưng <strong>vẫn cho đặt đơn</strong>; người có quyền đối chiếu bằng chứng rồi kết về <code>claimed</code>/<code>light</code>/<code>blocked</code> (BR-W7)</td></tr>
+        <tr><td>Labo cố tự claim hộ phòng khám</td><td>Sai mô hình quyền</td><td>Từ chối — chỉ chủ thực claim/merge được; labo chỉ <em>vouch</em>, không chiếm danh tính (BR-W4)</td></tr>
+        <tr><td>Nghi mạo danh/lạm dụng ở bất kỳ bước nào</td><td>Rate-limit claim, báo gian lận</td><td>Chuyển <code>blocked</code>; gỡ chặn cần quyền và hiếm (BR-W5)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Nâng cấp tài khoản là <strong>luồng song song</strong>, không phải điều kiện để đặt đơn: ở <code>light</code>, <code>invited</code>, <code>claim_pending</code>, thậm chí <code>disputed</code>, phòng khám vẫn tạo work order bình thường. Claim chỉ mở thêm kiểm soát truy cập, hoá đơn và quản người dùng — không đánh đổi bằng ma sát đặt hàng.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="wf-einvoice-failed.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">HĐĐT thất bại</div>
+      </a>
+      <a href="wf-connect-dentiq.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Liên kết clinic DentIQ</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>
