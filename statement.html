@@ -58,6 +58,11 @@
     <h2>Xuất sao kê</h2>
     <p>Chốt kỳ per phòng khám: gom mọi bút toán ghi nợ của kỳ, trừ cọc, phát hành sao kê rồi gửi qua Zalo/PDF. Nút "Chốt sao kê kỳ này" cho xem trước trước khi gửi, sau đó đánh dấu sẵn sàng phát hành HĐĐT. Nếu kỳ đã chốt rồi phát hiện thiếu một case lẽ ra thuộc kỳ, <strong>không</strong> sửa sao kê cũ — ghi case vào kỳ kế hoặc tạo bút toán điều chỉnh có ngày tham chiếu.</p>
 
+    <div class="callout">
+      <div class="ctitle">Chốt bị chặn nếu còn giá thiếu</div>
+      <p>Hệ thống <strong>chặn chốt sao kê</strong> nếu trong kỳ còn case đã giao mà <strong>chưa khớp được giá</strong> (không tự đặt 0) — kèm danh sách case cần <a href="pricing-material-catalog.html">báo giá lại</a> trước khi chốt được tiếp. Lý do: số trên sao kê đã chốt là bất biến và là đầu vào trực tiếp của <a href="e-invoice-issuance.html">hoá đơn điện tử</a> — chốt với giá thiếu sẽ khoá cứng một con số sai, không sửa lại được.</p>
+    </div>
+
     <h2>Nối sang hoá đơn điện tử</h2>
     <p>Một sao kê đã chốt là đầu vào hợp lệ để phát hành <a href="e-invoice-issuance.html">HĐĐT</a>: labo là bên phát hành, phòng khám là bên mua. Feature công nợ/sao kê <strong>không</strong> tự dựng XML hay ký số — việc phát hành uỷ thác cho feature e-invoice; sao kê chỉ feed dữ liệu và đánh dấu đã được phát hành. Một sao kê kỳ chỉ phát hành HĐĐT <strong>một lần</strong> để tránh xuất trùng.</p>
 

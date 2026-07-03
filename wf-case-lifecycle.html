@@ -69,6 +69,14 @@
       <li><strong>Đóng — <code>closed</code>.</strong> Đã giao + đã thanh toán/ghi công nợ, hết phát sinh → kế toán đóng case. Mọi nhánh cuối cùng hội tụ về <code>closed</code>.</li>
     </ol>
 
+    <h2>Huỷ đơn, sửa đơn giữa chừng, mẫu hỏng</h2>
+    <p>Ngoài đường "sạch" ở trên, case còn ba tình huống hằng ngày không đi theo tuyến tính:</p>
+    <ul>
+      <li><strong>Huỷ đơn (<code>cancel</code>) — bệnh nhân no-show, phòng khám gọi huỷ.</strong> Huỷ được từ <strong>mọi trạng thái trước khi giao</strong> (<code>submitted</code> đến <code>ready_to_ship</code>) sang <code>cancelled</code> — trạng thái <strong>terminal</strong>, không rẽ tiếp. Bắt buộc ghi lý do. <strong>Không</strong> huỷ được từ <code>shipped</code> trở đi (đang trên đường) hay sau <code>delivered</code> — những trường hợp đó đi đường redo/bảo hành. Nếu case có cọc trước-giao, huỷ phải kèm <code>depositDisposition</code>: <strong>refund</strong> (trả lại cọc) hoặc <strong>forfeit</strong> (lab giữ làm phí huỷ) — cả hai <strong>không</strong> chạm vào sổ <a href="accounts-receivable.html">công nợ</a>, vì ghi nợ chỉ phát sinh lúc <code>delivered</code>.</li>
+      <li><strong>Sửa đơn (amendment) — phòng khám gọi điện đổi shade/material/răng giữa chừng.</strong> Ghi nhận qua thao tác sửa đơn khi case đang ở <code>accepted</code>/<code>in_production</code>/<code>on_hold</code>/<code>try_in</code>; hệ thống cập nhật Rx và <strong>báo giá lại</strong> (khoá giá mới, giữ giá cũ trong lịch sử để truy vết) — <strong>không</strong> đổi trạng thái case. Sau khi vào <code>qc</code> thì không sửa được nữa — quá muộn để đổi ý.</li>
+      <li><strong>Mẫu hỏng — chờ mẫu lại (sample reject).</strong> Mẫu rách/thiếu chi tiết/sai khớp cắn là chuyện hàng ngày. Khi điều phối phát hiện mẫu hỏng lúc nhận (case đang ở <code>accepted</code>) → đặt lại <code>sampleReceived=false</code>, ghi lý do, và báo phòng khám gửi mẫu lại qua Zalo. Khi mẫu mới tới, mốc <code>sampleReceivedAt</code> được ghi <strong>lại từ đầu</strong> — nghĩa là <strong>SLA tự động tạm dừng</strong> trong lúc chờ mẫu, lab không bị tính trễ oan. Không thêm state riêng cho vòng này.</li>
+    </ul>
+
     <h2>Kết quả mong đợi</h2>
     <ul>
       <li>Case đi đúng đường <code>submitted → accepted → in_production → qc → ready_to_ship → shipped → delivered → closed</code>.</li>
@@ -87,6 +95,9 @@
         <tr><td>Cố chuyển thẳng sang <code>delivered</code> mà chưa qua QC</td><td>Bỏ qua cổng QC</td><td>Bất khả thi theo máy trạng thái — phải qua <code>qc → ready_to_ship</code> bằng một lần QC pass (BR-W2)</td></tr>
         <tr><td>Trễ due date</td><td>SLA chạy từ khi nhận mẫu; công đoạn kéo dài</td><td>Cảnh báo trễ nổi ở lab board + đẩy Zalo cho clinic; ghi lý do trễ</td></tr>
         <tr><td>Thao tác chuyển trạng thái bị từ chối</td><td>Sai cạnh clinic↔lab hoặc sai vai (mặc định từ chối)</td><td>Chỉ đúng actor trong đúng cạnh mới trigger được transition (BR-W4); kiểm lại vai và quyền</td></tr>
+        <tr><td>Không huỷ được case</td><td>Case đã <code>shipped</code> trở đi (đang trên đường hoặc đã giao)</td><td>Huỷ chỉ áp dụng cho trạng thái trước-giao; case đã giao đi đường redo/bảo hành thay vì huỷ</td></tr>
+        <tr><td>Không sửa được shade/material/răng giữa chừng</td><td>Case đã qua <code>qc</code></td><td>Sau QC là quá muộn để sửa; nếu phát hiện sai sau giao, dùng redo thay vì amendment</td></tr>
+        <tr><td>SLA không tính trễ dù mẫu tới muộn</td><td>Case vừa qua vòng mẫu hỏng (sample-reject) — mốc <code>sampleReceivedAt</code> đã reset theo mẫu mới</td><td>Đúng hành vi: thời gian chờ mẫu lại không tính vào SLA của lab</td></tr>
       </tbody>
     </table>
 

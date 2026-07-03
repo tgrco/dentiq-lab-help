@@ -57,9 +57,20 @@
     <p>Kỳ sao kê mặc định là <strong>tháng dương lịch per phòng khám</strong>. Cuối kỳ tháng, hệ thống chốt một <a href="statement.html">sao kê</a> cho mỗi phòng khám: số còn nợ đầu kỳ + ghi nợ trong kỳ − đã trả − cọc = số còn nợ cuối kỳ. Số <strong>còn nợ cuối kỳ</strong> của tháng N là <strong>còn nợ đầu kỳ</strong> của tháng N+1 (số dư cuộn). Số liệu trên sao kê đã chốt là <strong>bất biến</strong> — điều chỉnh sau kỳ phải tạo bút toán mới, không sửa số cũ.</p>
     <p>Labo có thể đặt kỳ khác (tuần / 2 tuần) per phòng khám, nhưng một phòng khám chỉ có một định nghĩa kỳ đang hiệu lực; đổi kỳ chỉ áp cho các kỳ <strong>chưa chốt</strong>, không hồi tố sao kê đã chốt. Sao kê đã chốt là đầu vào hợp lệ để phát hành <a href="e-invoice-issuance.html">hoá đơn điện tử</a> và để nhắc nợ khéo qua Zalo khi quá hạn.</p>
 
+    <h2>Chặn chốt sao kê khi còn giá thiếu</h2>
+    <p>Không được <strong>chốt sao kê</strong> một kỳ nếu trong kỳ còn case đã giao mà <strong>thiếu giá</strong> (chưa khớp được bảng giá, hệ thống không tự đặt 0). Chốt bị <strong>chặn</strong>, kèm danh sách case thiếu giá cần <strong>báo giá lại</strong> trước — vì sao kê đã chốt là bất biến và là đầu vào của hoá đơn điện tử, chốt với số thiếu sẽ khoá cứng một con số sai không sửa được nữa.</p>
+
+    <h2>Khoá công nợ (credit hold) chỉ chặn đơn mới</h2>
+    <p>Khi một phòng khám bị <strong>khoá</strong> (ví dụ quá hạn công nợ lâu), credit-hold <strong>chỉ chặn nhận đơn mới</strong> — mọi đường đặt đơn (tạo trực tiếp, QR/web, qua DentIQ) đều bị từ chối rõ lý do. Case <strong>đang chạy</strong> (đã tiếp nhận trở đi) vẫn hoàn tất bình thường tới giao/đóng — không đóng băng việc đang làm dở của phòng khám đó. Gỡ khoá (đã trả/đã thoả thuận) mở lại việc nhận đơn ngay.</p>
+
     <div class="callout">
       <div class="ctitle">Cổng quyền</div>
       <p>Chỉ người thuộc labo có quyền tài chính mới được ghi nhận thanh toán, điều chỉnh và phát hành sao kê. Phía phòng khám chỉ <strong>xem/đối chiếu</strong> sao kê của chính mình, không sửa số. Nhắc nợ qua Zalo chỉ gửi cho phòng khám có số còn nợ <strong>quá hạn</strong> (&gt; 0 và quá ngày đến hạn), đính kèm sao kê kỳ tương ứng — không gửi trùng để tránh spam.</p>
+    </div>
+
+    <div class="callout">
+      <div class="ctitle">Case huỷ không chạm công nợ</div>
+      <p>Case bị <a href="wf-case-lifecycle.html">huỷ</a> trước khi giao <strong>không</strong> tạo hay đảo bút toán nào trong công nợ — ghi nợ chỉ phát sinh lúc <strong>đã giao (delivered)</strong>, mà huỷ chỉ xảy ra ở trạng thái trước-giao. Cọc trước-giao (nếu có) được xử lý riêng trên chính case (hoàn lại hoặc lab giữ làm phí huỷ), không đi qua sổ công nợ.</p>
     </div>
 
     <div class="docs-pager">

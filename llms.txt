@@ -8,6 +8,7 @@
 - [Bắt đầu nhanh](https://help.dentiqlab.vn/getting-started.html): Vòng đời một case từ đặt đơn đến bảo hành, cho người mới bắt đầu.
 - [Khái niệm cốt lõi](https://help.dentiqlab.vn/concepts.html): work order, case, unit, hai kênh đặt đơn, SLA tính từ nhận mẫu, redo vs bảo hành.
 - [Cấu hình labo lần đầu](https://help.dentiqlab.vn/lab-setup-wizard.html): Khai vật liệu, bảng giá, vai trò và tạo QR cho phòng khám đặt đơn.
+- [Gói vận hành (launch pack)](https://help.dentiqlab.vn/lab-launch-pack.html): Chọn gói vận hành lúc khởi tạo labo — Simple/Standard/Advanced/In-house — bật đúng module và độ phức tạp giao diện cho quy mô labo.
 - [Chuyển từ Excel/Zalo](https://help.dentiqlab.vn/migrate-from-excel-zalo.html): Cách chuyển labo đang dùng Zalo/Excel lên DentIQ Lab.
 
 ## Đặt đơn
@@ -28,6 +29,7 @@
 ## Giao nhận & bảo hành
 
 - [Giao & theo dõi](https://help.dentiqlab.vn/shipment-delivery-tracking.html): Đánh dấu sẵn sàng giao, chọn phương thức, xác nhận đã nhận, theo dõi SLA.
+- [Phiếu in (print pack)](https://help.dentiqlab.vn/print-pack.html): In phiếu labo (A5) lúc nhận case và phiếu giao hàng (A4) lúc giao, kèm QR mã ca — chỉ đọc, không đổi trạng thái.
 - [Quản lý redo](https://help.dentiqlab.vn/redo-management.html): Phân loại lý do redo, gán trách nhiệm labo/clinic, thống kê tỉ lệ redo.
 - [Bảo hành & tra cứu](https://help.dentiqlab.vn/warranty-lookup-claims.html): Tra cứu bảo hành theo material và thời hạn, xem lịch sử case, tạo claim.
 

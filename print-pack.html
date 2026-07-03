@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phiếu in (print pack) — DentIQ Lab Help</title>
+<meta name="description" content="In phiếu labo và phiếu giao hàng kèm case: khổ A5/A4, QR mã ca, gate theo trạng thái case, không đổi trạng thái, không thêm dữ liệu mới.">
+<link rel="canonical" href="https://help.dentiqlab.vn/print-pack.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DentIQ Lab Help">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Phiếu in (print pack) — DentIQ Lab Help">
+<meta property="og:description" content="In phiếu labo và phiếu giao hàng kèm case: khổ A5/A4, QR mã ca, gate theo trạng thái case.">
+<meta property="og:url" content="https://help.dentiqlab.vn/print-pack.html">
+<meta property="og:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Phiếu in (print pack)">
+<meta name="twitter:description" content="Phiếu labo (A5) lúc nhận case, phiếu giao hàng (A4) lúc giao — kèm QR mã ca.">
+<meta name="twitter:image" content="https://help.dentiqlab.vn/assets/icons/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lexend:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/subpages.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Phiếu in (print pack)","description":"In phiếu labo và phiếu giao hàng kèm case: khổ A5/A4, QR mã ca, gate theo trạng thái case, không đổi trạng thái, không thêm dữ liệu mới.","url":"https://help.dentiqlab.vn/print-pack.html","inLanguage":"vi","publisher":{"@type":"Organization","name":"DentIQ Lab","url":"https://dentiqlab.vn","logo":{"@type":"ImageObject","url":"https://help.dentiqlab.vn/assets/icons/logo.png"}}}</script>
+</head>
+<body data-page="print-pack">
+
+<main>
+<div class="container docs-shell">
+
+  <article class="docs-content">
+    <nav class="breadcrumb"><a href="index.html">Help</a><span class="sep"></span>Giao nhận &amp; bảo hành<span class="sep"></span>Phiếu in</nav>
+
+    <h1>Phiếu in (print pack)</h1>
+    <p style="font-size:1.15rem;font-weight:600;color:var(--primary);margin-bottom:.5rem;">Tờ giấy đi kèm hộp không biến mất khi lên phần mềm — nó vẫn là quy trình sàn của labo VN. In thẳng từ trình duyệt, không cần app PDF.</p>
+    <p>Print pack là bộ <strong>giấy in đi kèm hộp vật lý</strong> của một <a href="glossary.html">case</a>. Ở labo VN, tờ phiếu giấy nằm trong khay/hộp và đi theo răng từ lúc nhận mẫu tới lúc giao — sản phẩm không thay được cuốn sổ nếu thiếu tờ giấy này. Có hai loại phiếu, in trực tiếp từ dữ liệu case đã có, không cần thư viện PDF phía máy chủ:</p>
+    <ul>
+      <li><strong>Phiếu labo</strong> (<a href="lab-slip.html">lab slip</a>) — in lúc <strong>nhận</strong> case: bệnh nhân, răng (FDI), material, shade, hạn, người chỉ định, ghi chú Rx, kèm QR mã ca.</li>
+      <li><strong>Phiếu giao hàng</strong> (delivery note) — in lúc <strong>giao</strong>: mã ca, phòng khám, ngày giao, danh sách unit, dòng ký nhận (người giao / người nhận), kèm QR mã ca.</li>
+    </ul>
+
+    <h2>Cách in</h2>
+    <p>Ở <strong>Danh sách ca</strong>, mỗi dòng có nút <strong>"In phiếu"</strong> mở một trong hai route in chuyên biệt — trang không có menu/sidebar, chỉ nội dung phiếu. Bấm <strong>Ctrl+P</strong> (Windows) hoặc <strong>Cmd+P</strong> (Mac) để in. Phiếu labo mặc định khổ <strong>A5</strong>, phiếu giao hàng khổ <strong>A4</strong> — CSS in tối ưu sẵn, không cần chỉnh khổ giấy thủ công.</p>
+
+    <h2>Chỉ đọc, không đổi trạng thái</h2>
+    <p>Phiếu in <strong>không</strong> gọi bất kỳ hành động ghi nào và không đổi <a href="wf-case-lifecycle.html">trạng thái case</a> — chỉ đọc dữ liệu case đã có rồi hiển thị. In bao nhiêu lần cũng được, không phát sinh gì mới. Dữ liệu lấy từ đúng response case mà người dùng vốn đã được xem — route in không lộ thêm trường nào, cùng cổng quyền như xem case (yêu cầu đăng nhập, case thuộc lab của mình).</p>
+
+    <h2>Gate theo trạng thái case</h2>
+    <table>
+      <thead><tr><th>Phiếu</th><th>In được từ</th><th>Chưa tới → hiện gì</th></tr></thead>
+      <tbody>
+        <tr><td>Phiếu labo</td><td>Đã nhận (<code>accepted</code>) trở đi</td><td>"Case chưa nhận, chưa in được"</td></tr>
+        <tr><td>Phiếu giao hàng</td><td>Chờ giao / đã gửi đi (<code>ready_to_ship</code>/<code>shipped</code>) trở đi</td><td>"Chưa tới bước giao"</td></tr>
+      </tbody>
+    </table>
+    <p>Case không tồn tại hoặc không thuộc lab của bạn → màn not-found, không lộ dữ liệu case khác.</p>
+
+    <h2>QR mã ca — không phải link công khai</h2>
+    <p>QR trên cả hai phiếu mã hoá <strong>mã ca</strong> (mã người-đọc-được đã in trên phiếu) — quét để tra nhanh ca trên sàn, đối chiếu khay/hộp với đúng case. QR <strong>không</strong> chứa tracking token công khai của case: token là credential, in nó lên hộp đi ngoài đường sẽ rò rỉ quyền truy cập.</p>
+
+    <div class="callout">
+      <div class="ctitle">Lưu ý</div>
+      <p>Trường tùy chọn vắng (SĐT/tên bệnh nhân/ghi chú Rx/hạn) → phiếu in dấu "—" hoặc bỏ dòng, không chặn in. SĐT bệnh nhân <strong>không</strong> in trên phiếu labo (giữ ranh giới riêng tư hiện có) — chỉ in tên nếu có. Case không có unit/items → phiếu giao hàng vẫn in được, bảng unit trống có nhãn "—", vẫn có mã ca + dòng ký nhận.</p>
+    </div>
+
+    <div class="docs-pager">
+      <a href="shipment-delivery-tracking.html">
+        <div class="pager-label">← Trước</div>
+        <div class="pager-title">Giao &amp; theo dõi</div>
+      </a>
+      <a href="redo-management.html" class="next">
+        <div class="pager-label">Tiếp →</div>
+        <div class="pager-title">Quản lý redo</div>
+      </a>
+    </div>
+  </article>
+
+</div>
+</main>
+
+<script src="assets/docs-shell.js" defer></script>
+</body>
+</html>

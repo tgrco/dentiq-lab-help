@@ -9,6 +9,7 @@
       { key: 'getting-started',          href: 'getting-started.html',           label: 'Bắt đầu nhanh' },
       { key: 'concepts',                 href: 'concepts.html',                  label: 'Khái niệm cốt lõi' },
       { key: 'lab-setup-wizard',         href: 'lab-setup-wizard.html',          label: 'Cấu hình labo lần đầu' },
+      { key: 'lab-launch-pack',          href: 'lab-launch-pack.html',           label: 'Gói vận hành' },
       { key: 'migrate-from-excel-zalo',  href: 'migrate-from-excel-zalo.html',   label: 'Chuyển từ Excel/Zalo' },
     ]},
 
@@ -41,6 +42,7 @@
 
     { section: 'Giao nhận & bảo hành', items: [
       { key: 'shipment-delivery-tracking', href: 'shipment-delivery-tracking.html', label: 'Giao & theo dõi' },
+      { key: 'print-pack',                 href: 'print-pack.html',                 label: 'Phiếu in' },
       { key: 'redo-management',            href: 'redo-management.html',            label: 'Quản lý redo' },
       { key: 'warranty-lookup-claims',     href: 'warranty-lookup-claims.html',     label: 'Bảo hành & tra cứu' },
     ]},
@@ -96,20 +98,22 @@
   // Labels resolved from NAV above so a single source of truth.
   const RELATED = {
     'overview':                ['getting-started', 'concepts', 'role-lab-owner', 'glossary'],
-    'getting-started':         ['overview', 'concepts', 'lab-setup-wizard', 'wf-case-lifecycle'],
+    'getting-started':         ['overview', 'concepts', 'lab-setup-wizard', 'lab-launch-pack'],
     'concepts':                ['glossary', 'getting-started', 'wf-case-lifecycle', 'production-stages'],
-    'lab-setup-wizard':        ['pricing-material-catalog', 'roles-permissions', 'lab-clinic-invitation', 'getting-started'],
+    'lab-setup-wizard':        ['lab-launch-pack', 'pricing-material-catalog', 'roles-permissions', 'lab-clinic-invitation'],
+    'lab-launch-pack':         ['lab-setup-wizard', 'accounts-receivable', 'roles-permissions', 'wf-lab-go-live'],
     'migrate-from-excel-zalo': ['lab-setup-wizard', 'accounts-receivable', 'wf-lab-go-live', 'troubleshoot'],
     'connectionless-intake':   ['rx-photo-capture', 'wf-first-order', 'role-clinic-dentist', 'lab-slip'],
     'rx-photo-capture':        ['connectionless-intake', 'lab-slip', 'stl-scan-upload', 'role-clinic-assistant'],
     'dentiq-connected-intake': ['connectionless-intake', 'lab-clinic-connection', 'wf-connect-dentiq', 'stl-scan-upload'],
     'stl-scan-upload':         ['rx-photo-capture', 'dentiq-connected-intake', 'wf-stl-digital', 'production-board'],
-    'lab-slip':                ['rx-photo-capture', 'connectionless-intake', 'role-clinic-assistant', 'glossary'],
+    'lab-slip':                ['print-pack', 'rx-photo-capture', 'connectionless-intake', 'role-clinic-assistant'],
     'case-queue-assignment': ['production-board', 'role-coordinator', 'wf-case-lifecycle', 'qc-gate'],
     'production-board':      ['case-queue-assignment', 'production-stages', 'qc-gate', 'role-technician'],
     'production-stages':     ['production-board', 'qc-gate', 'concepts', 'wf-case-lifecycle'],
     'qc-gate':               ['production-board', 'redo-management', 'wf-qc-fail-rework', 'role-qc'],
-    'shipment-delivery-tracking': ['qc-gate', 'warranty-lookup-claims', 'role-shipper', 'wf-case-lifecycle'],
+    'shipment-delivery-tracking': ['print-pack', 'qc-gate', 'warranty-lookup-claims', 'role-shipper'],
+    'print-pack':                 ['lab-slip', 'shipment-delivery-tracking', 'wf-case-lifecycle', 'role-shipper'],
     'redo-management':            ['qc-gate', 'warranty-lookup-claims', 'wf-redo-claim', 'reports-kpi'],
     'warranty-lookup-claims':     ['redo-management', 'wf-warranty-claim', 'role-clinic-dentist', 'accounts-receivable'],
     'pricing-material-catalog': ['lab-setup-wizard', 'production-stages', 'accounts-receivable', 'role-lab-owner'],

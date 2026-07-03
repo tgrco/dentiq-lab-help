@@ -3,10 +3,10 @@
 Ground-truth ledger. Help content derives from `dentlab/specs` (SSOT). When specs change,
 re-check the affected pages and bump the synced-commit line below.
 
-<!-- Last synced specs commit (dentlab/specs): 73b72d8 (2026-07-01) -->
+<!-- Last synced specs commit (dentlab/specs): 36bf0e3 (2026-07-03) -->
 
 ## Site facts
-- 58 pages across 10 nav sections. Registry: `scripts/pages.json`. Integrity gate: `scripts/check.mjs` (`npm run check`).
+- 60 pages across 10 nav sections. Registry: `scripts/pages.json`. Integrity gate: `scripts/check.mjs` (`npm run check`).
 - Vietnamese-first; keep-English lab terms (shade, milling, sinter, glaze, try-in, STL, QC, crown, veneer, margin, abutment, zirconia, e.max, PFM, work order).
 - Domain assumed `https://help.dentiqlab.vn`. Search index: `assets/search-data.json` (58 entries) → `llms.txt` via `npm run gen-llms`.
 - Screenshots sourced from `dentlab/screenshots/<feature>/<view>--<state>.png`.
@@ -18,6 +18,7 @@ re-check the affected pages and bump the synced-commit line below.
 | getting-started | 03-end-to-end.md |
 | concepts | 01-glossary.md, 04-principles.md |
 | lab-setup-wizard | features/pricing-material-catalog, 02-actors.md |
+| lab-launch-pack | features/lab-launch-pack, technical/vn-operations (fact 11) |
 | migrate-from-excel-zalo | technical/vn-operations |
 | role-lab-owner … role-accountant | 02-actors.md, 05-data-and-permission.md |
 | role-clinic-dentist / assistant / owner | 02-actors.md (Phía Clinic) |
@@ -31,6 +32,7 @@ re-check the affected pages and bump the synced-commit line below.
 | production-stages | 01-glossary.md#production-stage, features/production-board |
 | qc-gate | features/qc-gate |
 | shipment-delivery-tracking | features/shipment-delivery-tracking |
+| print-pack | features/print-pack |
 | redo-management | features/redo-management |
 | warranty-lookup-claims | features/warranty-lookup-claims |
 | pricing-material-catalog | features/pricing-material-catalog |
@@ -68,3 +70,4 @@ re-check the affected pages and bump the synced-commit line below.
 
 ## Sync history
 - 2026-07-01 — Initial build. 58 pages, shell forked from dentiq-help, synced to dentlab/specs commit 73b72d8.
+- 2026-07-03 — Synced to dentlab/specs commit 36bf0e3. Two new pages: `print-pack` (GAP-03 printable lab slip + delivery note + case QR) and `lab-launch-pack` (GAP-16 onboarding preset Simple/Standard/Advanced/In-house). Updated `wf-case-lifecycle` (case cancel + deposit disposition, in-place amendment/reprice, sample-reject/re-impression with SLA auto-pause), `accounts-receivable` + `statement` (statement-close price guard, credit-hold blocks only new intake, cancelled cases never touch AR), and `glossary` (new terms: launch pack, in-house lab). 58 → 60 pages.
